@@ -15,33 +15,30 @@ inception();
 const factorial = (n) => (n <= 1) ? n : (n * factorial(n - 1));
 factorial(5);
 
-var a = 1,b = 0, counter = 0;
+var a = 1, b = 0, counter = 0;
 
 
 
-function fibonacciArr(n, fiboSequence = [0,1]){
+function fibonacciArr(n, fiboSequence = [0, 1]) {
     let sequenceLen = fiboSequence.length;
-    let c = fiboSequence[sequenceLen-1] + fiboSequence[sequenceLen-2];
+    let c = fiboSequence[sequenceLen - 1] + fiboSequence[sequenceLen - 2];
     fiboSequence.push(c);
-    if(c >= n){
-        //I mean it works as long that you not asking the 0 and 1s though
-        return sequenceLen;
-    }
-    return fibonacciArr(n, fiboSequence);
+
+    return n < 2 ? n : (c >= n) ? sequenceLen : fibonacciArr(n, fiboSequence);
 }
 fibonacciArr(144);
 
 
 
 function FibonacciBasic(n) {
-    let c = a+b;
-    if(c >= n){
+    let c = a + b;
+    if (c >= n) {
         return counter
     }
     counter++;
     a = b;
     b = c;
-    return Fibonacci(n); 
+    return Fibonacci(n);
 
 }
 
