@@ -12,12 +12,7 @@ inception();
 
 
 
-function factorial(n) {
-    if (n <= 1) {
-        return n;
-    }
+const factorial = (n) =>  (n <= 1) ? n : (n * factorial(n - 1));
 
-    return (n * factorial(n - 1));
-}
 
 factorial(5);
