@@ -44,11 +44,21 @@ function FibonacciBasic(n) {
 
 Fibonacci(3)
 
-function FibonnacciReturnUsingRecursion(n){
-    if(n<2){
+function FibonnacciReturnUsingRecursion(n) {
+    if (n < 2) {
         return n;
     }
-    return FibonnacciReturnUsingRecursion(n-1) + FibonnacciReturnUsingRecursion(n+1);
+    return FibonnacciReturnUsingRecursion(n - 1) + FibonnacciReturnUsingRecursion(n + 1);
 }
 
 FibonnacciReturnUsingRecursion(43);
+
+
+//Implement a function that reverses a string using iteration...and then recursion!
+function reverseString(str) {
+    strlen = str.length;
+    return (strlen <= 1) ? str : str[strlen - 1] + reverseString(str.slice(0, strlen - 1));
+}
+
+reverseString('yoyo mastery');
+  //should return: 'yretsam oyoy'
