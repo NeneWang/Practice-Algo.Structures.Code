@@ -17,20 +17,18 @@ factorial(5);
 
 var a = 1,b = 0, counter = 0;
 
-var fiboSecuence = [0,1]
 
-function fibonacciArr(n){
-    let sequenceLen = fiboSecuence.length;
-    let c = fiboSecuence[sequenceLen-1] + fiboSecuence[sequenceLen-2];
-    fiboSecuence.push(c);
-    // console.log(c);
+
+function fibonacciArr(n, fiboSequence = [0,1]){
+    let sequenceLen = fiboSequence.length;
+    let c = fiboSequence[sequenceLen-1] + fiboSequence[sequenceLen-2];
+    fiboSequence.push(c);
     if(c >= n){
         //I mean it works as long that you not asking the 0 and 1s though
         return sequenceLen;
     }
-    return fibonacciArr(n);
+    return fibonacciArr(n, fiboSequence);
 }
-
 fibonacciArr(144);
 
 
