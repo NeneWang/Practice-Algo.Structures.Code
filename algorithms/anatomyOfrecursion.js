@@ -60,5 +60,22 @@ function reverseString(str) {
     return (strlen <= 1) ? str : str[strlen - 1] + reverseString(str.slice(0, strlen - 1));
 }
 
-reverseString('yoyo mastery');
+function reverseStringLikeATree(str) {
+    strlen = str.length;
+    console.log(`Size: ${strlen}`);
+    if (strlen <= 2) {
+        let firstHalf = (str.slice(0, strlen / 2));
+        let lastHalf = (str.slice(strlen / 2, strlen));
+        return lastHalf + firstHalf;
+    }
+    //console.log(`${str.slice(strlen / 2, strlen)} ->  ${str.slice(0, strlen / 2)}`);
+    let firstHalf = (str.slice(0, strlen / 2));
+    let lastHalf = (str.slice(strlen / 2, strlen));
+    console.log(firstHalf)
+    console.log(lastHalf)
+    return lastHalf + firstHalf;
+}
+
+
+reverseStringLikeATree('yoyo mastery');
   //should return: 'yretsam oyoy'
