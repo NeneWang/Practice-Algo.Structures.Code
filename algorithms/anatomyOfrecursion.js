@@ -1,7 +1,7 @@
 let counter = 0;
-function inception(){
+function inception() {
     counter++;
-    if(counter>3){
+    if (counter > 3) {
         return `Finished with counter: ${counter}`;
     }
     console.log(` Count: ${counter}`);
@@ -9,3 +9,15 @@ function inception(){
 }
 
 inception();
+
+
+
+function factorial(n) {
+    if (n <= 1) {
+        return n;
+    }
+
+    return (n * factorial(n - 1));
+}
+
+factorial(5);
