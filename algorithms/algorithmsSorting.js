@@ -1,4 +1,4 @@
-const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+var numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
 function bubbleSort(array) {
     arrlen = array.length;
@@ -16,5 +16,33 @@ function bubbleSort(array) {
     }
 }
 
-bubbleSort(numbers);
+
+
+function selectionSort(array) {
+    for (let i = 0; i < array.length; i++) {
+        let indexMin = getMinBetween(array, i);
+        console.log(`min index is: ${indexMin}`);
+        // Gets the low
+        let hold = array[i];
+        array[i] = array[indexMin];
+        array[indexMin] = hold
+    }
+}
+
+function getMinBetween(array, rangeMin) {
+    min = array[rangeMin];
+    indexMin = rangeMin;
+    for (let i = rangeMin; i < array.length; i++) {
+        if (array[indexMin] > array[i]) {
+            indexMin = i;
+        }
+    }
+    return indexMin;
+}
+
+
+const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+getMinBetween(numbers, 0 );
+selectionSort(numbers);
+
 console.log(numbers);
