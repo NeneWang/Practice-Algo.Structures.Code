@@ -14,4 +14,4 @@ function getName(firstName, lastName) {
     return firstName + ' ' + lastName;
 }
 console.log();
-console.log(getSum(1, 4));
+console.log(getSum(1, 5));
