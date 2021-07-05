@@ -1,3 +1,11 @@
 var myString;
-myString = "Hello World";
+var myNum;
+var myBool;
+var strArr;
+var numArr;
+myString = "Hello " + " " + "World".slice(0, 3);
+myNum = 2.2;
+myBool = false;
+strArr = ["Hello", "World"];
+numArr = [1, 2, 3];
 console.log(myString);
