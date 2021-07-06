@@ -22,8 +22,8 @@
         return true;
     }
 
-    if(array.includes(sequence[0])){
-        let indexOfCurrentSequence = array.indexOf(sequence[0]);
+    let indexOfCurrentSequence = array.indexOf(sequence[0]);
+    if(indexOfCurrentSequence>=0){
         return isValidSubsequence(array.slice(indexOfCurrentSequence+1), sequence.slice(1))
 
     }else{
