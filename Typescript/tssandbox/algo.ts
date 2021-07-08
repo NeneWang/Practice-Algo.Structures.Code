@@ -16,7 +16,6 @@
     return keys;
   }
   
-
    function isValidSubsequence(array: number[], sequence: number[]) : boolean{
     if(sequence.length == 0){
         return true;
