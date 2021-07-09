@@ -1,3 +1,7 @@
+function sortedSquaredArray(array) {
+    // Write your code here.
+    return array.map(function (x) { return Math.pow(x, 2); });
+}
 function twoNumberSum(array, targetSum) {
     // Write your code here.
     var keys;

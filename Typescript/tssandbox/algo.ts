@@ -1,4 +1,10 @@
- function twoNumberSum(array: number[], targetSum: number) {
+function sortedSquaredArray(array: number[]) {
+    // Write your code here.
+
+    return array.map(x => x**2);
+  }
+
+function twoNumberSum(array: number[], targetSum: number) {
     // Write your code here.
       let keys : number[];
       keys = [];
