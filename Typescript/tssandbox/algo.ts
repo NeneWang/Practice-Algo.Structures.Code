@@ -1,7 +1,6 @@
 function sortedSquaredArray(array: number[]) {
-    // Write your code here.
-
-    return array.map(x => x**2);
+    console.log(array);
+    return array.map(x => x**2).sort((a, b) => a-b);
   }
 
 function twoNumberSum(array: number[], targetSum: number) {
