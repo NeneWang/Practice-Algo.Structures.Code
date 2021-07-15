@@ -15,3 +15,7 @@ function getName(firstName, lastName) {
 }
 console.log();
 console.log(getSum(1, 5));
+
+function tournamentWinner(){
+    
+}
