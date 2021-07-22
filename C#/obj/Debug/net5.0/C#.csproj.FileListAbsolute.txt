@@ -1,0 +1,16 @@
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\bin\Debug\net5.0\C#.exe
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\bin\Debug\net5.0\C#.deps.json
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\bin\Debug\net5.0\C#.runtimeconfig.json
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\bin\Debug\net5.0\C#.runtimeconfig.dev.json
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\bin\Debug\net5.0\C#.dll
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\bin\Debug\net5.0\ref\C#.dll
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\bin\Debug\net5.0\C#.pdb
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.csproj.AssemblyReference.cache
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.GeneratedMSBuildEditorConfig.editorconfig
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.AssemblyInfoInputs.cache
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.AssemblyInfo.cs
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.csproj.CoreCompileInputs.cache
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.dll
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\ref\C#.dll
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.pdb
+E:\wangn\Documents\GitHub\Practice-Algo.Structures.code\C#\obj\Debug\net5.0\C#.genruntimeconfig.cache
