@@ -33,11 +33,6 @@ function tournamentWinner(competitions, results) {
         const [homeTeam, awayTeam] = competition;
 
         addIfExists(scores, results[i] == 1 ? homeTeam : awayTeam);
-        // addIfExists(scores, awayTeam);
-
-        // console.log(homeTeam);
-        // console.log(awayTeam);
-        // console.log(scores)
     };
 
     const getMax = (a, b) => {
