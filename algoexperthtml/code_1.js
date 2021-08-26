@@ -7,13 +7,13 @@ competition = [
 
 ]
 
-resuts = [0, 0, 1]
+results = [0, 0, 1]
 
 console.log(tournamentWinner(competition, results));
 
 function tournamentWinner(competitions, results) {
     // Write your code here.
-    const [homeTeam, awayTeam] = competitions;
+    const [homeTeam, awayTeam] = competitions[0];
 
     console.log(homeTeam);
     console.log(awayTeam);
