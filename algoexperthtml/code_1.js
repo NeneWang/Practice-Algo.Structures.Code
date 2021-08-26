@@ -52,3 +52,6 @@ function addIfExists(score, winningTeam) {
     }
     return score;
 }
+
+
+
