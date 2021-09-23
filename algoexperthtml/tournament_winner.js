@@ -1,6 +1,7 @@
-coins = [5, 7, 1, 1, 2, 3, 22]
+// coins = [5, 7, 1, 1, 2, 3, 22]
 
-console.log(nonConstructibleChange(coins));
+// console.log(nonConstructibleChange(coins));
+console.log()
 
 function nonConstructibleChange(coins) {
     // Write your code here.
@@ -18,24 +19,24 @@ function nonConstructibleChange(coins) {
 }
 
 function findClosestValueInBst(tree, target) {
-    // Write your code here.
+    return findClosestValueInBstHelper(tree, target, tree.value);
 }
 
-function findClosestValueInBsHelper(tree, target, closest) {
-    if (tree = null) return closest;
+function findClosestValueInBstHelper(tree, target, closest) {
+    if (tree === null) return closest;
     if (Math.abs(target - closest) > Math.abs(target - tree.value)) {
-        closest = tree.value; 
+        closest = tree.value;
         // My guess that this line of code makes the closest to this, if it is indeed closer than the one before
     }
     // Then you have to traverse the code in order to have the tree traversal
-    if(target < tree.value){
-        return findClosestValueInBsHelper(tree.left, target, clsoest);
-    }
-    if(target > tree.value){
-        return findClosestValueInBsHelper(tree.right, target. closest);
+    if (target < tree.value) {
+        return findClosestValueInBstHelper(tree.left, target, closest);
+    } else if (target > tree.value) {
+        return findClosestValueInBstHelper(tree.right, target, closest);
+    } else {
+        return closest;
     }
 }
-
 // This is the class of the input tree. Do not edit.
 class BST {
     constructor(value) {
