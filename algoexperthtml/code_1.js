@@ -54,4 +54,9 @@ function addIfExists(score, winningTeam) {
 }
 
 
+function branchSums(root) {
+    // Write your code here.
+  }
+  
+
 
