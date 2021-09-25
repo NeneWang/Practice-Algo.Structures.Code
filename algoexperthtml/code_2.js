@@ -49,19 +49,19 @@ class BST {
 function branchSums(root) {
     // Write your code here.
     sums = [];
-    branchSumRecursive(root, sums);
+    branchSumRecursive(root, 0, sums);
     return sums;
 }
 
 
-function branchSumRecursive(root, currentSum, sums) {
-    currentSum += root.value;
-
-    if (!root.left && !root.right) {
-        sums.push(currentSum);
+function branchSumRecursive(node, currentSum, sums) {
+    if (!node) return;
+    const newCurrentSum = currentSum + node.value;
+    if (!node.left && !node.right) {
+        sums.push(newCurrentSum);
         return;
     }
 
-    branchSumRecursive(root.right, currentSum, sums);
-    branchSumRecursive(root.left, currentSum, sums);
+    branchSumRecursive(node.right, newCurrentSum, sums);
+    branchSumRecursive(node.left, newCurrentSum, sums);
 }
