@@ -73,3 +73,39 @@ function calculateBranchSums(node, runningSum, sums) {
     calculateBranchSums(node.right, newRunningSum, sums);
 
 }
+
+// RETURN Closest 
+
+function findClosestValueInBst(tree, target) {
+    // Write your code here.
+    return recursiveValue(tree, target, tree.value);
+}
+
+function recursiveValue(node, target, currentClosest) {
+
+    if (node === null) {
+        return currentClosest;
+    }
+    if (Math.abs(node.value - target) < Math.abs(node.value - currentClosest)) {
+        currentClosest = node.value;
+    }
+
+    if (target > node.value) {
+        return recursiveValue(node.right, target, currentClosest);
+    } else if (target < node.value) {
+        return recursiveValue(node.left, target, currentClosest);
+    } else {
+        return currentClosest;
+
+    }
+}
+
+
+// This is the class of the input tree. Do not edit.
+class BST {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
