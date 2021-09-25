@@ -44,3 +44,24 @@ class BST {
         this.right = null;
     }
 }
+
+
+function branchSums(root) {
+    // Write your code here.
+    sums = [];
+    branchSumRecursive(root, sums);
+    return sums;
+}
+
+
+function branchSumRecursive(root, currentSum, sums) {
+    currentSum += root.value;
+
+    if (!root.left && !root.right) {
+        sums.push(currentSum);
+        return;
+    }
+
+    branchSumRecursive(root.right, currentSum, sums);
+    branchSumRecursive(root.left, currentSum, sums);
+}
