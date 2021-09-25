@@ -17,9 +17,9 @@ function findClosestValueRecursive(node, target, closestTarget) {
     if (target > node.value) {
         return findClosestValueRecursive(node.right, target, closestTarget);
     } else if (target < node.value) {
-        return findClosestValueRecursive(node.right, target, closestTarget);
+        return findClosestValueRecursive(node.left, target, closestTarget);
     } else {
-        return node.value;
+        return closestTarget;
     }
 
 
