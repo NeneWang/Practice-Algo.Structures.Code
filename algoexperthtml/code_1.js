@@ -109,3 +109,42 @@ class BST {
         this.right = null;
     }
 }
+
+
+
+function nodeDepths(root) {
+    // Write your code here.
+    let sumOfDepths = 0;
+    const stack = [{
+        node: root,
+        depth: 0
+    }]; //This should start some sort of structure, for the sakc. y question is hos is it built aside of habing the node as root?
+    while (stack.length > 0) {
+        const {
+            node,
+            depth
+        } = stack.pop(); // Should 
+        if (node === null) continue;
+        sumOfDepths += depth;
+        stack.push({
+            node: node.left,
+            depth: depth + 1
+        }); //First left then right, and then  uyou also add the depth for each step
+        stack.push({
+            node: node.right,
+            depth: depth + 1
+        });
+    }
+
+    return sumOfDepths;
+
+}
+
+// This is the class of the input binary tree.
+class BinaryTree {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
