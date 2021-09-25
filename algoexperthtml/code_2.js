@@ -46,6 +46,8 @@ class BST {
 }
 
 
+// Branch sums
+
 function branchSums(root) {
     // Write your code here.
     sums = [];
@@ -62,6 +64,6 @@ function branchSumRecursive(node, currentSum, sums) {
         return;
     }
 
-    branchSumRecursive(node.right, newCurrentSum, sums);
     branchSumRecursive(node.left, newCurrentSum, sums);
+    branchSumRecursive(node.right, newCurrentSum, sums);
 }
