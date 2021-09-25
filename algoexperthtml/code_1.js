@@ -129,7 +129,7 @@ function nodeDepths(root) {
         stack.push({
             node: node.left,
             depth: depth + 1
-        }); //First left then right, and then  uyou also add the depth for each step
+        }); //First left then right, and then  uyou also add the depth for each step, my question is that the depth + 1
         stack.push({
             node: node.right,
             depth: depth + 1

@@ -34,12 +34,35 @@ class BST {
     }
 }
 
-function nodeDepths(root, depth = 0) {
-    // Write your code here.
-    if (root === null) return 0;
-    return depth + nodeDepths(root.right, 1) + nodeDepths(root.left, depth + 1);
+function nodeDepths(root) {
+    const stack = [{
+        node: root,
+        depth: 0
+    }];
+    let sumOfdepth = 0
+
+    while (stack.length > 0) {
+        const {
+            node,
+            depth
+        } = stack.pop();
+        if (node === null) continue;
+        sumOfDepth += depth;
+        stack.push({
+            node: node.left,
+            depth: depth + 1
+        });
+        stack.push({
+            node: node.right,
+            depth: depth + 1
+        });
+
+    }
+    return sumOfDepth;
 
 }
+
+
 
 // This is the class of the input binary tree.
 class BinaryTree {
