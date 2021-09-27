@@ -173,3 +173,19 @@ class Node {
 
     }
 }
+
+minimumWaitingTime([3, 2, 1, 2, 6])
+
+function minimumWaitingTime(queries) {
+    // Write your code here.
+    // console.log(queries);
+    queries.sort((a, b) => a - b);
+    // console.log(queries);
+    totalTime = 0;
+    const queryLen = queries.length;
+    for (let i = 0; i < queryLen - 1; i++) {
+        totalTime += (queryLen-i-1) * queries[i];
+    }
+    console.log(totalTime);
+
+}
