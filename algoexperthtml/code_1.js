@@ -174,7 +174,7 @@ class Node {
     }
 }
 
-minimumWaitingTime([3, 2, 1, 2, 6])
+// minimumWaitingTime([3, 2, 1, 2, 6])
 
 function minimumWaitingTime(queries) {
     // Write your code here.
