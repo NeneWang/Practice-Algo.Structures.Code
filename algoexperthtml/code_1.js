@@ -261,7 +261,7 @@ class LinkedList {
   
   function removeDuplicatesFromLinkedList(linkedList) {
     // Write your code here.
-    let currentNode = currentNode.next;
+    let currentNode = linkedList;
     while(currentNode !== null){
         let nextDistictNode = currentNode.next;
         while(nextDistictNode !== null && nextDistictNode.value === currentNode.value){
