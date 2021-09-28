@@ -95,11 +95,23 @@ function removeDuplicatesFromLinkedList(linkedList) {
     let currentNode = linkedList;
     while (currentNode !== null) {
         let nextNode = currentNode.next;
-        while(nextNode !== null && nextNode.value === currentNode.value ){
+        while (nextNode !== null && nextNode.value === currentNode.value) {
             nextNode = nextNode.next;
         }
         currentNode.next = nextNode;
         currentNode = nextNode;
     }
     return linkedList;
+}
+
+function getNthFib(n) {
+    const lastTwo = [0, 1]
+    let counter = 3;
+    while (counter <= n) {
+        const nextFib = lastTwo[0] + lastTwo[1];
+        lastTwo[0] = lastTwo[1];
+        lastTwo[1] = nextFib;
+        counter++;
+    }
+    return n > 1 ? lastTwo[1] : lastTwo[0];
 }
