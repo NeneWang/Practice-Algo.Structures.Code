@@ -284,3 +284,14 @@ function getNthFib(n) {
         return getNthFib(n - 1) + getNthFib(n - 2)
     }
 }
+
+function getNthFibMemoize(n, memoize = {
+    1: 0,
+    2: 1
+}) {
+    if (n in memoize) {
+        return memoize[n];
+    } else {
+        return getNthFibMemoize(n - 1, memoize) + getNthFibMemoize(n - 2, memoize);
+    }
+}
