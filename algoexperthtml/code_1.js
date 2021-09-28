@@ -191,20 +191,38 @@ function minimumWaitingTime(queries) {
 }
 
 
+// function classPhotos(redShirtHeights, blueShirtHeights) {
+//     // Write your code here.
+//     redShirtHeights.sort((a, b) => b - a);
+//     blueShirtHeights.sort((a, b) => b - a);
+
+//     const shirtColorInFirstRowRed = redShirtHeights[0] < blueShirtHeights[0] ? true : false;
+//     for (let idx = 0; idx < redShirtHeights.length; idx++) {
+//         const redShirtHeight = redShirtHeights[idx];
+//         const blueShirtHeight = blueShirtHeights[idx];
+
+//         if (shirtColorInFirstRowRed) {
+//             if (redShirtHeight >= blueShirtHeight) return false;
+//         } else if (blueShirtHeight >= redShirtHeight) return false;
+
+//     }
+//     return true;
+// }
+
 function classPhotos(redShirtHeights, blueShirtHeights) {
-    // Write your code here.
     redShirtHeights.sort((a, b) => b - a);
     blueShirtHeights.sort((a, b) => b - a);
 
-    const shirtColorInFirstRowRed = redShirtHeights[0] < blueShirtHeights[0] ? true : false;
-    for (let idx = 0; idx < redShirtHeights.length; idx++) {
-        const redShirtHeight = redShirtHeights[idx];
-        const blueShirtHeight = blueShirtHeights[idx];
+    const isRedFirst = redShirtHeights[0] < blueShirtHeights[0] ? true : false;
+    for (let i = 0; i < redShirtHeights.length; i++) {
+        const redShirtHeight = redShirtHeights[i];
+        const blueShirtHeight = blueShirtHeights[i];
 
-        if (shirtColorInFirstRowRed) {
+        if (isRedFirst) {
             if (redShirtHeight >= blueShirtHeight) return false;
         } else if (blueShirtHeight >= redShirtHeight) return false;
 
     }
+
     return true;
 }
