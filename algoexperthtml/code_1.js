@@ -193,8 +193,8 @@ function minimumWaitingTime(queries) {
 
 function classPhotos(redShirtHeights, blueShirtHeights) {
     // Write your code here.
-    redShirtHeights.sort((a, b) => a - b);
-    blueShirtHeights.sort((a, b) => a - b);
+    redShirtHeights.sort((a, b) => b - a);
+    blueShirtHeights.sort((a, b) => b - a);
 
     const shirtColorInFirstRow = redShirtHeights[0] < blueShirtHeights[0] ? 'RED' : 'BLUE';
     for (let idx = 0; idx < redShirtHeights.length; idx++) {
@@ -208,5 +208,5 @@ function classPhotos(redShirtHeights, blueShirtHeights) {
     }
 
 
-    return false;
+    return true;
 }
