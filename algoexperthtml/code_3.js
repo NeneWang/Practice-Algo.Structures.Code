@@ -95,3 +95,17 @@ function removeDuplicatesFromLinkedList(linkedList) {
 
     return linkedList;
 }
+
+function getNthFib(n) {
+    let lastTwo = [0, 1];
+    let counter = 0;
+    while (counter < n) {
+        const nextFib = lastTwo[0] + lastTwo[1];
+        lastTwo[0] = lastTwo[1];
+        lastTwo[1] = nextFib;
+
+        counter++;
+    }
+
+    return n > 1 ? lastTwo[0] : lastTwo[1];
+}
