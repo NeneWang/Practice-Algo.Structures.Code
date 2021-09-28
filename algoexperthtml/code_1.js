@@ -240,7 +240,7 @@ function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
     console.log(blueShirtSpeeds);
     for (let i = 0; i < size; i++) {
         if (fastest) {
-            pairSpeed = Math.max(redShirtSpeeds[i], blueShirtSpeeds[size - i-1]);
+            pairSpeed = Math.max(redShirtSpeeds[i], blueShirtSpeeds[size - i - 1]);
         } else {
             pairSpeed = Math.max(redShirtSpeeds[i], blueShirtSpeeds[i]);
         }
@@ -254,17 +254,17 @@ function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
 // This is an input class. Do not edit.
 class LinkedList {
     constructor(value) {
-      this.value = value;
-      this.next = null;
+        this.value = value;
+        this.next = null;
     }
-  }
-  
-  function removeDuplicatesFromLinkedList(linkedList) {
+}
+
+function removeDuplicatesFromLinkedList(linkedList) {
     // Write your code here.
     let currentNode = linkedList;
-    while(currentNode !== null){
+    while (currentNode !== null) {
         let nextDistictNode = currentNode.next;
-        while(nextDistictNode !== null && nextDistictNode.value === currentNode.value){
+        while (nextDistictNode !== null && nextDistictNode.value === currentNode.value) {
             nextDistictNode = nextDistictNode.next;
         }
         currentNode.next = nextDistictNode;
@@ -272,5 +272,4 @@ class LinkedList {
     }
 
     return linkedList;
-  }
-  
+}
