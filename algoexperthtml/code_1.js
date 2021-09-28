@@ -249,3 +249,28 @@ function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
 
     return speedsSum;
 }
+
+
+// This is an input class. Do not edit.
+class LinkedList {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+  }
+  
+  function removeDuplicatesFromLinkedList(linkedList) {
+    // Write your code here.
+    let currentNode = currentNode.next;
+    while(currentNode !== null){
+        let nextDistictNode = currentNode.next;
+        while(nextDistictNode !== null && nextDistictNode.value === currentNode.value){
+            nextDistictNode = nextDistictNode.next;
+        }
+        currentNode.next = nextDistictNode;
+        currentNode = nextDistictNode;
+    }
+
+    return linkedList;
+  }
+  
