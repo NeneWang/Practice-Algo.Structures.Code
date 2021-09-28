@@ -227,7 +227,7 @@ function classPhotos(redShirtHeights, blueShirtHeights) {
     return true;
 }
 
-console.log(tandemBicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], true));
+console.log(tandemBicycle([5, 5, 3, 9, 2], [3, 6, 7, 2, 1], false));
 
 function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
     // If it is fastest pair the faster with slower 
@@ -237,11 +237,12 @@ function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
     let speedsSum = 0,
         pairSpeed = 0;
     console.log(redShirtSpeeds);
+    console.log(blueShirtSpeeds);
     for (let i = 0; i < size; i++) {
         if (fastest) {
             pairSpeed = Math.max(redShirtSpeeds[i], blueShirtSpeeds[size - i-1]);
         } else {
-            pairSpeed = Math.min(redShirtSpeeds[i], blueShirtSpeeds[i]);
+            pairSpeed = Math.max(redShirtSpeeds[i], blueShirtSpeeds[i]);
         }
         speedsSum += pairSpeed;
     }
