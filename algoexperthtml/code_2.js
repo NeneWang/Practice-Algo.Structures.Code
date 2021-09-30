@@ -115,3 +115,16 @@ function getNthFib(n) {
     }
     return n > 1 ? lastTwo[1] : lastTwo[0];
 }
+
+function productSum(array, multiplier = 1) {
+    // Write your code here.
+    let sum = 0;
+    for (const element of array) {
+        if (Array.isArray(element)) {
+            sum += productSum(array, multiplier+1);
+        } else {
+            sum += element;
+        }
+    }
+    return sum * multiplier;
+}
