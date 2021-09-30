@@ -109,3 +109,9 @@ function getNthFib(n) {
 
     return n > 1 ? lastTwo[0] : lastTwo[1];
 }
+
+
+function productSum(array) {
+    // Write your code here.
+    
+}
