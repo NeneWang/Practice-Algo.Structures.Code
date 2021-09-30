@@ -121,10 +121,30 @@ function productSum(array, multiplier = 1) {
     let sum = 0;
     for (const element of array) {
         if (Array.isArray(element)) {
-            sum += productSum(element, multiplier+1);
+            sum += productSum(element, multiplier + 1);
         } else {
             sum += element;
         }
     }
     return sum * multiplier;
+}
+
+
+function binarySearch(array, target) {
+    // Write your code here.
+    return binarySearchHelper(array, target, 0, array.length - 1);
+
+}
+
+function binarySearchHelper(array, target, left, right) {
+    if(left> right) return -1;
+    const middle = Math.floor((left + right) / 2);
+    const potentialMatch = array[middle];
+    if ( target === potentialMatch) {
+        return middle;
+    } else if (target < potentialMatch) {
+        return binarySearchHelper(array, target, left, middle - 1);
+    } else if (target > potentialMatch) {
+        return binarySearchHelper(array, target, middle + 1, right);
+    }
 }
