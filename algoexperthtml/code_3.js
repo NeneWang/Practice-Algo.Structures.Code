@@ -186,11 +186,11 @@ function updateLargest(threeLargest, num) {
 }
 
 function shiftAndUpdate(array, num, idx) {
-    for (let i = 0; i <= idx; i++) {
-        if (i == idx) {
+    for (let i = 0; i < idx; i++) {
+        if(i == idx){
             array[i] = num;
-        } else {
-            array[i] = array[i + 1];
+        }else{
+            array[i] = array[i+1];
         }
     }
 }
