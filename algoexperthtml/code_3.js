@@ -129,7 +129,7 @@ function productSum(array, multiplier = 1) {
 
 function binarySearch(array, target) {
     // Write your code here.
-    return binarySearchHelper(array, target, 0, array.length-1);
+    return binarySearchHelper(array, target, 0, array.length - 1);
 }
 
 function binarySearchHelper(array, target, left, right) {
@@ -146,5 +146,19 @@ function binarySearchHelper(array, target, left, right) {
 
     }
     return -1;
+}
 
+function binarySearchHelper2(array, target, left, right) {
+    while (left <= right) {
+        const middle = Math.floor((left + right) / 2);
+        const currentTarget = array[middle];
+        if (currentTarget === target) {
+            return middle;
+        } else if (currentTarget > target) {
+            right = middle - 1;
+        } else {
+            left = middle + 1;
+        }
+    }
+    return -1;
 }
