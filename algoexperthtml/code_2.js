@@ -182,4 +182,10 @@ function shiftAndUpdate(array, num, idx) {
 
 function bubbleSort(array) {
     // Write your code here.
-  }
+}
+
+function swap(i, j, array) {
+    const tempt = array[j];
+    array[j] = array[i];
+    array[i] = temp;
+}
