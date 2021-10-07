@@ -44,5 +44,3 @@ function shiftAndUpdate(array, num, idx) {
         }
     }
 }
-
-fucntion;
