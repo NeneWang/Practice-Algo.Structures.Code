@@ -205,5 +205,4 @@ function insertionSort(array) {
         }
     }
     return array;
-
 }
