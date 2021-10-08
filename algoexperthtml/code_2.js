@@ -215,3 +215,16 @@ function insertionSort(array) {
     }
     return array;
 }
+
+function selectionSort(array) {
+    let startedIdx = 0;
+    while (startedIdx < array.length - 1) {
+        let smallestIdx = startedIdx;
+        for (let i = startedIdx; i < array.length; i++) {
+            if (array[i] < array[smallestIdx]) smallestIdx = i;
+        }
+        swap(startedIdx, smallestIdx, array)
+        startedIdx++
+    }
+    return array;
+}
