@@ -164,23 +164,20 @@ function binarySearchHelper2(array, target, left, right) {
 }
 
 
-function findThreeLargestNumbers(array) {
-}
+function findThreeLargestNumbers(array) {}
 
-function updatedLargest(threeLargest, num) {
-}
+function updatedLargest(threeLargest, num) {}
 
-function shiftAndUpdate(array, num, idx) {
-}
+function shiftAndUpdate(array, num, idx) {}
 
 
-function bubblesort(array){
+function bubblesort(array) {
     let count = 0;
     let isSorted = false;
-    while(!isSorted){
+    while (!isSorted) {
         isSorted = true;
-        for(let i=0; i<array.length-1-count; i++){
-            if(array[i] > array[i+1]){
+        for (let i = 0; i < array.length - 1 - count; i++) {
+            if (array[i] > array[i + 1]) {
                 swap(i, j, array);
                 isSorted = false;
             }
@@ -191,8 +188,22 @@ function bubblesort(array){
     return array;
 }
 
-function swap(i, j, array){
+function swap(i, j, array) {
     const temp = array[i];
     array[i] = array[j];
     array[j] = temp;
+}
+
+function insertionSort(array) {
+
+    for (let i = 1; i < array.length; i++) {
+        let j = i;
+        while (j > 0 && array[j] < array[j - 1]) {
+
+            swap(j, j - 1, array);
+            j -= 1;
+        }
+    }
+    return array;
+
 }
