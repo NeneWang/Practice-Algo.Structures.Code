@@ -194,6 +194,21 @@ function swap(i, j, array) {
     array[j] = temp;
 }
 
+function selectionSort(array) {
+    let startIdx = 0;
+    while (startIdx < array.length) {
+        let minIdx = startIdx;
+
+        for (let i = startIdx; i < array.length; i++) {
+            if (array[i] < array[minIdx]) minIdx = i;
+        }
+        swap(startIdx, minIdx, array)
+
+        startIdx++;
+    }
+    return array;
+}
+
 function insertionSort(array) {
 
     for (let i = 1; i < array.length; i++) {
