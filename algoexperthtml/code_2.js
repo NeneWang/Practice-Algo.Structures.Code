@@ -236,3 +236,28 @@ function isPalindrome(string) {
     }
     return reverse === string;
 }
+
+function runLengthEncoding(string) {
+    // Write your code here.
+    let runningLength = 1;
+    let encodedCharacters = [];
+
+    for (let i = 1; i < string.length; i++) {
+        const currentLetter = string[i];
+        const previousLetter = string[i - 1];
+
+        if (currentLetter != previousLetter || runningLength >= 9) {
+            encodedCharacters.push(runningLength.toString());
+            encodedCharacters.push(previousLetter);
+            runningLength = 0;
+        }
+
+        runningLength++;
+
+    }
+    
+    encodedCharacters.push(runningLength.toString());
+    encodedCharacters.push(string[string.length-1]);
+    return encodedCharacters.join('');
+
+}
