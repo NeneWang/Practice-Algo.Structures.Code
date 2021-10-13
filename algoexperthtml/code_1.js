@@ -433,3 +433,9 @@ function getNewLetter2(letter, key) {
 
     return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + newLetterCode % 122);
 }
+
+function getNewLetter2(letter, key) {
+    const newLetterKey = letter.charCodeAt() + key;
+    return newLetterKey <= 122 ? String.fromCharCode(newLetterKey) : String.fromCharCode(96 + newLetterKey % 122);
+
+}
