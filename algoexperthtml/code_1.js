@@ -415,7 +415,7 @@ function isPalindrome(string) {
 
 function caesarCipherEncryptor(string, key) {
     const newLetters = [];
-    const newKey = key % 26;
+    const newKey = key % 26; //newKey. This is the key that cant be larger than 26 and well it cycles throught it.
     for (const letter of string) {
         newLetters.push(getNewLetter(letter, newKey));
     }
@@ -425,5 +425,11 @@ function caesarCipherEncryptor(string, key) {
 
 function getNewLetter(letter, key) {
     const newLetterCode = letter.charCodeAt() + key;
-    return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + (newLetterCode % 122));
+    return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + (newLetterCode % 122)); //Wait why? the 96?
+}
+
+function getNewLetter2(letter, key) {
+    const newLetterCode = letter.charCodeAt() + key;
+
+    return newLetterCode <= 122 ? String.fromCharCode(newLetterCode) : String.fromCharCode(96 + newLetterCode % 122);
 }
