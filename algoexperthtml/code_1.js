@@ -447,7 +447,7 @@ function runLengthEncoding(string) {
     for (let i = 1; i < string.length; i++) {
 
         const currentCharacter = string[i];
-        const previousCharacter = string[i-1];
+        const previousCharacter = string[i - 1];
 
         if (currentCharacter !== previousCharacter || currentRunLength === 9) {
             encodedStringCharacters.push(currentRunLength.toString());
@@ -464,4 +464,29 @@ function runLengthEncoding(string) {
 
 
 
+}
+
+
+function generateDocument(characters, document) {
+    const characterCounts = {};
+
+
+    // First you count each characters if they dont exist you initate the collection
+    for (const character of characters) {
+        if (!(character in characterCounts)) characterCounts[character] = 0;
+        characterCounts[character]++;
+    }
+
+    // Then you iterate throught the documents and check if the character exists
+
+    for (const character of document) {
+        if (!(character in characterCounts) || characterCounts[character] == 0) {
+            return false;
+
+        }
+        characterCounts[character]--;
+    }
+}
+
+return true;
 }
