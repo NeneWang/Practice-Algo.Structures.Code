@@ -255,9 +255,29 @@ function runLengthEncoding(string) {
         runningLength++;
 
     }
-    
+
     encodedCharacters.push(runningLength.toString());
-    encodedCharacters.push(string[string.length-1]);
+    encodedCharacters.push(string[string.length - 1]);
     return encodedCharacters.join('');
 
+}
+
+function generateDocument(characters, document) {
+
+    characterCounts = {};
+
+    for (character of characters) {
+        if (!(character in characters)) characterCounts[character] = 0;
+        characterCounts[character]++;
+    }
+
+    for (character of document) {
+        if (!(character in characterCounts) || characterCounts[character] == 0) {
+            return false;
+        }
+        characterCounts[character]--;
+    }
+
+
+    return true;
 }
