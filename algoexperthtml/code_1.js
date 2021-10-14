@@ -486,7 +486,6 @@ function generateDocument(characters, document) {
         }
         characterCounts[character]--;
     }
-}
 
-return true;
+    return true;
 }
