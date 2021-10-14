@@ -281,3 +281,18 @@ function generateDocument(characters, document) {
 
     return true;
 }
+
+function firstNonRepeatingCharacter(string) {
+    characterCounts = {};
+
+    for (character of string) {
+        if (!(character in characterCounts)) characterCounts[character] = 0;
+        characterCounts[characters]++;
+    }
+
+    for (let idx = 0; idx < string.length; idx++) {
+        if (characterCounts[string[idx]] == 0) return idx;
+    }
+
+    return -1;
+}
