@@ -499,10 +499,9 @@ function firstNonRepeatingCharacter(string) {
         characterFrequencies[character]++;
     }
 
-    // Then check which one only has one.
+
     for (let idx = 0; idx < string.length; idx++) {
-        const character = string[idx];
-        if (characterFrequencies[character] === 1) return idx;
+        if (characterFrequencies[string[idx]] == 1) return idx;
     }
 
     return -1;
