@@ -489,3 +489,23 @@ function generateDocument(characters, document) {
 
     return true;
 }
+
+function firstNonRepeatingCharacter(string) {
+    const characterFrequencies = {};
+
+    // Counts all that exists
+    for (const character of string) {
+        if (!(character in characterFrequencies)) characterFrequencies[character] = 0;
+        characterFrequencies[character]++;
+    }
+
+    // Then check which one only has one.
+    for (let idx = 0; idx < string.length; idx++) {
+        const character = string[idx];
+        if (characterFrequencies[character] === 1) return idx;
+    }
+
+    return -1;
+
+
+}
