@@ -307,7 +307,7 @@ function threeNumberSum(array, targetSum) {
         while (left < right) {
             const currentSum = array[i] + array[left] + array[right];
             if (currentSum === targetSum) {
-                triplets.push([array[i]], array[left], array[right]);
+                triplets.push([array[i], array[left], array[right]]);
                 left++;
                 right--;
             } else if (currentSum < targetSum) {
@@ -322,3 +322,6 @@ function threeNumberSum(array, targetSum) {
     return triplets;
 
 }
+
+// Do not edit the line below.
+exports.threeNumberSum = threeNumberSum;
