@@ -342,7 +342,8 @@ function smallestDifference(arrayOne, arrayTwo) {
             current = secondNum - firstNum;
             idxOne++;
         } else if (secondNum > firstNum) {
-            current = secondNum - firstNum;
+            current = firstNum - secondNum;
+            idxTwo++;
         } else {
             return [firstNum, secondNum];
         }
@@ -352,8 +353,5 @@ function smallestDifference(arrayOne, arrayTwo) {
             smallestPair = [firstNum, secondNum];
         }
     }
-
     return smallestPair;
-
-
 }
