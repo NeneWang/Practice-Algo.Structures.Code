@@ -549,23 +549,35 @@ function smallestDifference(arrayOne, arrayTwo) {
         let firstNum = arrayOne[idxOne];
         let secondNum = arrayTwo[idxTwo];
 
-        if(firstNum < secondNum){
+        if (firstNum < secondNum) {
             current = secondNum - firstNum;
             idxOne++;
-        } else if(secondNum < firstNum){
+        } else if (secondNum < firstNum) {
             current = firstNum - secondNum;
             idxTwo++;
         } else {
             return [firstNum, secondNum];
         }
 
-        if(smallest > current){
+        if (smallest > current) {
             smallest = current;
             smallestPair = [firstNum, secondNum];
         }
     }
 
     return smallestPair;
+}
 
+
+function moveElementToEnd(array, toMove) {
+    let i = 0;
+    let j = array.length - 1;
+
+    while (i < j) {
+        while (i < j && array[j] == toMove) j--;
+        if (array[i] === toMove) swap(i, j, array);
+        i++;
+    }
+    return array;
 
 }
