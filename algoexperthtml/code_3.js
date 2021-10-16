@@ -245,33 +245,32 @@ function smallestDifference(arrayOne, arrayTwo) {
     arrayOne.sort((a, b) => a - b);
     arrayTwo.sort((a, b) => a - b);
 
-    firstIdx = 0;
-    secondIdx = 0;
+    let firstIdx = 0;
+    let secondIdx = 0;
 
-    minimum = Infinity;
-    current = Infinity;
+    let smallestDifference = Infinity;
+    let current = Infinity;
     let smallestPair = [];
 
-    while (firsIdx < arrayOne.length && secondIdx < arrayTwo.length) {
-        let firstNum = arrayOne[idxOne];
-        let secondNum = arrayTwo[idxTwo];
+    while (firstIdx < arrayOne.length && secondIdx < arrayTwo.length) {
+        let firstNum = arrayOne[firstIdx];
+        let secondNum = arrayTwo[secondIdx];
 
         if (firstNum < secondNum) {
             current = secondNum - firstNum;
-            firstNum++;
+            firstIdx++;
         } else if (secondNum < firstNum) {
             current = firstNum - secondNum;
-            secondNum++;
+            secondIdx++;
         } else {
             // No difference at all
             return [firstNum, secondNum]
         }
-        if (smallest > current) {
-            current = smallest;
+        if (smallestDifference > current) {
+            smallestDifference = current;
             smallestPair = [firstNum, secondNum];
         }
     }
 
     return smallestPair;
-
 }
