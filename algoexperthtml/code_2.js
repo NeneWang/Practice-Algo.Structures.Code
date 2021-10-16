@@ -341,12 +341,12 @@ function smallestDifference(arrayOne, arrayTwo) {
         if (firstNum < secondNum) {
             current = secondNum - firstNum;
             idxOne++;
-        } else if (secondNum < firstNum) {
-            current = firstNum - secondNum;
-            idxTwo++;
+        } else if (secondNum > firstNum) {
+            current = secondNum - firstNum;
         } else {
             return [firstNum, secondNum];
         }
+
         if (smallest > current) {
             smallest = current;
             smallestPair = [firstNum, secondNum];
