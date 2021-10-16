@@ -341,7 +341,7 @@ function smallestDifference(arrayOne, arrayTwo) {
         if (firstNum < secondNum) {
             current = secondNum - firstNum;
             idxOne++;
-        } else if (secondNum > firstNum) {
+        } else if (firstNum > secondNum) {
             current = firstNum - secondNum;
             idxTwo++;
         } else {
