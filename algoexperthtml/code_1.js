@@ -508,3 +508,31 @@ function firstNonRepeatingCharacter(string) {
 
 
 }
+
+
+function threeNumberSum(array, targetSum) {
+    const triplets = [];
+    array.sort((a, b) => a - b);
+
+    for (let i = 0; i < array.length; i++) {
+        let left = i + 1;
+        let right = array.length - 1;
+
+        while (left < right) {
+            sum = array[i] + array[left] + array[right];
+            if (sum == targetSum) {
+                triplets.push(array[i], array[left], array[right]);
+                left++;
+                right--;
+            } else if (sum > targetSum) {
+                right--;
+            } else if (sum < targetSum) {
+                left++;
+            }
+        }
+    }
+
+    return triplets;
+
+
+}
