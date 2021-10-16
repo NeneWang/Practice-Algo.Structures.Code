@@ -237,3 +237,41 @@ function isPalindrom(string) {
     return true;
 
 }
+
+
+function smallestDifference(arrayOne, arrayTwo) {
+    // Write your code here.
+
+    arrayOne.sort((a, b) => a - b);
+    arrayTwo.sort((a, b) => a - b);
+
+    firstIdx = 0;
+    secondIdx = 0;
+
+    minimum = Infinity;
+    current = Infinity;
+    let smallestPair = [];
+
+    while (firsIdx < arrayOne.length && secondIdx < arrayTwo.length) {
+        let firstNum = arrayOne[idxOne];
+        let secondNum = arrayTwo[idxTwo];
+
+        if (firstNum < secondNum) {
+            current = secondNum - firstNum;
+            firstNum++;
+        } else if (secondNum < firstNum) {
+            current = firstNum - secondNum;
+            secondNum++;
+        } else {
+            // No difference at all
+            return [firstNum, secondNum]
+        }
+        if (smallest > current) {
+            current = smallest;
+            smallestPair = [firstNum, secondNum];
+        }
+    }
+
+    return smallestPair;
+
+}
