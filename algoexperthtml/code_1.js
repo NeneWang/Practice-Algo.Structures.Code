@@ -521,7 +521,7 @@ function threeNumberSum(array, targetSum) {
         while (left < right) {
             sum = array[i] + array[left] + array[right];
             if (sum == targetSum) {
-                triplets.push(array[i], array[left], array[right]);
+                triplets.push([array[i], array[left], array[right]]);
                 left++;
                 right--;
             } else if (sum > targetSum) {
