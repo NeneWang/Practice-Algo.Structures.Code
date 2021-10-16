@@ -551,12 +551,12 @@ function smallestDifference(arrayOne, arrayTwo) {
 
         if(firstNum < secondNum){
             current = secondNum - firstNum;
-            idxOne;
+            idxOne++;
         } else if(secondNum < firstNum){
             current = firstNum - secondNum;
             idxTwo++;
         } else {
-            reutrn [firstNum, secondNum];
+            return [firstNum, secondNum];
         }
 
         if(smallest > current){
