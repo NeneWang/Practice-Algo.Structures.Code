@@ -604,3 +604,4 @@ function breaksDirection(direction, previousInt, currentInt) {
     if (direction > 0) return difference < 0;
     return difference > 0;
 }
+

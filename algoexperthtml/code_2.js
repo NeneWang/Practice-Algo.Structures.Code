@@ -384,3 +384,33 @@ function swap(i, j, array) {
 }
 
 
+
+function isMonotonic(array) {
+
+    // If the length oth the array is minus two then tere doesn't make sense to ave the direction
+    if (array.length <= 2) return true;
+
+    // Get the direction based on what's next
+    let direction = array[1] - array[0];
+    for (let i = 2; i < array.length; i++) {
+
+        // If the direction is 0 then have this one menus the previous which should ge thte direction? 
+        // In other words if this and the next one have the same fucking direction
+        if (direction === 0) {
+            direction = array[i] - array[i - 1];
+            continue;
+        }
+        // If the direction breaks then returns false; Doing array i-1 and te now
+        if (breaksDirection(direction, array[i - 1], array[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function breaksDirection(direction, previousInt, currentInt) {
+    const difference = currentInt - previousInt;
+    if (direction > 0) return difference < 0;
+    return difference > 0;
+}
