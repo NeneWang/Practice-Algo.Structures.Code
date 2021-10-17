@@ -44,3 +44,32 @@ function shiftAndUpdate(array, num, idx) {
         }
     }
 }
+
+
+function isMonotonic(array) {
+    // If less or equal to two elements you would have automatically true return
+    if (array.length <= 2) {
+        return true;
+    }
+    direction = array[1] - array[0];
+    for (let i = 2; i < array.length; i++) {
+        if (direction == 0) {
+            direction = array[i] - array[i - 1];
+            // Until the direction appears (or the variant elemnt appears)
+            continue;
+        }
+
+        if (breaksDirection(direction, array[i - 1], array[i])) {
+            return false;
+        }
+    }
+    return true;
+
+
+}
+
+function breaksDirection(direction, previousItem, currentItem) {
+    const difference = currentItem - previousItem;
+    if (direction > 0) return difference < 0;
+    else return difference > 0;
+}
