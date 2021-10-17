@@ -362,26 +362,25 @@ function moveElementToEnd(array, toMove) {
     let idxEnd = array.length - 1;
 
     while (idx1 < idxEnd) {
-
-        
         while (idx1 < idxEnd && array[idxEnd] == toMove) {
             idxEnd--;
         }
-
         // If the array element is the to move then swap the elemnts and make the idx end -1
         if (array[idx1] == toMove) {
             swap(idx1, idxEnd, array);
         }
-
         idx1++;
     }
 
     return array;
-
 }
+
+
 
 function swap(i, j, array) {
     const temp = array[j];
     array[j] = array[i];
     array[i] = temp;
 }
+
+
