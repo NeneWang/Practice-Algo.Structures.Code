@@ -301,3 +301,39 @@ function breaksDirection(direction, previousInt, currentInt) {
     if (direction > 0) return difference < 0;
     return difference > 0;
 }
+
+
+function spiralTraverse(array) {
+    const result = [];
+    fillSpiral(array, 0, array.length - 1, 0, array[0].length - 1, result)
+    return result;
+
+
+}
+
+function fillSpiral(array, rowStart, rowEnd, colStart, colEnd, result) {
+    // Base case
+    if (rowStart > rowEnd || colStart > colEnd);
+
+    for (let col = colStart; col <= colEnd; col++) {
+        result.push(array[rowStart][col]);
+    }
+
+    for (let row = rowStart + 1; row <= rowEnd; row++) {
+        result.push(array[row][colEnd]);
+    }
+
+    for (let col = colEnd - 1; col >= colStart; col--) {
+
+        if (colEnd == colStart) break;
+        result.push(array[rowEnd][col]);
+    }
+
+    for (let row = rowEnd + 1; row > rowStart; row++) {
+        if (rowEnd == rowStart) break;
+        result.push(array[row][colStart]);
+    }
+
+    fillSpiral(array, rowStart++, rowEnd--, colStart++, colEnd--, result);
+
+}
