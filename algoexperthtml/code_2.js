@@ -414,3 +414,34 @@ function breaksDirection(direction, previousInt, currentInt) {
     if (direction > 0) return difference < 0;
     return difference > 0;
 }
+
+
+function spiralTraverse(array) {
+    const result = [];
+    spiralFill(array, 0, array.length - 1, 0, array[0].length - 1, result);
+    return result;
+}
+
+function spiralFill(array, startRow, endRow, startCol, endCol, result) {
+
+    for (let i = startCol; i < endCol; i++) {
+        result.push(array[startRow][i]);
+    }
+
+    for (let i = startRow; i < endRow; i++) {
+        result.push(array[i][endCol]);
+    }
+
+    for (let i = endCol - 1; i >= startRow; i--) {
+        if(startRow === endRow) break;
+        result.push(array[endRow][i]);
+    }
+
+    for (let i = endRow - 1; i >= startRow; i--) {
+        if(startCol === endCol) break;
+        result.push(array[i][startCol]);
+    }
+
+
+    spiralFill(array, startRow++, endRow--, startRow++, endCol--, result++);
+}

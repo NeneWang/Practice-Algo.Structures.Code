@@ -638,7 +638,7 @@ function spiralTraverse(array) {
         endCol--;
 
     }
-
-    let orderedArray = array.sort((a, b) => b - a);
-    return orderedArray == result;
+    return result;
 }
+
+
