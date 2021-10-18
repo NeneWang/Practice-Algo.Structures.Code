@@ -313,7 +313,7 @@ function spiralTraverse(array) {
 
 function fillSpiral(array, rowStart, rowEnd, colStart, colEnd, result) {
     // Base case
-    if (rowStart > rowEnd || colStart > colEnd);
+    if (rowStart > rowEnd || colStart > colEnd) return;
 
     for (let col = colStart; col <= colEnd; col++) {
         result.push(array[rowStart][col]);
@@ -325,15 +325,15 @@ function fillSpiral(array, rowStart, rowEnd, colStart, colEnd, result) {
 
     for (let col = colEnd - 1; col >= colStart; col--) {
 
-        if (colEnd == colStart) break;
+        if (rowEnd == rowStart) break;
         result.push(array[rowEnd][col]);
     }
 
-    for (let row = rowEnd + 1; row > rowStart; row++) {
-        if (rowEnd == rowStart) break;
+    for (let row = rowEnd + 1; row > rowStart; row--) {
+        if (colEnd == colStart) break;
         result.push(array[row][colStart]);
     }
 
-    fillSpiral(array, rowStart++, rowEnd--, colStart++, colEnd--, result);
 
+    fillSpiral(array, rowStart+1, rowEnd-1, colStart+1, colEnd-1, result);
 }
