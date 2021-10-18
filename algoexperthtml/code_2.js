@@ -424,21 +424,23 @@ function spiralTraverse(array) {
 
 function spiralFill(array, startRow, endRow, startCol, endCol, result) {
 
-    for (let i = startCol; i < endCol; i++) {
+    if (startRow > endRow || startCol > endCol) return;
+
+    for (let i = startCol; i <= endCol; i++) {
         result.push(array[startRow][i]);
     }
 
-    for (let i = startRow; i < endRow; i++) {
+    for (let i = startRow + 1; i <= endRow; i++) {
         result.push(array[i][endCol]);
     }
 
     for (let i = endCol - 1; i >= startRow; i--) {
-        if(startRow === endRow) break;
+        if (startRow === endRow) break;
         result.push(array[endRow][i]);
     }
 
-    for (let i = endRow - 1; i >= startRow; i--) {
-        if(startCol === endCol) break;
+    for (let i = endRow - 1; i >= startRow+1; i--) {
+        if (startCol === endCol) break;
         result.push(array[i][startCol]);
     }
 
