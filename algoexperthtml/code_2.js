@@ -445,5 +445,5 @@ function spiralFill(array, startRow, endRow, startCol, endCol, result) {
     }
 
 
-    spiralFill(array, startRow++, endRow--, startRow++, endCol--, result++);
+    spiralFill(array, startRow+1, endRow-1, startRow+1, endCol-1, result);
 }
