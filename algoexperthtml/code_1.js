@@ -658,6 +658,17 @@ function longestPeak(array) {
             leftIdx--;
         }
 
+        let rightIdx = i + 2;
+        while (rightIdx < array.length && array[rightIdx] < array[rightIdx - 1]) {
+            rightIdx++;
+        }
+
+        const currentPeakLength = rightIdx - leftIdx - 1;
+        longestPeakLength = Math.max(longestPeakLength, currentPeakLength);
+        i = rightIdx;
+
     }
+
+    return longestPeakLength;
 
 }
