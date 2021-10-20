@@ -644,7 +644,7 @@ function spiralTraverse(array) {
 
 function longestPeak(array) {
     let longestPeakLength = 0;
-    let = 1;
+    let i = 1;
 
     while (i < array.length - 1) {
         const isPeak = array[i - 1] < array[i] && array[i + 1] < array[i];
@@ -653,20 +653,18 @@ function longestPeak(array) {
             continue;
         }
 
-        // Goes to the left everytime
         let leftIdx = i - 2;
-        while (leftIdx >= 0 && array[leftIdx] < array[leftIdx + 1]) {
+        while(leftIdx >= 0 && array[leftIdx] < array[leftIdx+1]){
             leftIdx--;
         }
 
-        // Goes to the right
         let rightIdx = i + 2;
-        while (rightIdx < array.length && array[rightIdx] < array[rightIdx - 1]) {
+        while(rightIdx < array.length && array[rightIdx] < array[rightIdx-1]){
             rightIdx++;
         }
 
-        const currentPeakLength = rightIdx - leftIdx - 1;
-        longestPeakLength = Math.max(longestPeakLength, currentPeakLength);
+        const currentLongest = rightIdx - leftIdx - 1;
+        longestPeakLength = Math.max(currentLongest, longestPeakLength);
         i = rightIdx;
 
     }
