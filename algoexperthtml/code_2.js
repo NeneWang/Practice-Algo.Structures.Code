@@ -439,11 +439,44 @@ function spiralFill(array, startRow, endRow, startCol, endCol, result) {
         result.push(array[endRow][i]);
     }
 
-    for (let i = endRow - 1; i >= startRow+1; i--) {
+    for (let i = endRow - 1; i >= startRow + 1; i--) {
         if (startCol === endCol) break;
         result.push(array[i][startCol]);
     }
 
 
-    spiralFill(array, startRow+1, endRow-1, startRow+1, endCol-1, result);
+    spiralFill(array, startRow + 1, endRow - 1, startRow + 1, endCol - 1, result);
+}
+
+
+
+function longestPeak(array) {
+    // Write your code here.
+    let i = 1;
+    let longestPeak = 0;
+
+    while (i < array.length-1) {
+        let isPeak = array[i - 1] < array[i] && array[i] > array[i + 1]
+
+        if (!isPeak) {
+            i++;
+            continue;
+        }
+
+        let rightIdx = i + 2;
+        while (rightIdx < array.length && array[rightIdx] < array[rightIdx - 1]) {
+            rightIdx++;
+        }
+
+        let leftIdx = i - 2;
+        while (leftIdx >= 0 && array[leftIdx] < array[leftIdx + 1]) {
+            leftIdx--;
+        }
+
+        let currentPeakLength = rightIdx - leftIdx - 1;
+        longestPeak = Math.max(currentPeakLength, longestPeak);
+        i = rightIdx;
+
+    }
+    return longestPeak;
 }
