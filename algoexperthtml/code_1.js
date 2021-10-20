@@ -642,3 +642,22 @@ function spiralTraverse(array) {
 }
 
 
+function longestPeak(array) {
+    let longestPeakLength = 0;
+    let = 1;
+
+    while (i < array.length - 1) {
+        const isPeak = array[i - 1] < array[i] && array[i + 1] < array[i];
+        if (!isPeak) {
+            i++;
+            continue;
+        }
+
+        let leftIdx = i - 2;
+        while (leftIdx >= 0 && array[leftIdx] < array[leftIdx + 1]) {
+            leftIdx--;
+        }
+
+    }
+
+}
