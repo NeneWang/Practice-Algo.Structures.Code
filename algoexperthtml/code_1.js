@@ -653,11 +653,13 @@ function longestPeak(array) {
             continue;
         }
 
+        // Goes to the left everytime
         let leftIdx = i - 2;
         while (leftIdx >= 0 && array[leftIdx] < array[leftIdx + 1]) {
             leftIdx--;
         }
 
+        // Goes to the right
         let rightIdx = i + 2;
         while (rightIdx < array.length && array[rightIdx] < array[rightIdx - 1]) {
             rightIdx++;
