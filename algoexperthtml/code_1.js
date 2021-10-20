@@ -654,12 +654,12 @@ function longestPeak(array) {
         }
 
         let leftIdx = i - 2;
-        while(leftIdx >= 0 && array[leftIdx] < array[leftIdx+1]){
+        while (leftIdx >= 0 && array[leftIdx] < array[leftIdx + 1]) {
             leftIdx--;
         }
 
         let rightIdx = i + 2;
-        while(rightIdx < array.length && array[rightIdx] < array[rightIdx-1]){
+        while (rightIdx < array.length && array[rightIdx] < array[rightIdx - 1]) {
             rightIdx++;
         }
 
@@ -671,4 +671,20 @@ function longestPeak(array) {
 
     return longestPeakLength;
 
+}
+
+
+function arrayOfProducts(array) {
+    const products = [];
+
+    for (let i = 0; i < array.length; i++) {
+        let runningProduct = 1;
+        for (let j = 0; j < array.length; j++) {
+            if(i!==j){
+                runningProduct *= array[j];
+            }
+            products[i] = runningProduct;
+        }
+    }
+    return products;
 }

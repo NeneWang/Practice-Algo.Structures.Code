@@ -480,3 +480,5 @@ function longestPeak(array) {
     }
     return longestPeak;
 }
+
+
