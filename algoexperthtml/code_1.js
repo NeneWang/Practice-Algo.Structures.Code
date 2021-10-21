@@ -688,3 +688,6 @@ function arrayOfProducts(array) {
     }
     return products;
 }
+
+
+

@@ -455,7 +455,7 @@ function longestPeak(array) {
     let i = 1;
     let longestPeak = 0;
 
-    while (i < array.length-1) {
+    while (i < array.length - 1) {
         let isPeak = array[i - 1] < array[i] && array[i] > array[i + 1]
 
         if (!isPeak) {
@@ -481,4 +481,14 @@ function longestPeak(array) {
     return longestPeak;
 }
 
+function arrayOfProducts(array) {
 
+    const multiplicationAll = array.reduce((a,b) => a+b);
+    console.log(multiplicationAll);
+
+    const arrayToReturn = [];
+    array.forEach(element => {
+        arrayToReturn.push(multiplicationAll/all);
+    })
+    return arrayToReturn;    
+}
