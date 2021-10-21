@@ -483,12 +483,24 @@ function longestPeak(array) {
 
 function arrayOfProducts(array) {
 
-    const multiplicationAll = array.reduce((a,b) => a+b);
+    const multiplicationAll = array.reduce((a, b) => a + b);
     console.log(multiplicationAll);
 
     const arrayToReturn = [];
     array.forEach(element => {
-        arrayToReturn.push(multiplicationAll/all);
+        arrayToReturn.push(multiplicationAll / all);
     })
-    return arrayToReturn;    
+    return arrayToReturn;
+}
+
+
+function firstDuplicateValue(array) {
+    // Write your code here.
+    for (let i = 0; i < array.length; i++) {
+        const absValue = Math.abs(array[i]);
+        if(array[absValue -1] <0) return absValue;
+        array[absValue - 1 ] *= -1;
+    }
+
+    return -1;
 }
