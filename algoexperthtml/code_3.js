@@ -335,5 +335,24 @@ function fillSpiral(array, rowStart, rowEnd, colStart, colEnd, result) {
     }
 
 
-    fillSpiral(array, rowStart+1, rowEnd-1, colStart+1, colEnd-1, result);
+    fillSpiral(array, rowStart + 1, rowEnd - 1, colStart + 1, colEnd - 1, result);
+}
+
+function arrayOfProducts(array) {
+    const products = new Array(array.length).fill(1);
+
+    let leftRunningProduct = 1;
+    for (let i = 0; i < array.length; i++) {
+        products[i] = leftRunningProduct;
+        leftRunningProduct *= array[i];
+    }
+
+    let rightRunningProduct = 1;
+    for (let i = array.length - 1; i >= 0; i--) {
+        products[i] *= rightRunningProduct;
+        rightRunningProduct *= array[i];
+    }
+
+    return products;
+
 }
