@@ -680,7 +680,7 @@ function arrayOfProducts(array) {
     for (let i = 0; i < array.length; i++) {
         let runningProduct = 1;
         for (let j = 0; j < array.length; j++) {
-            if(i!==j){
+            if (i !== j) {
                 runningProduct *= array[j];
             }
             products[i] = runningProduct;
@@ -690,4 +690,12 @@ function arrayOfProducts(array) {
 }
 
 
+function firstDuplicateValue(array) {
+    for (const value of array) {
+        const absValue = Math.abs(value);
+        if (array[absValue - 1] < 0) return absValue;
+        array[absValue - 1] *= -1;
 
+    }
+    return -1;
+}
