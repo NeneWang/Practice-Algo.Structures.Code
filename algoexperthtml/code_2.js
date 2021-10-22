@@ -554,7 +554,6 @@ class BST {
     }
 
     contains(value) {
-        // Write your code here.
         if (value < this.value) {
             if (this.left === null) {
                 return false;
@@ -568,7 +567,7 @@ class BST {
                 return this.right.contains(value);
             }
         } else {
-            return (true);
+            return true;
         }
     }
 
