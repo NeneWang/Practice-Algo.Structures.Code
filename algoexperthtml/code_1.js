@@ -701,19 +701,34 @@ function firstDuplicateValue(array) {
 }
 
 function mergeOverlappingIntervals(intervals) {
+    // First the intervals are sorted based on their first inex
     const sortedIntervals = intervals.sort((a, b) => a[0] - b[0]);
 
+    // Creates the merged intervals
     const mergedIntervals = [];
+
+    // current Interval = the first sorted interval 
     let currentInterval = sortedIntervals[0];
+
+    // push that 
     mergedIntervals.push(currentInterval);
 
+
     for (const nextInterval of sortedIntervals) {
+
+        // The _ and the current Interval End equals current Interval
         const [_, currentIntervalEnd] = currentInterval;
+
+        // Next interval starts and end using the then next Interval
         const [nextIntervalStart, nextIntervalEnd] = nextInterval;
 
-        if(currentIntervalEnd >= nextIntervalStart) currentInterval[1] = Math.max(currentInterval, nextIntervalEnd)
+        // Get the item where the current interval end is larger than the start then the current interval (end) would be then the max between the current interval and the next interval end 
+        if(currentIntervalEnd >= nextIntervalStart) currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd)
         else{
+
+            // If the current interval = nextinterval
             currentInterval = nextInterval;
+            // then the currentInterval is pushed inot the mergedIntervals
             mergedIntervals.push(currentInterval);
         }
     }
