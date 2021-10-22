@@ -73,3 +73,24 @@ function breaksDirection(direction, previousItem, currentItem) {
     if (direction > 0) return difference < 0;
     else return difference > 0;
 }
+
+
+function mergeOverlappingIntervals(array) {
+    const sortedInterval = array.sort((a, b) => a[0] - b[0])
+
+    const mergedIntervals = [];
+    const currentInterval = sortedInterval[0];
+    mergedIntervals.push(currentInterval);
+
+    for (const nextInterval of sortedInterval) {
+        const [_, currentIntervalEnd] = currentInterval;
+        const [nextIntervalStart, nextIntervalEnd] = nextInterval;
+
+        if (currentIntervalEnd >= nextIntervalStart) currentInterval[1] = Math.max(nextIntervalEnd, currentIntervalEnd)
+        else {
+            currentInterval = nextInterval;
+            mergedIntervals.push(currentInterval);
+        }
+    }
+    return mergedIntervals;
+}
