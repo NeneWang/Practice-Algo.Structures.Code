@@ -943,3 +943,16 @@ class BST {
         }
     }
 }
+
+function findKthLargestValueInBst(tree, k) {
+    const sortedNodeValues = [];
+    inOrderTraverse(tree, sortedNodeValues);
+    return sortedNodeValues[sortedNodeValues.length - k];
+}
+
+function inOrderTraverse(node, sortedTreeValues){
+    if(node === null) return;
+    inOrderTraverse(node.left, sortedTreeValues);
+    sortedTreeValues.push(node.value);
+    inOrderTraverse(node.right, sortedTreeValues);
+}
