@@ -701,4 +701,5 @@ function reverseLinkedList(head) {
         previousNode = currentNode;
         currentNode = nextNode;
     }
+    return previousNode;
 }
