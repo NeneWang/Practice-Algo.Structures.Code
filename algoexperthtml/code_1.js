@@ -899,9 +899,16 @@ function minHeightBst(array) {
 }
 
 function constructMinHeightBst(array, bst, startIdx, endIdx) {
+    // If the end is smaller than the start then return because it is already constrcuted
     if (endIdx < startIdx) return;
+
+    // using the mid index as the flooor of the middle
     const midIdx = Math.floor((startIdx + endIdx) / 2);
+
+    // Value to add aas theone in the middle
     const valueToAdd = array[midIdx];
+
+    // If the bst == null then the bst then create one, otherwise kist omsert tje ,odd;e omdex/ 
     if (bst === null) {
         bst = new BST(valueToAdd);
     } else {
