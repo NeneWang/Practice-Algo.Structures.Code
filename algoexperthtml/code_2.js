@@ -689,3 +689,16 @@ class BST {
         }
     }
 }
+
+
+function reverseLinkedList(head) {
+    // Write your code here.
+    let previousNode = null;
+    let currentNode = head;
+    while (currentNode !== null) {
+        const nextNode = currentNode.next;
+        currentNode.next = previousNode;
+        previousNode = currentNode;
+        currentNode = nextNode;
+    }
+}
