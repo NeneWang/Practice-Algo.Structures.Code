@@ -369,11 +369,26 @@ function mergeOverlappingIntervals(intervals) {
         const [_, currentIntervalEnd] = currentInterval;
         const [nextIntervalStart, nextIntervalEnd] = nextInterval;
 
-        if(currentIntervalEnd >= nextIntervalStart) currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd)
-        else{
+        if (currentIntervalEnd >= nextIntervalStart) currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd)
+        else {
             currentInterval = nextInterval;
             mergedIntervals.push(currentInterval);
         }
     }
     return mergedIntervals;
+}
+
+
+function invertBinaryTree(tree) {
+    if(tree === null) return false;
+    swapLeftAndRight(tree);
+    invertBinaryTree(tree.left);
+    invertBinaryTree(tree.right);
+
+}
+
+function swapLeftAndRight(tree){
+    const left = tree.left;
+    tree.left = tree.right;
+    tree.right = left;
 }
