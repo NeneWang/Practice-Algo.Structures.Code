@@ -1012,9 +1012,6 @@ function invertBinaryTree(tree) {
         queue.push(current.left);
         queue.push(current.right);
     }
-
-
-
 }
 
 function swapLeftAndRight(tree) {
