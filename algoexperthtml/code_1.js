@@ -1120,7 +1120,7 @@ class BinaryTree {
 }
 
 function findSuccessor(tree, node) {
-    const inOrderTraversalOrder = getOrderTraversalOrder(tree);
+    const inOrderTraversalOrder = getInOrderTraversalOrder(tree);
 
     for (let idx = 0; idx < inOrderTraversalOrder.length; idx++) {
         const currentNode = inOrderTraversalOrder[idx];
