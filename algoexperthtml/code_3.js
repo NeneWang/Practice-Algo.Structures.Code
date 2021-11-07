@@ -380,15 +380,52 @@ function mergeOverlappingIntervals(intervals) {
 
 
 function invertBinaryTree(tree) {
-    if(tree === null) return false;
+    if (tree === null) return false;
     swapLeftAndRight(tree);
     invertBinaryTree(tree.left);
     invertBinaryTree(tree.right);
 
 }
 
-function swapLeftAndRight(tree){
+function swapLeftAndRight(tree) {
     const left = tree.left;
     tree.left = tree.right;
     tree.right = left;
+}
+
+
+class BinaryTree {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class TreeInfo {
+    constructor(isBalanced, heigth) {
+        this.isBalanced = isBalanced;
+        this.height = heigth;
+    }
+}
+
+
+
+function heightBalancedBinaryTree(tree) {
+    
+    
+    return getTreeInfo(tree).isBalanced;
+}
+
+function getTreeInfo(node) {
+    if (node === null) return new TreeInfo(true, -1);
+
+    const leftTreetInfo = getTreeInfo(node.left);
+    const rightTreetInfo = getTreeInfo(node.right);
+
+    const isBalanced = leftTreetInfo.isBalanced && rightTreetInfo.isBalanced && Math.abs(rightTreetInfo.height - leftTreetInfo.height) <= 1;
+    const height = Math.max(leftTreetInfo.height, rightTreetInfo.height);
+
+    return new TreeInfo(isBalanced, height)
+
 }
