@@ -424,7 +424,7 @@ function getTreeInfo(node) {
     const rightTreetInfo = getTreeInfo(node.right);
 
     const isBalanced = leftTreetInfo.isBalanced && rightTreetInfo.isBalanced && Math.abs(rightTreetInfo.height - leftTreetInfo.height) <= 1;
-    const height = Math.max(leftTreetInfo.height, rightTreetInfo.height);
+    const height = Math.max(leftTreetInfo.height, rightTreetInfo.height) +1;
 
     return new TreeInfo(isBalanced, height)
 
