@@ -759,11 +759,24 @@ function heightBalancedBinaryTree(tree) {
 
 
 function getTreeInfo(node) {
-    if(node === null) return new TreeInfo(true, -1);
+    if (node === null) return new TreeInfo(true, -1);
     const leftSubstreeInfo = getTreeInfo(node.left);
     const rightSubstreeInfo = getTreeInfo(node.right);
-    const isBalanced = leftSubstreeInfo.isBalanced && rightSubstreeInfo.isBalanced && Math.abs(rightSubstreeInfo.height - leftSubstreeInfo.height) <=1;
+    const isBalanced = leftSubstreeInfo.isBalanced && rightSubstreeInfo.isBalanced && Math.abs(rightSubstreeInfo.height - leftSubstreeInfo.height) <= 1;
     const height = Math.max(leftSubstreeInfo.height, rightSubstreeInfo.height) + 1;
     return new TreeInfo(isBalanced, height);
 
+}
+
+
+function maxSubsetSumNoAdjacent(array) {
+    if (!array.length) return 0;
+    if (array.length === 1) return array[0];
+
+    const maxSums = array.slice();
+    maxSums[1] = Math.max(array[0], array[1])
+    for (let i = 2; i < array.length; i++) {
+        maxSums[i] = Math.max(maxSums[i - 1], maxSums[i - 2] + array[i]);
+    }
+    return maxSums[maxSums.length - 1];
 }
