@@ -759,18 +759,11 @@ function heightBalancedBinaryTree(tree) {
 
 
 function getTreeInfo(node) {
-    if (node === null) return new TreeInfo(true, -1);
-    const leftSubtreeInfo = getTreeInfo(node.left);
-    const rightSubtreeInfo = getTreeInfo(node.right);
-
-    const isBalanced = leftSubtreeInfo.isBalanced && rightSubtreeInfo.isBalanced && Math.abs(leftSubtreeInfo.height - rightSubtreeInfo.height) <=1;
-    const height = Math.max(leftSubtreeInfo.height, rightSubtreeInfo.height) + 1;
+    if(node === null) return new TreeInfo(true, -1);
+    const leftSubstreeInfo = getTreeInfo(node.left);
+    const rightSubstreeInfo = getTreeInfo(node.right);
+    const isBalanced = leftSubstreeInfo.isBalanced && rightSubstreeInfo.isBalanced && Math.abs(rightSubstreeInfo.height - leftSubstreeInfo.height) <=1;
+    const height = Math.max(leftSubstreeInfo.height, rightSubstreeInfo.height) + 1;
     return new TreeInfo(isBalanced, height);
 
-}
-
-
-function heightBalancedBinaryTree(tree) {
-    // Write your code here.
-    return false;
 }
