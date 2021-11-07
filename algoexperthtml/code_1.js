@@ -1092,12 +1092,13 @@ function heightBalancedBinaryTree(tree) {
     return treeInfo.isBalanced;
 }
 
+
 function getTreeInfo(node) {
     if (node === null) return new TreeInfo(true, -1);
     const leftSubtreeInfo = getTreeInfo(node.left);
     const rightSubtreeInfo = getTreeInfo(node.right);
 
-    const isBalanced = leftSubtreeInfo.isBalanced && rightSubtreeInfo.isBalanced && Math.abs(leftSubtreeInfo.height, rightSubtreeInfo.height) + 1;
+    const isBalanced = leftSubtreeInfo.isBalanced && rightSubtreeInfo.isBalanced && Math.abs(leftSubtreeInfo.height - rightSubtreeInfo.height) <= 1;
     const height = Math.max(leftSubtreeInfo.height, rightSubtreeInfo.height) + 1;
     return new TreeInfo(isBalanced, height);
 
@@ -1148,22 +1149,19 @@ function findSuccessor(tree, node) {
 }
 
 
-function getLeftMostChild(node){
+function getLeftMostChild(node) {
     let currentNode = node;
-    while(currentNode.left !== null){
+    while (currentNode.left !== null) {
         currentNode = currentNode.left;
     }
 
     return currentNode;
 }
 
-function getRightMostParent(node){
+function getRightMostParent(node) {
     let currentNode = node;
-    while(currentNode.parent !== null && currentNode.parent.right === currentNode){
+    while (currentNode.parent !== null && currentNode.parent.right === currentNode) {
         currentNode = currentNode.parent;
     }
     return currentNode.parent;
 }
-
-
-
