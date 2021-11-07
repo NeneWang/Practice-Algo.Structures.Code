@@ -763,7 +763,7 @@ function getTreeInfo(node) {
     const leftSubtreeInfo = getTreeInfo(node.left);
     const rightSubtreeInfo = getTreeInfo(node.right);
 
-    const isBalanced = leftSubtreeInfo.isBalanced && rightSubtreeInfo.isBalanced && Math.abs(leftSubtreeInfo.height - rightSubtreeInfo.height) <= 1;
+    const isBalanced = leftSubtreeInfo.isBalanced && rightSubtreeInfo.isBalanced && Math.abs(leftSubtreeInfo.height - rightSubtreeInfo.height) <=1;
     const height = Math.max(leftSubtreeInfo.height, rightSubtreeInfo.height) + 1;
     return new TreeInfo(isBalanced, height);
 
