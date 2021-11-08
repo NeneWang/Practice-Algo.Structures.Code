@@ -412,8 +412,8 @@ class TreeInfo {
 
 
 function heightBalancedBinaryTree(tree) {
-    
-    
+
+
     return getTreeInfo(tree).isBalanced;
 }
 
@@ -424,8 +424,21 @@ function getTreeInfo(node) {
     const rightTreetInfo = getTreeInfo(node.right);
 
     const isBalanced = leftTreetInfo.isBalanced && rightTreetInfo.isBalanced && Math.abs(rightTreetInfo.height - leftTreetInfo.height) <= 1;
-    const height = Math.max(leftTreetInfo.height, rightTreetInfo.height) +1;
+    const height = Math.max(leftTreetInfo.height, rightTreetInfo.height) + 1;
 
     return new TreeInfo(isBalanced, height)
 
+}
+
+
+
+function numberOfWaysToMakeChange(n, denoms) {
+
+    const ways = Array[n + 1].fill(1);
+    for (let denom of denoms) {
+        for (let amount = 1; amount <= n; amount++) {
+            if (denom <= amount) ways[amount] += ways[amount - denom];
+        }
+    }
+    return ways[n];
 }
