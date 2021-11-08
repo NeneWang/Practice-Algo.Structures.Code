@@ -782,3 +782,4 @@ function maxSubsetSumNoAdjacent(array) {
     return maxSums[maxSums.length - 1];
 
 }
+
