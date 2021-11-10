@@ -456,7 +456,7 @@ function minNumberOfCoinsForChange(n, denoms) {
     return numOfCoins[n] !== Infinity ? numOfCoins[n] : -1;
 }
 
-function levelsheinDistance(str1, str2) {
+function levenshteinDistance(str1, str2) {
     const edits = [];
     for (let i = 0; i < str2.length + 1; i++) {
         const row = [];
@@ -478,6 +478,5 @@ function levelsheinDistance(str1, str2) {
         }
     }
     return edits[str2.length][str1.length];
-
 
 }
