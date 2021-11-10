@@ -473,7 +473,7 @@ function levenshteinDistance(str1, str2) {
             if (str2[i - 1] === str1[j - 1]) {
                 edits[i][j] = edits[i - 1][j - 1];
             } else {
-                edits[i][j] = 1 + Math.min(edits[i - 1][j - 1], edits[i - 1][j], edits[i][j - 1]);
+                edits[i][j]=1 + min(edits[i][j-1],edits[i-1][j],edits[i-1][j-1]);
             }
         }
     }
