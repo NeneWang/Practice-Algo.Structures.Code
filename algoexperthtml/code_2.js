@@ -870,3 +870,25 @@ function kadanesAlgorithm(array) {
 
     return maxSoFar;
 }
+
+
+
+function hasSingleCycle(array) {
+    let numElementVisited = 0;
+    let currentIdx = 0;
+    while (numElementVisited < array.length) {
+        if(numElementVisited >0 && currentIdx ===0) return false;
+        currentIdx = getNextIdx(currentIdx, array);
+        numElementVisited++;
+    }
+    return currentIdx === 0;
+}
+
+
+function getNextIdx(currentIdx, array) {
+
+
+    const jump = array[currentIdx];
+    const nextIdx = (currentIdx + jump) % array.length;
+    return nextIdx >= 0 ? nextIdx : nextIdx + array.length;
+}
