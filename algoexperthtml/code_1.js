@@ -1337,6 +1337,4 @@ function getUnvisitedNeighbors(i, j, matrix, visited) {
     if (j > 0 && !visited[i][j - 1]) unvisitedNeighbors.push([i, j - 1]);
     if (j < matrix[0].length - 1 && !visited[i][j + 1]) unvisitedNeighbors.push([i, j + 1]);
     return unvisitedNeighbors;
-
-
 }
