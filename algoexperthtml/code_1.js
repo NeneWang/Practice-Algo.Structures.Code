@@ -1233,7 +1233,7 @@ function numberOfWaysToTraverseGraph(width, height) {
     return numberOfWaysToTraverseGraph(width - 1, height) + numberOfWaysToTraverseGraph(width, height - 1);
 }
 
-function kadasAlrithm(array) {
+function kadanesAlgorithm(array) {
     let maxEndingHere = array[0];
     let maxSoFar = array[0];
 
