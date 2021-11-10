@@ -501,8 +501,8 @@ function factorial(num) {
 function hasSingleCycle(array) {
     let numberTimesVisited = 0;
     let currentIdx = 0;
-    while(numberTimesVisited < array.length){
-        if(numberTimesVisited > 0 && currentIdx ===0) return false;
+    while (numberTimesVisited < array.length) {
+        if (numberTimesVisited > 0 && currentIdx === 0) return false;
         numberTimesVisited++;
         currentIdx = getNextIdx(currentIdx, array);
 
@@ -513,8 +513,6 @@ function hasSingleCycle(array) {
 
 
 function getNextIdx(currentIdx, array) {
-
-
     const jump = array[currentIdx];
     const nextIdx = (currentIdx + jump) % array.length;
     return nextIdx >= 0 ? nextIdx : nextIdx + array.length;
