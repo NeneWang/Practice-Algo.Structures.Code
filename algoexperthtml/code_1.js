@@ -1232,3 +1232,16 @@ function numberOfWaysToTraverseGraph(width, height) {
     if (width === 1 || height === 1) return 1;
     return numberOfWaysToTraverseGraph(width - 1, height) + numberOfWaysToTraverseGraph(width, height - 1);
 }
+
+function kadasAlrithm(array) {
+    let maxEndingHere = array[0];
+    let maxSoFar = array[0];
+
+    for (let i = 1; i < array.length; i++) {
+        const num = array[i];
+        maxEndingHere = Math.max(num, maxEndingHere + num);
+        maxSoFar = Math.max(maxSoFar, maxEndingHere);
+    }
+    return maxSoFar;
+
+}
