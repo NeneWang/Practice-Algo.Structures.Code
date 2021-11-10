@@ -877,7 +877,7 @@ function hasSingleCycle(array) {
     let numElementVisited = 0;
     let currentIdx = 0;
     while (numElementVisited < array.length) {
-        if(numElementVisited >0 && currentIdx ===0) return false;
+        if (numElementVisited > 0 && currentIdx === 0) return false;
         currentIdx = getNextIdx(currentIdx, array);
         numElementVisited++;
     }
@@ -891,4 +891,29 @@ function getNextIdx(currentIdx, array) {
     const jump = array[currentIdx];
     const nextIdx = (currentIdx + jump) % array.length;
     return nextIdx >= 0 ? nextIdx : nextIdx + array.length;
+}
+
+class Node {
+    constructor(name) {
+        this.name = name;
+        this.children = [];
+    }
+
+    addChild(name) {
+        this.children.push(new Node(name));
+        return this;
+    }
+
+    breadthFirstSearch(array) {
+        // Write your code here.
+        const queue = [this];
+        while (queue.length > 0) {
+            const current = queue.shift();
+            array.push(current.name);
+            for (const child of current.children) {
+                queue.push(child);
+            }
+        }
+        return array;
+    }
 }
