@@ -856,3 +856,17 @@ function numberOfWaysToTraverseGraph(width, height) {
 
     return numberOfWays[height][width];
 }
+
+
+function kadanesAlgorithm(array) {
+    // Write your code here.
+    let maxSoFar = array[0];
+    let maxEndingHere = array[0];
+
+    for (let i = 1; i < array.length; i++) {
+        maxEndingHere = Math.max(maxEndingHere + array[i], array[i]);
+        maxSoFar = Math.max(maxSoFar, maxEndingHere);
+    }
+
+    return maxSoFar;
+}
