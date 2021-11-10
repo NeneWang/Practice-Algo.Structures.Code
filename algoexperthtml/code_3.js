@@ -473,10 +473,27 @@ function levenshteinDistance(str1, str2) {
             if (str2[i - 1] === str1[j - 1]) {
                 edits[i][j] = edits[i - 1][j - 1];
             } else {
-                edits[i][j]=1 + min(edits[i][j-1],edits[i-1][j],edits[i-1][j-1]);
+                edits[i][j] = 1 + min(edits[i][j - 1], edits[i - 1][j], edits[i - 1][j - 1]);
             }
         }
     }
     return edits[str2.length][str1.length];
 
+}
+
+function numberOfWaysToTraverseGraph(width, height) {
+    const xDistanceToCorner = width - 1;
+    const yDistanceToCorner = height - 1;
+
+    const numerator = factorial(xDistanceToCorner + yDistanceToCorner);
+    const denominator = factorial(xDistanceToCorner) * factorial(yDistanceToCorner);
+    return Math.floor(numerator / denominator);
+}
+
+function factorial(num) {
+    let result = 1;
+    for (let n = 2; n < num + 1; n++) {
+        result *= n;
+    }
+    return result;
 }
