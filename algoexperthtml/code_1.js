@@ -1431,7 +1431,30 @@ function removeIslands(matrix) {
 }
 
 function findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBorder) {
+    // create an stack using the start row and start col
 
+    // While the stack length larger than 0pop the stack (for the current position) and then get the current row and col from the current position. 
+    // Decide if it already been visited by finding out if there is any value in the coordinates of the onesConnectedToBorder matrix.
+
+    // then declare the neightbors as get neightbors of the matrix and for each neightbor, if the value is not 1 skip, otherwise push to the stack
+
+    const stack = [
+        [startRow, startCol]
+    ];
+
+    while (stack.length > 0) {
+        const currentPosition = stack.pop();
+        const [currentRow, currentCol] = currentPosition;
+        const alreadyVisisted = onesConnectedToBorder[currentRow, currentCol];
+        if (alreadyVisisted) continue;
+
+        const neightbors = getNeighbors(matrix, currentRow, currentCol);
+        for (const neighbor of neighbors) {
+            const [row, col] = neighbor;
+            if (matrix[row][col] !== 1) continue;
+            neighbor.push(neighbor);
+        }
+    }
 }
 
 function getNeighbors(matrix, row, col) {
