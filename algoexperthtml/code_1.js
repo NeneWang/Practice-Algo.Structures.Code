@@ -1372,11 +1372,14 @@ function getDescendantDepth(descendant, topAncestor) {
 function backtrackAncestralTree(lowerDescendant, higherDescendant, diff) {
 
     // Backtracking the ancestral tree by the gettin the key.
+    // While the difference is larger than 0; Lower is equal to the lower descendant ancestor, and keep making the diff -? until it reaches to no differences
     while (diff > 0) {
         lowerDescendant = lowerDescendant.ancestor;
         diff--;
     }
 
+    // The lower Descendant !== higher descendant
+    // The lower descendant equals the lower descendant ancestor and the higher descendant equals the higher descendant ancestor. Sp tjeu lee[ gpomg nacclwards imto; tje ;pwer descemdamt ,atcjes tje jogjer descemdamt/]
     while (lowerDescendant !== higherDescendant) {
         lowerDescendant = lowerDescendant.ancestor;
         higherDescendant = higherDescendant.ancestor;
