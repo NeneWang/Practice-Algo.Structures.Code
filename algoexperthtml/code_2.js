@@ -925,7 +925,7 @@ function riverSizes(matrix) {
     const visited = matrix.map(row => row.map(value => false));
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[i].length; j++) {
-            if(visited[i][j]) continue;
+            if (visited[i][j]) continue;
             traverseNode(i, j, matrix, visited, sizes);
         }
     }
@@ -965,4 +965,46 @@ function getUnvisitedNeighbors(i, j, matrix, visited) {
     if (j > 0 && !visited[i][j - 1]) unvisitedNeighbors.push([i, j - 1]);
     if (j < matrix[0].length - 1 && !visited[i][j + 1]) unvisitedNeighbors.push([i, j + 1]);
     return unvisitedNeighbors;
+}
+
+
+class AncestralTree {
+    constructor(name) {
+        this.name = name;
+        this.ancestor = null;
+    }
+}
+
+function getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo) {
+    // Write your code here.
+    const depthOne = getDescendantDepth(descendantOne, topAncestor);
+    const depthTwo = getDescendantDepth(descendantTwo, topAncestor);
+    if (depthOne > depthTwo) {
+        return backtrackAncestralTree(descendantOne, descendantTwo, depthOne - depthTwo);
+    } else {
+        return backtrackAncestralTree(descendantTwo, descendantOne, depthTwo - depthOne);
+    }
+}
+
+function getDescendantDepth(descendant, topAncestor) {
+    let depth = 0;
+    while (descendant !== topAncestor) {
+        descendant = descendant.ancestor;
+        depth++;
+    }
+
+    return depth;
+}
+
+function backtrackAncestralTree(lowerDescendant, higherDescendant, diff) {
+
+    while (diff > 0) {
+        lowerDescendant = lowerDescendant.ancestor;
+        diff--;
+    }
+    while (lowerDescendant !== higherDescendant) {
+        lowerDescendant = lowerDescendant.ancestor;
+        higherDescendant = higherDescendant.ancestor;
+    }
+    return lowerDescendant;
 }
