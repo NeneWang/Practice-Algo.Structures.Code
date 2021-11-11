@@ -1458,5 +1458,17 @@ function findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBo
 }
 
 function getNeighbors(matrix, row, col) {
+    // simply look at the right left top, bottom, by making additions and checking if the content is larger or smaller than the boundaries using the matrix length of rows and cols
 
+    const neighbors = [];
+
+    const numRows = matrix.length;
+    const numCols = matrix[0].length;
+
+    if (row + 1 < numRows) neighbors.push([row + 1, col]);
+    if (row - 1 > 0) neighbors.push([row - 1, col]);
+    if (col + 1 < numCols) neighbors.push([row, col + 1]);
+    if (col - 1 > 0) neighbors.push([row, col - 1]);
+
+    return neighbors;
 }
