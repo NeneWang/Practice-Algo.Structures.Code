@@ -565,7 +565,7 @@ class AncestralTree {
     }
 }
 
-function getDepth(topAncestor, descendant) {
+function getDepth(descendant, topAncestor) {
     let depth = 0
     while (topAncestor !== descendant) {
         depth++;
