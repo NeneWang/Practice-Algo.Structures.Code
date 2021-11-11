@@ -1375,7 +1375,7 @@ function backtrackAncestralTree(lowerDescendant, higherDescendant, diff) {
         diff--;
     }
 
-    while (lowerDescendant !== lowerDescendant.ancestor) {
+    while (lowerDescendant !== higherDescendant) {
         lowerDescendant = lowerDescendant.ancestor;
         higherDescendant = higherDescendant.ancestor;
     }
