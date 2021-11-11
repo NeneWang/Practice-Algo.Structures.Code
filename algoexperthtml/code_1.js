@@ -1403,6 +1403,19 @@ function removeIslands(matrix) {
     }
 
     // Loop each row and col to figure out if the row (0)  the row max lenght (the borders) and then if its not border make a matrix not equal to one. find the ones connected to border
+    for (let row = 0; row < matrix.length; row++) {
+        for (let col = 0; col < matrix[row].length; col++) {
+            const rowIsBorder = row == 0 | row == matrix.length - 1;
+            const colIsBorder = col == 0 | col == matrix[row].length - 1;
+            const isBorder = rowIsBorder | colIsBorder;
+
+            if (!isBorder) continue;
+            if (matrix[col][row] != 1) continue;
+
+            findOnesConnectedToBorder(matrix, row, col, onesConnectedToBorder);
+
+        }
+    }
 
 
 
