@@ -1370,6 +1370,8 @@ function getDescendantDepth(descendant, topAncestor) {
 }
 
 function backtrackAncestralTree(lowerDescendant, higherDescendant, diff) {
+
+    // Backtracking the ancestral tree by the gettin the key.
     while (diff > 0) {
         lowerDescendant = lowerDescendant.ancestor;
         diff--;
