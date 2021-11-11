@@ -1487,6 +1487,8 @@ function getNeighbors(matrix, row, col) {
     return neighbors;
 }
 
+// CYCLE
+
 function cycleInGraph(edges) {
     const numberOfNodes = edges.length;
     const visited = new Array(numberOfNodes).fill(false);
@@ -1495,28 +1497,28 @@ function cycleInGraph(edges) {
     for (let node = 0; node < numberOfNodes; node++) {
         if (visited[node]) continue;
 
-        const containsCycle = isNodeInCycle(node, edges, visited, currentInStack);
+        const containsCycle = isNodeInCycle(node, edges, visited, currentlyInStack);
         if (containsCycle) return true;
     }
 
     return false;
 }
 
-function isNodeInCycle(node, edges, visited, currentInStack) {
+function isNodeInCycle(node, edges, visited, currentlyInStack) {
     visited[node] = true;
-    currentInStack[node] = true;
+    currentlyInStack[node] = true;
 
     const neighbors = edges[node];
     for (const neightbor of neighbors) {
         if (!visited[neightbor]) {
-            const containsCycle = isNodeInCycle(node, edges, visited, currentInStack);
+            const containsCycle = isNodeInCycle(neightbor, edges, visited, currentlyInStack);
             if(containsCycle) return true;
-        } else if (currentInStack[neightbor]) {
+        } else if (currentlyInStack[neightbor]) {
             // if hadn't been visited then that means that there is a cycle
             return true;
         }
     }
 
-    currentInStack[node] = false;
+    currentlyInStack[node] = false;
     return false;
 }
