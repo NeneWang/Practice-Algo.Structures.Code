@@ -544,3 +544,47 @@ class Node {
 
     }
 }
+
+
+function getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo) {
+    const depthOne = getDepth(descendantOne, topAncestor);
+    const depthTwo = getDepth(descendantTwo, topAncestor);
+
+    if (depthOne > depthTwo) {
+        return backTrackAncestor(descendantOne, descendantTwo, depthOne - depthTwo);
+    } else {
+        return backTrackAncestor(descendantTwo, descendantOne, depthTwo - depthOne);
+    }
+
+}
+// This is an input class. Do not edit.
+class AncestralTree {
+    constructor(name) {
+        this.name = name;
+        this.ancestor = null;
+    }
+}
+
+function getDepth(topAncestor, descendant) {
+    let depth = 0
+    while (topAncestor !== descendant) {
+        depth++;
+        descendant = descendant.ancestor;
+    }
+    return depth;
+}
+
+function backTrackAncestor(lowerNode, HigherNode, diff) {
+    while (diff > 0) {
+        diff--;
+        lowerNode = lowerNode.ancestor;
+    }
+
+    while (lowerNode !== HigherNode) {
+        lowerNode = lowerNode.ancestor;
+        HigherNode = HigherNode.ancestor;
+    }
+
+    return lowerNode;
+
+}
