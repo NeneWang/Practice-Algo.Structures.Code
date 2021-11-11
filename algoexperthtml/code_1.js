@@ -1386,3 +1386,20 @@ function backtrackAncestralTree(lowerDescendant, higherDescendant, diff) {
     }
     return lowerDescendant;
 }
+
+
+// Remove Islands
+
+function removeIslands(matrix) {
+    // Write your code here.
+    return [];
+}
+
+function findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBorder) {
+
+}
+
+function getNeighbors(matrix, row, col) {
+
+}
+
