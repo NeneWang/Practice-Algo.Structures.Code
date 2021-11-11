@@ -1495,7 +1495,7 @@ function cycleInGraph(edges) {
     for (let node = 0; node < numberOfNodes; node++) {
         if (visited[node]) continue;
 
-        const containsCycle = isNodeInCycle(node, edges, visited, currentlyInStack);
+        const containsCycle = isNodeInCycle(node, edges, visited, currentInStack);
         if (containsCycle) return true;
     }
 
@@ -1509,9 +1509,10 @@ function isNodeInCycle(node, edges, visited, currentInStack) {
     const neighbors = edges[node];
     for (const neightbor of neighbors) {
         if (!visited[neightbor]) {
-            const containsCycle = isNodeInCycle(neightbor, edges, visited, currentInStack);
-            if (containsCycle) return true;
+            const containsCycle = isNodeInCycle(node, edges, visited, currentInStack);
+            if(containsCycle) return true;
         } else if (currentInStack[neightbor]) {
+            // if hadn't been visited then that means that there is a cycle
             return true;
         }
     }
