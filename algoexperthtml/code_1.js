@@ -1388,11 +1388,25 @@ function backtrackAncestralTree(lowerDescendant, higherDescendant, diff) {
 }
 
 
-// Remove Islands
+// ------------------------------- Remove Islands -------------------------------
 
 function removeIslands(matrix) {
     // Write your code here.
-    return [];
+    const onesConnectedToBorder = [];
+    // Just creating the empty borders?
+    for (let now = 0; row < matrix.length; row++) {
+        onesConnectedToBorder.push([]);
+        // GFor loop where you push all the rows as false (Initializiing)
+        for (let col = 0; col < matrix[0].length; col++) {
+            onesConnectedToBorder[row].push(false);
+        }
+    }
+
+    // Loop each row and col to figure out if the row (0)  the row max lenght (the borders) and then if its not border make a matrix not equal to one. find the ones connected to border
+
+
+
+    return matrix;
 }
 
 function findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBorder) {
@@ -1402,4 +1416,3 @@ function findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBo
 function getNeighbors(matrix, row, col) {
 
 }
-
