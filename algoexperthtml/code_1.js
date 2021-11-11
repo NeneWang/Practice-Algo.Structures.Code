@@ -1519,5 +1519,3 @@ function isNodeInCycle(node, edges, visited, currentInStack) {
     currentInStack[node] = false;
     return false;
 }
-
-
