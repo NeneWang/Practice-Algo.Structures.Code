@@ -1486,3 +1486,38 @@ function getNeighbors(matrix, row, col) {
 
     return neighbors;
 }
+
+function cycleInGraph(edges) {
+    const numberOfNodes = edges.length;
+    const visited = new Array(numberOfNodes).fill(false);
+    const currentlyInStack = new Array(numberOfNodes).fill(false);
+
+    for (let node = 0; node < numberOfNodes; node++) {
+        if (visited[node]) continue;
+
+        const containsCycle = isNodeInCycle(node, edges, visited, currentlyInStack);
+        if (containsCycle) return true;
+    }
+
+    return false;
+}
+
+function isNodeInCycle(node, edges, visited, currentInStack) {
+    visited[node] = true;
+    currentInStack[node] = true;
+
+    const neighbors = edges[node];
+    for (const neightbor of neighbors) {
+        if (!visited[neightbor]) {
+            const containsCycle = isNodeInCycle(neightbor, edges, visited, currentInStack);
+            if (containsCycle) return true;
+        } else if (currentInStack[neightbor]) {
+            return true;
+        }
+    }
+
+    currentInStack[node] = false;
+    return false;
+}
+
+
