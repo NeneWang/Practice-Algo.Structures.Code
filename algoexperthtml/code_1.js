@@ -1417,6 +1417,14 @@ function removeIslands(matrix) {
         }
     }
 
+    // Loop each row col -1 (not borders starting from 1 and if the are ones connectedTo Border then skip, otherwise, connect to zero.)
+    for (let row = 1; row < matrix.length - 1; row++) {
+        for (let col = 1; col < matrix[row].length - 1; col++) {
+
+            if (onesConnectedToBorder[row][col]) continue;
+            matrix[col][row] = 0;
+        }
+    }
 
 
     return matrix;
