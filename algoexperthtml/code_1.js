@@ -1394,7 +1394,7 @@ function removeIslands(matrix) {
     // Write your code here.
     const onesConnectedToBorder = [];
     // Just creating the empty borders?
-    for (let now = 0; row < matrix.length; row++) {
+    for (let row = 0; row < matrix.length; row++) {
         onesConnectedToBorder.push([]);
         // GFor loop where you push all the rows as false (Initializiing)
         for (let col = 0; col < matrix[0].length; col++) {
@@ -1448,11 +1448,13 @@ function findOnesConnectedToBorder(matrix, startRow, startCol, onesConnectedToBo
         const alreadyVisisted = onesConnectedToBorder[currentRow, currentCol];
         if (alreadyVisisted) continue;
 
-        const neightbors = getNeighbors(matrix, currentRow, currentCol);
+        onesConnectedToBorder[currentRow][currentCol] = true;
+
+        const neighbors = getNeighbors(matrix, currentRow, currentCol);
         for (const neighbor of neighbors) {
             const [row, col] = neighbor;
             if (matrix[row][col] !== 1) continue;
-            neighbor.push(neighbor);
+            stack.push(neighbor);
         }
     }
 }
@@ -1463,7 +1465,7 @@ function getNeighbors(matrix, row, col) {
     const neighbors = [];
 
     const numRows = matrix.length;
-    const numCols = matrix[0].length;
+    const numCols = matrix[row].length;
 
     if (row + 1 < numRows) neighbors.push([row + 1, col]);
     if (row - 1 > 0) neighbors.push([row - 1, col]);
