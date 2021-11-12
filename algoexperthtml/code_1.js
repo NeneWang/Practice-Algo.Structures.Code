@@ -1627,10 +1627,6 @@ function taskAssignment(k, tasks) {
     }
 
     return pairedTasks;
-
-
-
-
 }
 
 function getTaskDurationToIndices(tasks) {
