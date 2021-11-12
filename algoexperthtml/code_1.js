@@ -1598,7 +1598,7 @@ function containsNegative(matrix) {
 function taskAssignment(k, tasks) {
     const pairedTasks = [];
     // Convert reverses the key and values of the tasks, so you would have time->mapping to the task id.
-    
+
     // console.log(sortedTasks);I dont really get why it then becomes htat the a is smaller, so it means that when is false, then is good?
 
     // Sort the tasks based on te larger to smaller
@@ -1614,14 +1614,12 @@ function taskAssignment(k, tasks) {
     const sortedTasks = [...tasks].sort((a, b) => a - b);
     for (let idx = 0; idx < k; idx++) {
         const task1Duration = sortedTasks[idx];
-        const indicesWithTask1Duration = taskDurationToIndices[task1Duration];
-        const task1Index = indicesWithTask1Duration.pop();
+        const task1Index = taskDurationToIndices[task1Duration].pop();
 
-        const task2SortedIndex = tasks.length - 1 - idx;
-        const task2Duration = sortedTasks[task2SortedIndex];
-        const indicesWithTask2Duration = taskDurationToIndices[task2Duration];
-        const task2Index = indicesWithTask2Duration.pop();
-
+        const task2DurationIndex = task.length - 1 - idx;
+        const task2Duration = sortedTasks[task2DurationIndex];
+        const task2Index = taskDurationToIndices[task2Duration].pop();
+        
         pairedTasks.push([task1Index, task2Index]);
 
     }
