@@ -1538,18 +1538,19 @@ function convertNegatives(matrix) {
     // while currentqueue length > 0: get the currentPassqueue row na col and then get the adjacent positions for thus current row and cols on the matrix.
     // For each position of adjacent poisitions const row, col in position valu of the matrixand then if the value is larger than 0 matrix, *=-1 nextpassqueue push that item.
 
+
+    // Why sending the passess? Ifi it increases everytime that the nextPassQueues increases, which is what I assume to be just the index, so if you get all positive positions that n your okok so thats the all the negative, but do., lreight so it checks if there is a negative for each one that he can convert into positive
     while (nextPassQueue.length > 0) {
         const currentPassQueue = nextPassQueue;
         nextPassQueue = [];
 
         while (currentPassQueue.length > 0) {
 
-            const [currentRow, currentCol] = currentPassQueue.shift();
+            const[currentRow, currentCol] = currentPassQueue.shift;
             const adjacentPositions = getAdjancentPositions(currentRow, currentCol, matrix);
             for (const position of adjacentPositions) {
                 const [row, col] = position;
-                const value = matrix[row][col];
-                if (value < 0) {
+                if (matrix[row][col] < 0) {
                     matrix[row][col] *= -1;
                     nextPassQueue.push([row, col]);
                 }
