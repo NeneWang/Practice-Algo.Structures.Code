@@ -1027,19 +1027,19 @@ function cycleInGraph(edges) {
     return false;
 }
 
-function isNodeInCycle(node, edges, visited, isInStack) {
+function isNodeInCycle(node, edges, visited, currentlyInStack) {
     visited[node] = true;
-    isInStack[node] = true;
+    currentlyInStack[node] = true;
 
-    for (const edge in edges[node]) {
+    for (const edge of edges[node]) {
         if (!visited[edge]) {
-            const inCircle = isNodeInCycle(edge, edges, visited, isInStack);
+            const inCircle = isNodeInCycle(edge, edges, visited, currentlyInStack);
             if (inCircle) return true;
-        } else if (isInStack[edge]) {
+        } else if (currentlyInStack[edge]) {
             return true;
         }
     }
 
-    isInStack[node] = false;
+    currentlyInStack[node] = false;
     return false;
 }
