@@ -1546,7 +1546,7 @@ function convertNegatives(matrix) {
 
         while (currentPassQueue.length > 0) {
 
-            const[currentRow, currentCol] = currentPassQueue.shift();
+            const [currentRow, currentCol] = currentPassQueue.shift();
             const adjacentPositions = getAdjancentPositions(currentRow, currentCol, matrix);
             for (const position of adjacentPositions) {
                 const [row, col] = position;
@@ -1591,4 +1591,33 @@ function containsNegative(matrix) {
     }
 
     return false;
+}
+
+// Function of the Task Assigment
+
+function taskAssigment(k, tasks) {
+    const pairedTasks = [];
+    // Convert reverses the key and values of the tasks, so you would have time->mapping to the task id.
+    const getTaskDurationToIndices = getTaskDurationToIndices(tasks);
+
+    // Sort the tasks based on te larger to smaller
+    // For each starting from larger you get the idx less than the amoun of tasks (for each worker)
+    // the task  duration = sorted tasks indices with task durations by the indexes and then you get the first index equals the indices of the task duration 1 popping while on the other one youget the task lenght -1 -idx and get the duration starting from the half and duration being tae tasks (the last two,half and then get the task durtation to indeces and then ,  we push this tasks)
+
+
+
+}
+
+function getTaskDurationToIndices(tasks) {
+    const taskDurationToIndices = {};
+
+    for (let idx = 0; idx < tasks.length; idx++) {
+        const taskDuration = tasks[idx];
+        if (taskDuration in taskDurationToIndices) {
+            taskDurationToIndices[taskDuration].push(idx);
+        } else {
+            taskDurationToIndices[taskDuration] = [idx];
+        }
+    }
+    return taskDurationToIndices;
 }
