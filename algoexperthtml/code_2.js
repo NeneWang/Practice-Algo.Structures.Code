@@ -1043,3 +1043,78 @@ function isNodeInCycle(node, edges, visited, currentlyInStack) {
     currentlyInStack[node] = false;
     return false;
 }
+
+
+// __________________ Minimum Passess of the Matrix ______________________________
+
+function minimumPassesOfMatrix(matrix) {
+
+    // define passes as the convertion of negatives, if there is not containing negative then show passes other wise return -1;
+    const passess = convertNegatives(matrix);
+    return !containsNegative(matrix) ? passess - 1 : -1;
+}
+
+function convertNegatives(matrix) {
+    let nextPassQueue = getAllPostivePositions(matrix);
+    let passes = 0;
+
+    // while currentqueue length > 0: get the currentPassqueue row na col and then get the adjacent positions for thus current row and cols on the matrix.
+    // For each position of adjacent poisitions const row, col in position valu of the matrixand then if the value is larger than 0 matrix, *=-1 nextpassqueue push that item.
+
+    while (nextPassQueue.length > 0) {
+        const currentQueue = nextPassQueue;
+        nextPassQueue = [];
+
+        while (currentQueue.length > 0) {
+            const [currentRow, currentCol] = currentQueue.shift();
+            const adjacentNodes = getAdjancentPositions(currentRow, currentCol, matrix);
+            for (const adjacentNode of adjacentNodes) {
+                const [row, col] = adjacentNode;
+                if (matrix[row][col] < 0) {
+                    matrix[row][col] *= -1;
+                    nextPassQueue.push(matrix[row][col]);
+                }
+            }
+
+        }
+
+        passes++;
+
+    }
+    return passes;
+}
+
+function getAllPostivePositions(matrix) {
+    const positivePositions = [];
+
+    for (let row = 0; row < matrix.length; row++) {
+        for (let col = 0; col < matrix[row].length; col++) {
+            const value = matrix[row][col];
+            if (value > 0) positivePositions.push([row, col]);
+        }
+    }
+    return positivePositions;
+}
+
+function getAdjancentPositions(row, col, matrix) {
+    const adjacentPositions = [];
+    if (row > 0) adjacentPositions.push([row - 1, col]);
+    if (row < matrix.length - 1) adjacentPositions.push([row + 1, col]);
+    if (col > 0) adjacentPositions.push([row, col - 1]);
+    if (col < matrix[0].length - 1) adjacentPositions.push([row, col + 1]);
+
+    return adjacentPositions;
+}
+
+function containsNegative(matrix) {
+    for (const row of matrix) {
+        for (const value of row) {
+            if (value < 0) return true;
+        }
+    }
+
+    return false;
+}
+
+// Do not edit the line below.
+exports.minimumPassesOfMatrix = minimumPassesOfMatrix;

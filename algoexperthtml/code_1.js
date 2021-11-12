@@ -1546,7 +1546,7 @@ function convertNegatives(matrix) {
 
         while (currentPassQueue.length > 0) {
 
-            const[currentRow, currentCol] = currentPassQueue.shift;
+            const[currentRow, currentCol] = currentPassQueue.shift();
             const adjacentPositions = getAdjancentPositions(currentRow, currentCol, matrix);
             for (const position of adjacentPositions) {
                 const [row, col] = position;
