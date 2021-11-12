@@ -1508,13 +1508,11 @@ function isNodeInCycle(node, edges, visited, currentlyInStack) {
     visited[node] = true;
     currentlyInStack[node] = true;
 
-    const neighbors = edges[node];
-    for (const neightbor of neighbors) {
-        if (!visited[neightbor]) {
-            const containsCycle = isNodeInCycle(neightbor, edges, visited, currentlyInStack);
-            if(containsCycle) return true;
-        } else if (currentlyInStack[neightbor]) {
-            // if hadn't been visited then that means that there is a cycle
+    for(const edge of edges[node]){
+        if(!visited[edge]){
+            const inCircle = isNodeInCycle(edge, edges, visited, currentlyInStack)
+            if (inCircle) return true;
+        }else if(currentlyInStack[edge]){
             return true;
         }
     }
