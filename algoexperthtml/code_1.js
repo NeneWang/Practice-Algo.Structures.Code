@@ -1508,15 +1508,60 @@ function isNodeInCycle(node, edges, visited, currentlyInStack) {
     visited[node] = true;
     currentlyInStack[node] = true;
 
-    for(const edge of edges[node]){
-        if(!visited[edge]){
+    for (const edge of edges[node]) {
+        if (!visited[edge]) {
             const inCircle = isNodeInCycle(edge, edges, visited, currentlyInStack)
             if (inCircle) return true;
-        }else if(currentlyInStack[edge]){
+        } else if (currentlyInStack[edge]) {
             return true;
         }
     }
 
     currentlyInStack[node] = false;
     return false;
+}
+
+
+// ------------------ Minimum Passes Matrix ----------------
+
+function minimumPassesOfMatrix(matrix) {
+
+    // define passes as the convertion of negatives, if there is not containing negative then show passes other wise return -1;
+    const passess = convertNegatives(matrix);
+    return !containsNegative(matrix) ? passess - 1 : -1;
+}
+
+function convertNegatives(matrix) {
+    let nextPassQueue = getAllPostivePositions(matrix);
+    let passes = 0;
+
+    // while currentqueue length > 0: get the currentPassqueue row na col and then get the adjacent positions for thus current row and cols on the matrix.
+    // For each position of adjacent poisitions const row, col in position valu of the matrixand then if the value is larger than 0 matrix, *=-1 nextpassqueue push that item.
+
+    while (currentPassQueue.length > 0) {
+        const [currentRow, currentCol] = currentPassQueue.shift();
+        for (const position of getAdjancentPositions) {
+            const [row, col] = position;
+            const value = matrix[row][col];
+            if (value < 0) {
+                matrix[row][col] *= -1;
+                nextPassQueue.push([row, col]);
+            }
+        }
+    }
+    passes++;
+
+
+}
+
+function getAllPostivePositions(matrix) {
+
+}
+
+function getAdjancentPositions(row, col, matrix) {
+
+}
+
+function containsNegative(matrix) {
+
 }
