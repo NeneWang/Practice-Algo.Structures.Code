@@ -1598,9 +1598,7 @@ function containsNegative(matrix) {
 function taskAssignment(k, tasks) {
     const pairedTasks = [];
     // Convert reverses the key and values of the tasks, so you would have time->mapping to the task id.
-    const taskDurationToIndices = getTaskDurationToIndices(tasks);
-
-    const sortedTasks = [...tasks].sort((a, b) => a - b);
+    
     // console.log(sortedTasks);I dont really get why it then becomes htat the a is smaller, so it means that when is false, then is good?
 
     // Sort the tasks based on te larger to smaller
@@ -1611,6 +1609,9 @@ function taskAssignment(k, tasks) {
     // While the taskDurationToIndices getting based on the duration woul return the indices. and get the first one and pop them to pair with the speeds. and then
 
     // the task sorted would always grab the lenght-1
+    const taskDurationToIndices = getTaskDurationToIndices(tasks);
+
+    const sortedTasks = [...tasks].sort((a, b) => a - b);
     for (let idx = 0; idx < k; idx++) {
         const task1Duration = sortedTasks[idx];
         const indicesWithTask1Duration = taskDurationToIndices[task1Duration];
