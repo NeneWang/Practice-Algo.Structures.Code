@@ -1008,3 +1008,38 @@ function backtrackAncestralTree(lowerDescendant, higherDescendant, diff) {
     }
     return lowerDescendant;
 }
+
+
+function cycleInGraph(edges) {
+    // Write your code here.
+    const numberNodes = edges.length;
+    const isInStack = Array(numberNodes).fill(false);
+    const visited = Array(numberNodes).fill(false);
+
+    for (let nodeNumber = 0; nodeNumber < numberNodes; nodeNumber++) {
+        if (visited[nodeNumber]) continue;
+
+        const isInCircle = isNodeInCycle(nodeNumber, edges, visited, isInStack);
+        if (isInCircle) return true;
+    }
+
+
+    return false;
+}
+
+function isNodeInCycle(node, edges, visited, isInStack) {
+    visited[node] = true;
+    isInStack[node] = true;
+
+    for (const edge in edges[node]) {
+        if (!visited[edge]) {
+            const inCircle = isNodeInCycle(edge, edges, visited, isInStack);
+            if (inCircle) return true;
+        } else if (isInStack[edge]) {
+            return true;
+        }
+    }
+
+    isInStack[node] = false;
+    return false;
+}
