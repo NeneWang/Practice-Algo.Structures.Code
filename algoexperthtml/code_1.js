@@ -1538,30 +1538,56 @@ function convertNegatives(matrix) {
     // while currentqueue length > 0: get the currentPassqueue row na col and then get the adjacent positions for thus current row and cols on the matrix.
     // For each position of adjacent poisitions const row, col in position valu of the matrixand then if the value is larger than 0 matrix, *=-1 nextpassqueue push that item.
 
-    while (currentPassQueue.length > 0) {
-        const [currentRow, currentCol] = currentPassQueue.shift();
-        for (const position of getAdjancentPositions) {
-            const [row, col] = position;
-            const value = matrix[row][col];
-            if (value < 0) {
-                matrix[row][col] *= -1;
-                nextPassQueue.push([row, col]);
+    while (nextPassQueue.length > 0) {
+        const currentPassQueue = nextPassQueue;
+        nextPassQueue = [];
+
+        while (currentPassQueue.length > 0) {
+
+            const [currentRow, currentCol] = currentPassQueue.shift();
+            const adjacentPositions = getAdjancentPositions(currentRow, currentCol, matrix);
+            for (const position of adjacentPositions) {
+                const [row, col] = position;
+                const value = matrix[row][col];
+                if (value < 0) {
+                    matrix[row][col] *= -1;
+                    nextPassQueue.push([row, col]);
+                }
             }
         }
+        passes++;
     }
-    passes++;
-
-
+    return passes;
 }
 
 function getAllPostivePositions(matrix) {
+    const positivePositions = [];
 
+    for (let row = 0; row < matrix.length; row++) {
+        for (let col = 0; col < matrix[row].length; col++) {
+            const value = matrix[row][col];
+            if (value > 0) positivePositions.push([row, col]);
+        }
+    }
+    return positivePositions;
 }
 
 function getAdjancentPositions(row, col, matrix) {
+    const adjacentPositions = [];
+    if (row > 0) adjacentPositions.push([row - 1, col]);
+    if (row < matrix.length - 1) adjacentPositions.push([row + 1, col]);
+    if (col > 0) adjacentPositions.push([row, col - 1]);
+    if (col < matrix[0].length - 1) adjacentPositions.push([row, col + 1]);
 
+    return adjacentPositions;
 }
 
 function containsNegative(matrix) {
+    for (const row of matrix) {
+        for (const value of row) {
+            if (value < 0) return true;
+        }
+    }
 
+    return false;
 }
