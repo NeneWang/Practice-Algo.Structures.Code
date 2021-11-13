@@ -1981,9 +1981,7 @@ function permutationHelper(array, currentPermutation, permutations) {
             // Why the slice thought? if its based on the array lenght, and concatinging to the array based on i and + 1, which is removing one of thme of I get it, so the array slice tets covere each time
             const newArray = array.slice(0, i).concat(array.slice(i + 1))
             const newPermutation = currentPermutation.concat(array[i]);
-            permutationHelper(newArray, newPermutation, permutations)
-
-
+            permutationHelper(newArray, newPermutation, permutations);
         }
     }
 }
