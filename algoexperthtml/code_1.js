@@ -1640,9 +1640,22 @@ function validStartingCity(distances, fuel, mpg) {
     let indexOfStartingCityCandidate = 0;
     let milesRemainingStartingCityCandidate = 0;
 
+
+    // This is the validation, but how do I get the index of the starting city candidate? but we know but don't we cahnge the index of starting city candidate?
+    //  So ideallly we can design an algorithm more efficient O(n)
+    
+    // We know that there will always be a valid city.If we keep at each iteration, and starts with 0 miles, at the gallon of gas, when we get to the city based on the amount of gas substracted from the the first
+// Based on the amountoof gas from the previous city and based on the city travel, on the amount of miles remaining. 
     for (let cityIdx = 1; cityIdx < numberOfCities; cityIdx++) {
-        const distancesFromPreviousCity = distances[cityIdx - 1];
-        const fuelFromPreviousCity = fuel[cityIdx - 1];
+        // How does this work though? The index of the distances, the cities, at the that corresponds them, cities are 5 miles away, and the circular road again, collected at it.
+        // A gallon of gas, that it allows to get city on the array, the distance to get to the first city. The last city to agains
+
+        // Be able to travel to this city all the itself such that we can start there and fill withouth much trouble.  
+        // What is MPG again? the miles per gallon that you can perform.
+
+        // Whenever in the math and the problem, what we saw, that we get the negative at the cities. NEgative 5, bringing us, to 5 and negative 5 and negative 10 and 20. We get one gas, and fifteen, then from city 
+        // We travel and get 15, The minimum will always be the one with minimum amount remaniuning.
+        const distancesFromPreviousCity = 
         milesRemaining += fuelFromPreviousCity * mpg - distancesFromPreviousCity;
 
         if (milesRemaining < milesRemainingStartingCityCandidate) {
