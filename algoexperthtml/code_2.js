@@ -1209,25 +1209,25 @@ class MinHeap {
     siftDown(currentIdx, endIdx, heap) {
         let childOneIdx = currentIdx * 2 + 1;
         while (childOneIdx <= endIdx) {
-            // Get two
-            const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
-            let idxSwap;
+            let childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
+            let swapIdx;
 
-            // Check index switching target depending on which is smaller
             if (childTwoIdx != -1 && heap[childTwoIdx] < heap[childOneIdx]) {
-                idxSwap = childTwoIdx;
+                swapIdx = childTwoIdx;
             } else {
-                idxSwap = childOneIdx;
+                swapIdx = childOneIdx;
             }
 
-            // Swap if the heap idx to swap is less than the current indx
-            if (heap[idxSwap] < heap[currentIdx]) {
-                this.swap(currentIdx, idxSwap, heap);
-                currentIdx = idxSwap;
+            if (heap[swapIdx] < heap[currentIdx]) {
+                this.swap(swapIdx, currentIdx, heap);
+                currentIdx = swapIdx;
                 childOneIdx = currentIdx * 2 + 1;
-            } else {
+                // The children the first children of the current index
+            }else{
                 return;
             }
+
+
         }
     }
 
