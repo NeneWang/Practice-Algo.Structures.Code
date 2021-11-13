@@ -1207,26 +1207,23 @@ class MinHeap {
 
     // Continuously swap down until the position is finished. 
     siftDown(currentIdx, endIdx, heap) {
-
-        // Write your code here.
-
-        // Here you want to calculate the child indexes and where you get the child index using the current Index calculation for the heap
         let childOneIdx = currentIdx * 2 + 1;
         while (childOneIdx <= endIdx) {
-            const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 +2: -1;
-            let idxToSwap;
+            // Get two
+            const childTwoIdx = currentIdx * 2 + 2 >= endIdx ? currentIdx * 2 + 2 : -1;
+            let idxSwap;
 
-            // If the childTwo index is not equal to -1 (unesxistent, because of being smaller than the end index? then the current Index multiplied by 2 +2 will be retuned the children index two (+2) would be the difference to the first childre, other wise returns an -1;
+            // Check index switching target depending on which is smaller
             if (childTwoIdx != -1 && heap[childTwoIdx] < heap[childOneIdx]) {
-                childTwoIdx = childOneIdx;
+                idxSwap = childTwoIdx;
             } else {
-                childOneIdx = childTwoIdx;
+                idxSwap = childOneIdx;
             }
 
-
-            if (heap[idxToSwap] < heap[currentIdx]) {
-                this.swap(idxToSwap, currentIdx, heap);
-                currentIdx = idxToSwap;
+            // Swap if the heap idx to swap is less than the current indx
+            if (heap[idxTwo] < heap[currentIdx]) {
+                this.swap(currentIdx, idxSwap, heap);
+                currentIdx = idxSwap;
                 childOneIdx = currentIdx * 2 + 1;
             } else {
                 return;
