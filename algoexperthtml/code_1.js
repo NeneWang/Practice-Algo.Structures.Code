@@ -1754,12 +1754,12 @@ class MinHeap {
 
 // ______________ LINKED LIST CONSTRUCTION ________________
 
-/class Node {
-constructor(value) {
-    this.value = value;
-    this.prev = null;
-    this.next = null;
-}
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.prev = null;
+        this.next = null;
+    }
 }
 
 // Feel free to add new properties and methods to the class.
@@ -1907,7 +1907,10 @@ function removeKthNodeFromEnd(head, k) {
         counter++;
     }
 
-    if (second === null) {
+    if (second == null) {
+        // My guess is on the case that finds null from the end of the list, that should happen always?
+        // If th case of these cond being null, then you make it the case that the head value is moved by one, probably what this means is that the target is next to the head???
+        // So if thats the case means that you want to remove the first item from the list which would interacti directly with the "head"
         head.value = head.next.value;
         head.next = head.next.next;
         return;
@@ -1918,5 +1921,6 @@ function removeKthNodeFromEnd(head, k) {
         first = first.next;
     }
 
+    // The next of the first is the first next next and thats done. 
     first.next = first.next.next;
 }

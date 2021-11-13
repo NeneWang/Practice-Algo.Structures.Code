@@ -1327,9 +1327,9 @@ class DoublyLinkedList {
         nodeToInsert.prev = node;
         nodeToInsert.next = node.next;
 
-        if(node.next == null){
+        if (node.next == null) {
             this.tail = nodeToInsert;
-        }else{
+        } else {
             node.next.prev = nodeToInsert;
         }
         node.next = nodeToInsert;
@@ -1379,7 +1379,7 @@ class DoublyLinkedList {
 
     containsNodeWithValue(value) {
         let node = this.head;
-        while(node!==null &&  node.value !== value)  value = node.next;
+        while (node !== null && node.value !== value) value = node.next;
         return node !== null;
     }
 
@@ -1391,3 +1391,41 @@ class DoublyLinkedList {
         node.next = null;
     }
 }
+
+// This is an input class. Do not edit.
+class LinkedList {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+function removeKthNodeFromEnd(head, k) {
+    let counter = 1;
+    let first = head;
+    let second = head;
+    // Move the second ahed
+    while (counter <= k) {
+        second = second.next;
+        counter++;
+    }
+
+    // Now if the case where it is already null
+    if (second.value == null) {
+        head.value = head.next.value;
+        head.next = head.next.next;
+    }
+
+    // Now move them all together
+    while (second.value !== null) {
+        second = second.next;
+        first = first.next;
+    }
+
+    first.next = first.next.next;
+}
+
+
+// Do not edit the lines below.
+exports.LinkedList = LinkedList;
+exports.removeKthNodeFromEnd = removeKthNodeFromEnd;
