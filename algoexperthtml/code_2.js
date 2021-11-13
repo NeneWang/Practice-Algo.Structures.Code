@@ -1487,3 +1487,7 @@ function swap(i, j, array) {
     array[i] = array[j];
     array[j] = temp;
 }
+
+function powerset(array){
+    
+}

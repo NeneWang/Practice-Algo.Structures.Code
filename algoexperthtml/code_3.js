@@ -588,3 +588,27 @@ function backTrackAncestor(lowerNode, HigherNode, diff) {
     return lowerNode;
 
 }
+
+
+function powerset(array, idx = null) {
+    if (idx === null) {
+        idx = array.length - 1;
+    }
+
+    if (idx < 0) {
+        return [
+            []
+        ];
+    }
+
+    const ele = array[idx];
+    const subsets = powerset(array, idx - 1);
+    const length = subsets.length;
+    for (let i = 0; i < length; i++) {
+        const currentSet = array[i];
+        subsets.push(currentSet.concat(ele));
+    }
+
+    return subsets;
+
+}
