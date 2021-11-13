@@ -1963,3 +1963,23 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
 
     return newLinkedListHeadPointer.next;
 }
+
+
+
+function getPermutations(array) {
+    const permutation = [];
+    permutationHelper(array, [], permutation);
+    return permutation;
+}
+
+function permutationHelper(array, currentPermutation, permutations) {
+    if (!array.length && currentPermutation.length) {
+        permutations.push(currentPermutation);
+    } else {
+        for (let i = 0; i < array.length; i++) {
+            const newArray = array.slice(0, i).concat(array.slice(i + 1));
+            const newPermutation = currentPermutation.concat(array.slice(i + 1));
+            permutationHelper(newArray, newPermutation, permutations);
+        }
+    }
+}
