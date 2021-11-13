@@ -1985,3 +1985,34 @@ function permutationHelper(array, currentPermutation, permutations) {
         }
     }
 }
+
+
+function powerset(array, idx = null) {
+    if (idx === null) {
+        idx = array.length - 1;
+    }
+
+    if (idx < 0) {
+        return [
+            []
+        ];
+    }
+
+    // element is equal to the index.
+    const ele = array[idx];
+
+    // Subsets is eqaul to the powerset (array, index-1) which means that the array inde will each be one time less, startinf from null.
+    const subsets = powerset(array, idx - 1);
+
+    // lenghts is the subsets lenghts
+    const length = subsets.length;
+    for (let i = 0; i < length; i++) {
+
+        // being hte currentSubset the subset i, and checking each subset adding the first element, 
+        const currentSubset = subsets[i];
+        subsets.push(currentSubset.concat(ele));
+    }
+
+    return subsets;
+
+}
