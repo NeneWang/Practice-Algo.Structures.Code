@@ -1455,7 +1455,7 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
         currentNode = newLinkedValue;
 
         // Carry and getting the following nodes.
-        carry = Math.floor(sum / 10);
+        carry = Math.floor(sumValues / 10);
         nodeOne = nodeOne == null ? null : nodeOne.next;
         nodeTwo = nodeTwo == null ? null : nodeTwo.next;
 
