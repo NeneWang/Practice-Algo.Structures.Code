@@ -1322,15 +1322,14 @@ class DoublyLinkedList {
     }
 
     insertAfter(node, nodeToInsert) {
-        // Write your code here.
         if (nodeToInsert === this.head && nodeToInsert === this.tail) return;
         this.remove(nodeToInsert);
         nodeToInsert.prev = node;
         nodeToInsert.next = node.next;
 
-        if (node.next === null) {
+        if(node.next == null){
             this.tail = nodeToInsert;
-        } else {
+        }else{
             node.next.prev = nodeToInsert;
         }
         node.next = nodeToInsert;
