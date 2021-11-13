@@ -1948,14 +1948,13 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
         const valueOne = nodeOne !== null ? nodeOne.value : 0;
         const valueTwo = nodeTwo !== null ? nodeTwo.value : 0;
 
-        // Add the values. 
+        // Add the values.  and getting the newValue = getting the new nodes, and also the next is also the next and the current = newNode why the current and next are all newNode??? oh so it targets the node and as next? and then have it change every following? Like pushing
         const sumOfValues = valueOne + valueTwo + carry;
-
-        const newValue = sumOfValues % 10;
-        const newNode = new LinkedList(newValue);
+        const newNode = new LinkedList(sumOfValues % 10);
         currentNode.next = newNode;
         currentNode = newNode;
 
+        // Carry and getting the following nodes.
         carry = Math.floor(sumOfValues / 10);
         nodeOne = nodeOne !== null ? nodeOne.next : null;
         nodeTwo = nodeTwo !== null ? nodeTwo.next : null;

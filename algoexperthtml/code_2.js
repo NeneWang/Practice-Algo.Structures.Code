@@ -1425,7 +1425,40 @@ function removeKthNodeFromEnd(head, k) {
     first.next = first.next.next;
 }
 
-
-// Do not edit the lines below.
-exports.LinkedList = LinkedList;
-exports.removeKthNodeFromEnd = removeKthNodeFromEnd;
+// This is an input class. Do not edit.
+class LinkedList {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+  }
+  
+  function sumOfLinkedLists(linkedListOne, linkedListTwo) {
+      const newLinkedListHeadPointer = new LinkedList(0);
+      let currentNode = newLinkedListHeadPointer;
+      let carry = 0;
+  
+      let nodeOne = linkedListOne;
+      let nodeTwo = linkedListTwo;
+  
+      while (nodeOne != null || nodeTwo !== null || carry !== 0) {
+  
+          // Value One equals nodeOne !== null then  return nodeOne.value and otherwise if null then Add a 0
+          const valueOne = nodeOne !== null ? nodeOne.value : 0;
+          const valueTwo = nodeTwo !== null ? nodeTwo.value : 0;
+  
+          // Add the values. 
+         const sumOfValues = valueOne + valueTwo + carry;
+          const newNode = new LinkedList(sumOfValues % 10);
+          currentNode.next = newNode;
+          currentNode = newNode;
+  
+          carry = Math.floor(sumOfValues / 10);
+          nodeOne = nodeOne !== null ? nodeOne.next : null;
+          nodeTwo = nodeTwo !== null ? nodeTwo.next : null;
+  
+      }
+  
+      return newLinkedListHeadPointer.next;
+  }
+  
