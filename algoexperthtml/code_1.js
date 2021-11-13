@@ -1813,7 +1813,7 @@ class DoublyLinkedList {
         if (node.next === null) {
             this.tail = nodeToInsert;
         } else {
-            this.next.prev = nodeToInsert;
+            node.next.prev = nodeToInsert;
         }
         node.next = nodeToInsert;
     }
