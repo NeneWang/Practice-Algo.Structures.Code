@@ -1379,7 +1379,7 @@ class DoublyLinkedList {
 
     containsNodeWithValue(value) {
         let node = this.head;
-        while (node !== null && node.value !== value) node = node.next;
+        while(node!==null &&  node.value !== value)  value = node.next;
         return node !== null;
     }
 
@@ -1391,7 +1391,3 @@ class DoublyLinkedList {
         node.next = null;
     }
 }
-
-// Do not edit the lines below.
-exports.Node = Node;
-exports.DoublyLinkedList = DoublyLinkedList;
