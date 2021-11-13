@@ -1978,7 +1978,7 @@ function permutationHelper(array, currentPermutation, permutations) {
     } else {
         for (let i = 0; i < array.length; i++) {
             const newArray = array.slice(0, i).concat(array.slice(i + 1));
-            const newPermutation = currentPermutation.concat(array.slice(i + 1));
+            const newPermutation = currentPermutation.concat(array[i]);
             permutationHelper(newArray, newPermutation, permutations);
         }
     }
