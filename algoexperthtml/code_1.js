@@ -1755,11 +1755,11 @@ class MinHeap {
 // ______________ LINKED LIST CONSTRUCTION ________________
 
 /class Node {
-    constructor(value) {
-        this.value = value;
-        this.prev = null;
-        this.next = null;
-    }
+constructor(value) {
+    this.value = value;
+    this.prev = null;
+    this.next = null;
+}
 }
 
 // Feel free to add new properties and methods to the class.
@@ -1847,7 +1847,7 @@ class DoublyLinkedList {
         while (node !== null) {
             {
                 const nodeToRemove = node;
-							node =node.next
+                node = node.next
                 if (nodeToRemove.value == value) this.remove(nodeToRemove);
             }
         }
@@ -1867,11 +1867,56 @@ class DoublyLinkedList {
     }
 
     removeNodeBindings(node) {
-        if(node.prev !== null) node.prev.next = node.next;
-        if(node.next !== null) node.next.prev = node.prev;
+        if (node.prev !== null) node.prev.next = node.next;
+        if (node.next !== null) node.next.prev = node.prev;
 
         node.prev = null;
         node.next = null;
     }
 }
 
+
+// This is an input class. Do not edit.
+class LinkedList {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+// What we want to do is to point the first one with the pointer of the value we want and the second one.
+// Keep the node at the beginning and the head node. The linked list and how it ends at three. 
+
+
+// This is an input class. Do not edit.
+class LinkedList {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+function removeKthNodeFromEnd(head, k) {
+    let counter = 1;
+    let first = head;
+    let second = head;
+
+    // While the counter of the item is less than k, the second is the next to the second.
+    while (counter <= k) {
+        second = second.next;
+        counter++;
+    }
+
+    if (second === null) {
+        head.value = head.next.value;
+        head.next = head.next.next;
+        return;
+    }
+
+    while (second.next !== null) {
+        second = second.next;
+        first = first.next;
+    }
+
+    first.next = first.next.next;
+}
