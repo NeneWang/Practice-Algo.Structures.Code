@@ -1754,8 +1754,7 @@ class MinHeap {
 
 // ______________ LINKED LIST CONSTRUCTION ________________
 
-// This is an input class. Do not edit.
-class Node {
+/class Node {
     constructor(value) {
         this.value = value;
         this.prev = null;
@@ -1793,7 +1792,7 @@ class DoublyLinkedList {
         if (nodeToInsert === this.head && nodeToInsert === this.tail) return;
         this.remove(nodeToInsert);
         nodeToInsert.prev = node.prev;
-        nodeToStart.next = node;
+        nodeToInsert.next = node;
 
         if (node.prev === null) {
             this.head = nodeToInsert;
@@ -1822,7 +1821,7 @@ class DoublyLinkedList {
     insertAtPosition(position, nodeToInsert) {
 
         // IF the position is one then just assume you want to insert ot the head
-        if (postition === 1) {
+        if (position === 1) {
             this.setHead(nodeToInsert);
             return;
         }
@@ -1848,6 +1847,7 @@ class DoublyLinkedList {
         while (node !== null) {
             {
                 const nodeToRemove = node;
+							node =node.next
                 if (nodeToRemove.value == value) this.remove(nodeToRemove);
             }
         }
@@ -1875,6 +1875,3 @@ class DoublyLinkedList {
     }
 }
 
-// Do not edit the lines below.
-exports.Node = Node;
-exports.DoublyLinkedList = DoublyLinkedList;
