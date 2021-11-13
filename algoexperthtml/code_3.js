@@ -612,3 +612,42 @@ function powerset(array, idx = null) {
     return subsets;
 
 }
+
+
+
+function phoneNumberMnemonics(phoneNumber) {
+
+    // Start initializing throught the array lenght filling to 0. I don't get why the of so its the longitude of the phone number...
+    const currentMnemonic = new Array(phoneNumber.length).fill('0');
+    const mnemonicsFound = [];
+    phoneNumberMnemonicsHelper(0, phoneNumber, currentMnemonic, mnemonicsFound);
+    return mnemonicsFound;
+}
+
+function phoneNumberMnemonicsHelper(idx, phoneNumber, currentMnemonic, mnemonicsFound) {
+
+    if (idx == phoneNumber.length) {
+        mnemonicsFound.push(currentMnemonic.join(''));
+    } else {
+        const letters = DIGIT_LETTERS[phoneNumber[idx]];
+        for (const letter of letters) {
+            currentMnemonic[idx] = letter;
+            phoneNumberMnemonicsHelper(idx + 1, phoneNumber, currentMnemonic, mnemonicsFound)
+        }
+    }
+
+}
+
+const DIGIT_LETTERS = {
+    0: ['0'],
+    1: ['1'],
+    2: ['a', 'b', 'c'],
+    3: ['d', 'e', 'f'],
+    4: ['g', 'h', 'i'],
+    5: ['j', 'k', 'l'],
+    6: ['m', 'n', 'o'],
+    7: ['p', 'q', 'r', 's'],
+    8: ['t', 'u', 'v'],
+    9: ['w', 'x', 'y', 'z']
+
+}
