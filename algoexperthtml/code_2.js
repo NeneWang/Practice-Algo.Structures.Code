@@ -1210,7 +1210,7 @@ class MinHeap {
         let childOneIdx = currentIdx * 2 + 1;
         while (childOneIdx <= endIdx) {
             // Get two
-            const childTwoIdx = currentIdx * 2 + 2 >= endIdx ? currentIdx * 2 + 2 : -1;
+            const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
             let idxSwap;
 
             // Check index switching target depending on which is smaller
@@ -1221,7 +1221,7 @@ class MinHeap {
             }
 
             // Swap if the heap idx to swap is less than the current indx
-            if (heap[idxTwo] < heap[currentIdx]) {
+            if (heap[idxSwap] < heap[currentIdx]) {
                 this.swap(currentIdx, idxSwap, heap);
                 currentIdx = idxSwap;
                 childOneIdx = currentIdx * 2 + 1;
