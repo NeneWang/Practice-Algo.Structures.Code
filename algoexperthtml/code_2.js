@@ -1181,7 +1181,7 @@ function validStartingCity(distances, fuel, mpg) {
 
         milesRemaining += fuelFromPreviousCity * mpg - distanceFromPreviousCity;
         if (milesRemaining < milesRemainingStartingCityCandidate) {
-            milesRemainingStartingCityCandidate =  milesRemaining
+            milesRemainingStartingCityCandidate = milesRemaining
             // Yeah because the indexes are starting from 0 and the city from 1.
             indexOfStartingCityCandidate = cityIdx;
         }
@@ -1213,15 +1213,17 @@ class MinHeap {
         // Here you want to calculate the child indexes and where you get the child index using the current Index calculation for the heap
         let childOneIdx = currentIdx * 2 + 1;
         while (childOneIdx <= endIdx) {
-            const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
+            const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 +2: -1;
             let idxToSwap;
 
             // If the childTwo index is not equal to -1 (unesxistent, because of being smaller than the end index? then the current Index multiplied by 2 +2 will be retuned the children index two (+2) would be the difference to the first childre, other wise returns an -1;
-            if (childTwoIdx !== -1 && heap[childTwoIdx] < heap[childOneIdx]) {
-                idxToSwap = childTwoIdx;
+            if (childTwoIdx != -1 && heap[childTwoIdx] < heap[childOneIdx]) {
+                childTwoIdx = childOneIdx;
             } else {
-                idxToSwap = childOneIdx;
+                childOneIdx = childTwoIdx;
             }
+
+
             if (heap[idxToSwap] < heap[currentIdx]) {
                 this.swap(idxToSwap, currentIdx, heap);
                 currentIdx = idxToSwap;
