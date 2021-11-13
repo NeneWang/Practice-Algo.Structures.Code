@@ -1599,7 +1599,6 @@ function taskAssignment(k, tasks) {
     const pairedTasks = [];
     // Convert reverses the key and values of the tasks, so you would have time->mapping to the task id.
     const taskDurationToIndices = getTaskDurationToIndices(tasks);
-
     const sortedTasks = [...tasks].sort((a, b) => a - b);
     for (let idx = 0; idx < k; idx++) {
         const task1Duration = sortedTasks[idx];
@@ -1614,12 +1613,7 @@ function taskAssignment(k, tasks) {
         pairedTasks.push([task1Index, task2Index]);
 
     }
-
     return pairedTasks;
-
-
-
-
 }
 
 function getTaskDurationToIndices(tasks) {
@@ -1634,4 +1628,30 @@ function getTaskDurationToIndices(tasks) {
         }
     }
     return taskDurationToIndices;
+}
+
+
+// Function 
+
+function validStartingCity(distances, fuel, mpg) {
+    const numberOfCities = distances.length;
+    let milesRemaining = 0;
+
+    let indexOfStartingCityCandidate = 0;
+    let milesRemainingStartingCityCandidate = 0;
+
+    // For each city index starting from 1, and the number of cities
+    for (let cityIdx = 1; cityIdx < numberOfCities; cityIdx++) {
+        const distancesFromPreviousCity = distances[cityIdx - 1];
+        const fuelFromPreviousCity = fuel[cityIdx - 1];
+        milesRemaining += fuelFromPreviousCity * mpg - distancesFromPreviousCity;
+
+        if (milesRemaining < milesRemainingStartingCityCandidate) {
+            milesRemainingStartingCityCandidate = milesRemaining;
+            indexOfStartingCityCandidate = cityIdx;
+        }
+    }
+
+    return indexOfStartingCityCandidate;
+
 }
