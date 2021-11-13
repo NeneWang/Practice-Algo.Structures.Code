@@ -1487,3 +1487,46 @@ function swap(i, j, array) {
     array[i] = array[j];
     array[j] = temp;
 }
+
+
+// Phone Number Mnemonics
+
+function phoneNumberMnemonics(phoneNumber) {
+
+    // Start initializing throught the array lenght filling to 0. I don't get why the of so its the longitude of the phone number...
+    const currentMnemonic = new Array(phoneNumber.length).fill('0');
+    const mnemonicsFound = [];
+    phoneNumberMnemonicsHelper(0, phoneNumber, currentMnemonic, mnemonicsFound);
+    return mnemonicsFound;
+}
+
+function phoneNumberMnemonicsHelper(idx, phoneNumber, currentMnemonic, mnemonicsFound) {
+
+    // If the index is the number lenght then thats the base case and you want ot joing hte current mnemonics into a string and opush that into the mnemonics found, other wise the digit is the ohoneNumber of the index
+
+    if (idx === phoneNumber.length) {
+        const mnemonic = currentMnemonic.join('');
+        mnemonicsFound.push(mnemonic);
+    } else {
+        const digit = phoneNumber[idx];
+        const letters = DIGIT_LETTERS[digit];
+        for (let letter of letters) {
+            currentMnemonic[idx] = (letter);
+            phoneNumberMnemonicsHelper(idx + 1, phoneNumber, currentMnemonic, mnemonicsFound);
+        }
+    }
+}
+
+const DIGIT_LETTERS = {
+    0: ['0'],
+    1: ['1'],
+    2: ['a', 'b', 'c'],
+    3: ['d', 'e', 'f'],
+    4: ['g', 'h', 'i'],
+    5: ['j', 'k', 'l'],
+    6: ['m', 'n', 'o'],
+    7: ['p', 'q', 'r', 's'],
+    8: ['t', 'u', 'v'],
+    9: ['w', 'x', 'y', 'z']
+
+}

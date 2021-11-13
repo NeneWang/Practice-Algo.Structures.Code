@@ -2017,6 +2017,8 @@ function powerset(array, idx = null) {
 }
 
 
+// Phone Number Mnemonics
+
 function phoneNumberMnemonics(phoneNumber) {
     const currentMnemonic = new Array(phoneNumber.length).fill('0');
     const mnemonicsFound = [];
