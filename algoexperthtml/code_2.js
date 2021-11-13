@@ -1223,7 +1223,7 @@ class MinHeap {
                 currentIdx = swapIdx;
                 childOneIdx = currentIdx * 2 + 1;
                 // The children the first children of the current index
-            }else{
+            } else {
                 return;
             }
 
@@ -1312,12 +1312,12 @@ class DoublyLinkedList {
         nodeToInsert.prev = node.prev;
         nodeToInsert.next = node;
 
+        // IF the node was actually the head, then make the insert node the head, otherwise, if not hthe head then make the node. previous next to derigite towards nodeToInsert
         if (node.prev === null) {
             this.head = nodeToInsert;
         } else {
             node.prev.next = nodeToInsert;
         }
-
         node.prev = nodeToInsert;
     }
 
@@ -1365,7 +1365,7 @@ class DoublyLinkedList {
         while (node !== null) {
             {
                 const nodeToRemove = node;
-							node =node.next
+                node = node.next
                 if (nodeToRemove.value == value) this.remove(nodeToRemove);
             }
         }
@@ -1385,8 +1385,8 @@ class DoublyLinkedList {
     }
 
     removeNodeBindings(node) {
-        if(node.prev !== null) node.prev.next = node.next;
-        if(node.next !== null) node.next.prev = node.prev;
+        if (node.prev !== null) node.prev.next = node.next;
+        if (node.next !== null) node.next.prev = node.prev;
 
         node.prev = null;
         node.next = null;
