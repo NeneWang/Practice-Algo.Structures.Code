@@ -1142,7 +1142,7 @@ function taskAssignment(k, tasks) {
         const task2DurationIndex = task.length - 1 - idx;
         const task2Duration = sortedTasks[task2DurationIndex];
         const task2Index = taskDurationToIndices[task2Duration].pop();
-        
+
         pairedTasks.push([task1Index, task2Index]);
 
     }
@@ -1165,4 +1165,28 @@ function getTaskDurationToIndices(tasks) {
 }
 
 
-exports.minimumPassesOfMatrix = minimumPassesOfMatrix;
+// Valid City
+
+function validStartingCity(distances, fuel, mpg) {
+    const numberOfCities = distances.length;
+    let milesRemaining = 0;
+
+    let indexOfStartingCityCandidate = 0;
+    let milesRemainingStartingCityCandidate = 0;
+
+    // For each city index starting from 1, and the number of cities
+    for (let cityIdx = 1; cityIdx < numberOfCities; cityIdx++) {
+        const distanceFromPreviousCity = distances[cityIdx - 1];
+        const fuelFromPreviousCity = fuel[cityIdx - 1];
+
+        milesRemaining += fuelFromPreviousCity * mpg - distanceFromPreviousCity;
+        if (milesRemaining < milesRemainingStartingCityCandidate) {
+            milesRemainingStartingCityCandidate =  milesRemaining
+            // Yeah because the indexes are starting from 0 and the city from 1.
+            indexOfStartingCityCandidate = cityIdx;
+        }
+    }
+
+    return indexOfStartingCityCandidate;
+
+}
