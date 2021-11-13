@@ -1795,9 +1795,9 @@ class DoublyLinkedList {
         nodeToInsert.prev = node.prev;
         nodeToStart.next = node;
 
-        if (node.prev === null){
+        if (node.prev === null) {
             this.head = nodeToInsert;
-        }else{
+        } else {
             node.prev.next = nodeToInsert;
         }
 
@@ -1806,22 +1806,72 @@ class DoublyLinkedList {
 
     insertAfter(node, nodeToInsert) {
         // Write your code here.
+        if (nodeToInsert === this.head && nodeToInsert === this.tail) return;
+        this.remove(nodeToInsert);
+        nodeToInsert.prev = node;
+        nodeToInsert.next = node.next;
+
+        if (node.next === null) {
+            this.tail = nodeToInsert;
+        } else {
+            this.next.prev = nodeToInsert;
+        }
+        node.next = nodeToInsert;
     }
 
     insertAtPosition(position, nodeToInsert) {
-        // Write your code here.
+
+        // IF the position is one then just assume you want to insert ot the head
+        if (postition === 1) {
+            this.setHead(nodeToInsert);
+            return;
+        }
+        let node = this.head;
+        let currentPosition = 1;
+        // Ass the current Possition ++ not equal to the position, then the node is the next node
+        while (node !== null && currentPosition++ !== position) node = node.next;
+
+        // after being on the dedicated node, if it is not null (if contains something) then sinsert before, otherwise, if it is null then set is at the tail.  (I imagine if extends the basics)
+        if (node !== null) {
+            this.insertBefore(node, nodeToInsert);
+        } else {
+            this.setTail(nodeToInsert);
+        }
+
+
     }
 
     removeNodesWithValue(value) {
         // Write your code here.
+
+        let node = this.head;
+        while (node !== null) {
+            {
+                const nodeToRemove = node;
+                if (nodeToRemove.value == value) this.remove(nodeToRemove);
+            }
+        }
     }
 
     remove(node) {
-        // Write your code here.
+        if (node === this.head) this.head = this.head.next;
+        if (node === this.tail) this.tail = this.tail.prev;
+        this.removeNodeBindings(node);
+
     }
 
     containsNodeWithValue(value) {
-        // Write your code here.
+        let node = this.head;
+        while (node !== null && node.value !== value) node = node.next;
+        return node !== null;
+    }
+
+    removeNodeBindings(node) {
+        if(node.prev !== null) node.prev.next = node.next;
+        if(node.next !== null) node.next.prev = node.prev;
+
+        node.prev = null;
+        node.next = null;
     }
 }
 
