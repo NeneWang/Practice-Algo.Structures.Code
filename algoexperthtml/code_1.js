@@ -1702,9 +1702,9 @@ class MinHeap {
                 idxToSwap = childOneIdx;
             }
             if (heap[idxToSwap] < heap[currentIdx]) {
-                this.swap(currentIdx, idxToSwap, heap);
+                this.swap(currentIdx, parentIdx, heap);
                 currentIdx = idxToSwap;
-                childOneIdx = currentIdx * 2 + 1;
+                idxToSwap = currentIdx * 2 + 1;
             } else {
                 return;
             }
