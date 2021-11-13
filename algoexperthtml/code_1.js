@@ -1678,7 +1678,7 @@ class MinHeap {
     buildHeap(array) {
         // Write your code here.
         const firstParentIdx = Math.floor((array.length - 2) / 2);
-        for (let currentIdx; currentIdx >= 0; currentIdx--) {
+        for (let currentIdx = firstParentIdx; currentIdx >= 0; currentIdx--) {
             this.siftDown(currentIdx, array.length - 1, array);
         }
         return array;
