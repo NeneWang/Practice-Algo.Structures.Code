@@ -1531,16 +1531,16 @@ const DIGIT_LETTERS = {
 
 }
 
-function starcaseTraversal(height, maxSteps) {
+function starcaseTraversal (height, maxSteps) {
     return numberOfWaysToTop(height, maxSteps);
 }
 
 function numberOfWaysToTop(height, maxSteps) {
     if (height <= 1) return 1;
-    numberOfWays = 0;
 
-    for (let i = 1; i < Math.min(maxSteps, height); i++) {
-        numberOfWays += numberOfWaysToTop(height - i, maxSteps);
+    let numberOfWays = 0;
+    for (let steps = 1; steps <= Math.min(height, maxSteps); steps++) {
+        numberOfWays += numberOfWaysToTop(height - steps, maxSteps);
     }
 
     return numberOfWays;
