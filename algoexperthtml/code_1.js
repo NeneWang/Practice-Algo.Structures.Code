@@ -1947,8 +1947,8 @@ function sumOfLinkedLists(linkedListOne, linkedListTwo) {
         // Value One equals nodeOne !== null then  return nodeOne.value and otherwise if null then Add a 0
         const valueOne = nodeOne !== null ? nodeOne.value : 0;
         const valueTwo = nodeTwo !== null ? nodeTwo.value : 0;
-        
-        // Add the values.
+
+        // Add the values. 
         const sumOfValues = valueOne + valueTwo + carry;
 
         const newValue = sumOfValues % 10;
