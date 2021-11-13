@@ -1474,10 +1474,10 @@ function permutationHelper(i, array, permutations) {
     if (i === array.length - 1) {
         permutations.push(array.slice());
     } else {
-        for (let j = i; j < array.length; j++){
-            swap(i, j, array);
-            permutationHelper(i+1, array, permutations)
-            swap(i, j, array);
+        for (let j =i; j < array.length; j++) {
+            swap(i, j, array)
+            permutationHelper(i + 1, array, permutations)
+            swap(i, j, array)
         }
     }
 }
