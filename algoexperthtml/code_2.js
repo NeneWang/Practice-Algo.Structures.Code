@@ -1530,3 +1530,18 @@ const DIGIT_LETTERS = {
     9: ['w', 'x', 'y', 'z']
 
 }
+
+function starcaseTraversal(height, maxSteps) {
+    return numberOfWaysToTop(height, maxSteps);
+}
+
+function numberOfWaysToTop(height, maxSteps) {
+    if (height <= 1) return 1;
+    numberOfWays = 0;
+
+    for (let i = 1; i < Math.min(maxSteps, height); i++) {
+        numberOfWays += numberOfWaysToTop(height - i, maxSteps);
+    }
+
+    return numberOfWays;
+}
