@@ -1428,37 +1428,38 @@ function removeKthNodeFromEnd(head, k) {
 // This is an input class. Do not edit.
 class LinkedList {
     constructor(value) {
-      this.value = value;
-      this.next = null;
+        this.value = value;
+        this.next = null;
     }
-  }
-  
-  function sumOfLinkedLists(linkedListOne, linkedListTwo) {
-      const newLinkedListHeadPointer = new LinkedList(0);
-      let currentNode = newLinkedListHeadPointer;
-      let carry = 0;
-  
-      let nodeOne = linkedListOne;
-      let nodeTwo = linkedListTwo;
-  
-      while (nodeOne != null || nodeTwo !== null || carry !== 0) {
-  
-          // Value One equals nodeOne !== null then  return nodeOne.value and otherwise if null then Add a 0
-          const valueOne = nodeOne !== null ? nodeOne.value : 0;
-          const valueTwo = nodeTwo !== null ? nodeTwo.value : 0;
-  
-          // Add the values. 
-         const sumOfValues = valueOne + valueTwo + carry;
-          const newNode = new LinkedList(sumOfValues % 10);
-          currentNode.next = newNode;
-          currentNode = newNode;
-  
-          carry = Math.floor(sumOfValues / 10);
-          nodeOne = nodeOne !== null ? nodeOne.next : null;
-          nodeTwo = nodeTwo !== null ? nodeTwo.next : null;
-  
-      }
-  
-      return newLinkedListHeadPointer.next;
-  }
-  
+}
+
+function sumOfLinkedLists(linkedListOne, linkedListTwo) {
+    const newLinkedListHeadPointer = new LinkedList(0);
+    let currentNode = newLinkedListHeadPointer;
+    let carry = 0;
+
+    let nodeOne = linkedListOne;
+    let nodeTwo = linkedListTwo;
+
+    while (nodeOne != null || nodeTwo !== null || carry !== 0) {
+
+        // Value One equals nodeOne !== null then  return nodeOne.value and otherwise if null then Add a 0
+        const value1 = nodeOne !== null ? nodeOne.value : 0;
+        const value2 = nodeTwo !== null ? nodeTwo.value : 0;
+
+
+        // Add the values.  and getting the newValue = getting the new nodes, and also the next is also the next and the current = newNode why the current and next are all newNode??? oh so it targets the node and as next? and then have it change every following? Like pushing
+        const sumValues = carry + value1 + value2;
+        const newLinkedValue = new LinkedList(sumValues % 10)
+        currentNode.next = newLinkedValue;
+        currentNode = newLinkedValue;
+
+        // Carry and getting the following nodes.
+        carry = Math.floor(sum / 10);
+        nodeOne = nodeOne == null ? null : nodeOne.next;
+        nodeTwo = nodeTwo == null ? null : nodeTwo.next;
+
+    }
+
+    return newLinkedListHeadPointer.next;
+}
