@@ -1190,3 +1190,85 @@ function validStartingCity(distances, fuel, mpg) {
     return indexOfStartingCityCandidate;
 
 }
+
+class MinHeap {
+    constructor(array) {
+        this.heap = this.buildHeap(array);
+    }
+
+    buildHeap(array) {
+        // Write your code here.
+        const firstParentIdx = Math.floor((array.length - 2) / 2);
+        for (let currentIdx = firstParentIdx; currentIdx >= 0; currentIdx--) {
+            this.siftDown(currentIdx, array.length - 1, array);
+        }
+        return array;
+    }
+
+    // Continuously swap down until the position is finished. 
+    siftDown(currentIdx, endIdx, heap) {
+
+        // Write your code here.
+
+        // Here you want to calculate the child indexes and where you get the child index using the current Index calculation for the heap
+        let childOneIdx = currentIdx * 2 + 1;
+        while (childOneIdx <= endIdx) {
+            const childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
+            let idxToSwap;
+
+            // If the childTwo index is not equal to -1 (unesxistent, because of being smaller than the end index? then the current Index multiplied by 2 +2 will be retuned the children index two (+2) would be the difference to the first childre, other wise returns an -1;
+            if (childTwoIdx !== -1 && heap[childTwoIdx] < heap[childOneIdx]) {
+                idxToSwap = childTwoIdx;
+            } else {
+                idxToSwap = childOneIdx;
+            }
+            if (heap[idxToSwap] < heap[currentIdx]) {
+                this.swap(idxToSwap, currentIdx, heap);
+                currentIdx = idxToSwap;
+                childOneIdx = currentIdx * 2 + 1;
+            } else {
+                return;
+            }
+        }
+    }
+
+    // Continuosly swap up until you achieve the orrect position. We swap them. ONce we compare tand the value is sift up,
+
+    siftUp(currentIdx, heap) {
+        // Write your code here.
+
+        // This is how you calculate the parents
+        let parentIdx = Math.floor((currentIdx - 1) / 2);
+
+        while (currentIdx > 0 && heap[currentIdx] < heap[parentIdx]) {
+            this.swap(currentIdx, parentIdx, heap);
+            currentIdx = parentIdx;
+            // And now the parent Index recalculated based on this current Index(I assume to check if the next one requires moving also.)
+            parentIdx = Math.floor((currentIdx - 1) / 2);
+        }
+    }
+
+    peek() {
+        return this.heap[0];
+    }
+
+    remove() {
+        this.swap(0, this.heap.length - 1, this.heap);
+        const valueToRemove = this.heap.pop();
+
+        this.siftDown(0, this.heap.length - 1, this.heap)
+        return valueToRemove;
+    }
+
+    insert(value) {
+        this.heap.push(value);
+        this.siftUp(this.heap.length - 1, this.heap)
+
+    }
+
+    swap(i, j, heap) {
+        const temp = heap[j];
+        heap[j] = heap[i];
+        heap[i] = temp;
+    }
+}
