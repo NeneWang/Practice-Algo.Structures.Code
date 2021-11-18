@@ -1545,7 +1545,26 @@ function numberOfWaysToTop(height, maxSteps, memoize) {
     for (let steps = 1; steps <= Math.min(height, maxSteps); steps++) {
         numberOfWays += numberOfWaysToTop(height - steps, maxSteps, memoize);
     }
-	memoize[height] = numberOfWays;
+    memoize[height] = numberOfWays;
 
     return numberOfWays;
+}
+
+// Search sorted matrix.
+
+function searchInSortedMatrix(matrix, target) {
+    let row = 0;
+    let col = matrix[0].length - 1;
+    while (row < matrix.length && col >= 0) {
+        const element = matrix[row][col];
+
+        if (element > target) {
+            col--;
+        } else if (element < matrix) {
+            row++;
+        } else {
+            return [row, col];
+        }
+    }
+    return [-1, -1]
 }
