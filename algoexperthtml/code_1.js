@@ -2105,3 +2105,34 @@ function threeNumberSort(array, order) {
     }
     return array;
 }
+
+
+function threeNumberSort(array, order) {
+    const firstValue = order[0];
+    const secondValue = order[1];
+
+    let firstIdx = 0;
+    let secondIdx = 0;
+    let thirdIdx = array.length - 1;
+
+    while (secondIdx <= thirdIdx) {
+        const value = array[secondIdx];
+        if (firstValue === value) {
+            swap(firstIdx, secondIdx, array);
+            firstIdx++;
+            secondIdx++;
+        } else if (secondValue === value) {
+            secondIdx++;
+        } else {
+            swap(thirdIdx, secondIdx, array);
+            thirdIdx--;
+        }
+    }
+    return array;
+}
+
+function swap(i, j, array){
+    const temp = array[j];
+    array[j] = array[i];
+    array[i] = temp;
+}
