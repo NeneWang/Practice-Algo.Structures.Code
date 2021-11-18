@@ -2217,5 +2217,28 @@ function balancedBrackets(string) {
         }
     }
     return stack.length === 0
+}
 
+
+function sunsetViews(buildings, direction) {
+
+    buildingWithSunsetViews = [];
+    const startIdx = direction == "WEST" ? 0 : buildings.length - 1;
+    const step = direction == "WEST" ? 1 : -1;
+    let idx = startIdx;
+    let maxBuildingHeight = 0;
+    while (idx >= 0 && idx < buildings.length) {
+        const buildingHeight = buildings[idx];
+        if (buildingHeight > maxBuildingHeight) {
+            buildingWithSunsetViews.push(idx);
+        }
+        maxBuildingHeight = Math.max(maxBuildingHeight, buildingHeight)
+        idx += step;
+    }
+
+    if (direction == "WEST") {
+        buildingWithSunsetViews.reverse();
+    }
+
+    return buildingWithSunsetViews;
 }
