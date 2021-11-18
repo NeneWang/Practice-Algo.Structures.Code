@@ -1560,7 +1560,7 @@ function searchInSortedMatrix(matrix, target) {
 
         if (element > target) {
             col--;
-        } else if (element < matrix) {
+        } else if (element < target) {
             row++;
         } else {
             return [row, col];
