@@ -2131,8 +2131,60 @@ function threeNumberSort(array, order) {
     return array;
 }
 
-function swap(i, j, array){
+function swap(i, j, array) {
     const temp = array[j];
     array[j] = array[i];
     array[i] = temp;
+}
+
+
+// Feel free to add new properties and methods to the class.
+class MinMaxStack {
+
+    constructor() {
+        this.minMaxStack = [];
+        this.stack = [];
+    }
+
+
+    peek() {
+        // Write your code here.
+        return this.stack[this.stack.length - 1];
+    }
+
+    pop() {
+        // Write your code here.
+        // Pops out from bot stacks
+
+        this.minMaxStack.pop();
+        this.stack.pop();
+
+    }
+
+    push(number) {
+        // Write your code here.
+        // The idea is that it willpush towards the both stacks and also calculate the max and minimum. from the last one
+
+        this.stack.push(number);
+        const newMinMax = {
+            min: number,
+            max: number
+        };
+        const lastMinMax = this.minMaxStack[this.length - 1];
+        if (this.minMaxStack.length) {
+            newMinMax.min = Math.min(number, lastMinMax.min);
+            newMinMax.max = Math.max(number, lastminMax.max);
+        }
+        this.minMaxStack.push(newMinMax);
+    }
+
+    getMin() {
+        // Write your code here.
+        return this.minMaxStack[this.minMaxStack.length - 1].min;
+    }
+
+    getMax() {
+        // Write your code here.
+        return this.minMaxStack[this.minMaxStack.length - 1].max;
+    }
 }
