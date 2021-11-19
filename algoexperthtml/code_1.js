@@ -2278,3 +2278,10 @@ function nextGreaterElement(array) {
     return result;
 }
 
+function longestPalindromicSubstring(string) {
+
+}
+
+function isPalindrome(string) {
+
+}
