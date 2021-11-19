@@ -2279,9 +2279,12 @@ function nextGreaterElement(array) {
 }
 
 function longestPalindromicSubstring(string) {
-
+    let currentLongest = [0, 1];
+    for (let i = 1; i < string.length; i++) {
+        const odd = getLongestPalindromeFrom(string, i - 1, i + 1);
+    }
 }
 
-function isPalindrome(string) {
+function isPalindrome(string, leftIdx, rightIdx) {
 
 }
