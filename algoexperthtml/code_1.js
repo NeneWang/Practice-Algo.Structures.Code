@@ -2389,7 +2389,7 @@ function minimumCharactersForWords(words) {
         const characterFrequencies = countCharacterFrequencies(word);
         updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies);
     }
-
+return makeArrayFromCharacterFrequencies(maximumCharacterFrequencies);
 }
 
 function countCharacterFrequencies(string) {
@@ -2399,16 +2399,28 @@ function countCharacterFrequencies(string) {
         if (character in characterFrequencies) {
             characterFrequencies[character]++;
         } else {
-            characterFrequencies[character] = 0;
+            characterFrequencies[character] = 1;
         }
     }
     return characterFrequencies;
 }
 
 function updateMaximumFrequencies(frequencies, maximumFrequencies) {
-
+    for (const character in frequencies) {
+        if (character in maximumFrequencies) {
+            maximumFrequencies[character] = Math.max(frequencies[character], maximumFrequencies[character]);
+        } else {
+            maximumFrequencies[character] = frequencies[character];
+        }
+    }
 }
 
 function makeArrayFromCharacterFrequencies(characterFrequencies) {
-
+    const characters = [];
+    for (const character in characterFrequencies) {
+        for (let i = 0; i < characterFrequencies[character]; i++) {
+            characters.push(character);
+        }
+    }
+    return characters;
 }
