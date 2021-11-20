@@ -2389,7 +2389,7 @@ function minimumCharactersForWords(words) {
         const characterFrequencies = countCharacterFrequencies(word);
         updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies);
     }
-return makeArrayFromCharacterFrequencies(maximumCharacterFrequencies);
+    return makeArrayFromCharacterFrequencies(maximumCharacterFrequencies);
 }
 
 function countCharacterFrequencies(string) {
@@ -2423,4 +2423,16 @@ function makeArrayFromCharacterFrequencies(characterFrequencies) {
         }
     }
     return characters;
+}
+
+class SuffixTrie {
+    constructor(string) {
+        this.root = {};
+        this.endSymbol = '*';
+        this.populateSuffixTrieFrom(string);
+    }
+
+    
+
+
 }
