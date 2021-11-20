@@ -2312,3 +2312,40 @@ function groupAnagrams(words) {
 
     return Object.values(anagrams);
 }
+
+function validIPAddresses(string) {
+    const ipAddressessFound = [];
+
+    for (let i = 0; i < Math.min(string.length, 4); i++) {
+        const currentIpAddressParts = ['', '', '', ''];
+
+        currentIpAddressParts[0] = string.slice(0, i);
+        if (!isValidPart(currentIpAddressParts[0])) continue;
+        console.log(currentIpAddressParts[0]);
+        for (let j = i + 1; j < i + Math.min(string.length - i, 4); j++) {
+
+            currentIpAddressParts[1] = string.slice(i, j);
+            if (!isValidPart(currentIpAddressParts[1])) {
+                continue;
+            }
+            console.log(currentIpAddressParts[1]);
+            for (let k = j + 1; k < j + Math.min(4, string.length - j); k++) {
+                currentIpAddressParts[2] = string.slice(j, k);
+                currentIpAddressParts[3] = string.slice(k);
+                console.log(currentIpAddressParts[2]);
+                if (isValidPart(currentIpAddressParts[2]) && isValidPart(currentIpAddressParts[3])) {
+                    ipAddressessFound.push(currentIpAddressParts.join('.'));
+                }
+
+            }
+        }
+    }
+    return ipAddressessFound;
+}
+
+
+function isValidPart(string) {
+    const numericValue = parseInt(string);
+    if (numericValue > 255) return false;
+    return numericValue.toString().length == string.length;
+}
