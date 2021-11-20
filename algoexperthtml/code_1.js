@@ -2381,3 +2381,34 @@ function reverseList(list) {
     }
     return list;
 }
+
+function minimumCharactersForWords(words) {
+    const maximumCharacterFrequencies = {};
+
+    for (const word of words) {
+        const characterFrequencies = countCharacterFrequencies(word);
+        updateMaximumFrequencies(characterFrequencies, maximumCharacterFrequencies);
+    }
+
+}
+
+function countCharacterFrequencies(string) {
+    const characterFrequencies = {};
+
+    for (const character of string) {
+        if (character in characterFrequencies) {
+            characterFrequencies[character]++;
+        } else {
+            characterFrequencies[character] = 0;
+        }
+    }
+    return characterFrequencies;
+}
+
+function updateMaximumFrequencies(frequencies, maximumFrequencies) {
+
+}
+
+function makeArrayFromCharacterFrequencies(characterFrequencies) {
+
+}
