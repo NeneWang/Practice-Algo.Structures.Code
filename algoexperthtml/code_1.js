@@ -2425,6 +2425,7 @@ function makeArrayFromCharacterFrequencies(characterFrequencies) {
     return characters;
 }
 
+
 class SuffixTrie {
     constructor(string) {
         this.root = {};
@@ -2432,7 +2433,29 @@ class SuffixTrie {
         this.populateSuffixTrieFrom(string);
     }
 
-    
+    populateSuffixTrieFrom(string) {
+        for (let i = 0; i < string.length; i++) {
+            this.insertSubstringStartingAt(i, string);
+        }
+    }
 
+    insertSubstringStartingAt(i, string) {
+        let node = this.root;
+        for (let j = i; j < string.length; j++) {
+            const letter = string[j];
+            if (!(letter in node)) node[letter] = {};
+            node = node[letter];
+        }
+        // At the end
+        node[this.endSymbol] = true;
+    }
 
+    contains(string) {
+        let node = this.root;
+        for (const letter of string) {
+            if (!(letter in node)) return false;
+            node = node[letter];
+        }
+        return this.endSymbol in node;
+    }
 }
