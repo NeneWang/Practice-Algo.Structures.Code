@@ -68,3 +68,6 @@ Accepts JSON, defines endpoints, get and post endpoints, console logging stuff, 
 A bunch of different protocols since we haven't specified anything else we ge the GET requests witht he response of the servers. Headers with the metadata, post requests, headers where we issue. Applications / Json.
 
 As specification of Data. Food point bar. 
+Here we have the body, and being unfamiliar, why http is so rare. Those protocols and transformation of data. Developing a large scale system, simple endpoints, as data wasn't formatted as it should be.
+
+A key take waways is that these three are very important protocols. Http is more relevant, some of the request. methods pathings.
