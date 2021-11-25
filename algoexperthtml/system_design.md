@@ -42,6 +42,12 @@ Those are the ones we want to cover
 An Internet Protocol. In context is that the modern interne truns in UIP. When a machine tries to interact and sends data, is sent in the IP package, and data thats sent from one machine to another.
 By way and memory, other ways as bytes and have two main sections. Headers source and IP address, the stimation and the estimations and quick pause.
 
+The header you can know what the total size of the package is. It turns out there are two versions. With the IPV4 and now being used the IPV6 which is now getting started to being used. The rest this part here,
+The data of the machine, and limited in size, 2^16 bytes, which is actually not that much, Sending an image, way more than 2^16 bytes. Likely no fit, the IP packages, when you have multiple IP packages, you dont actually get a way to receive all the data that you were trying to send and neither the 
+order of them
+
+
+
 ### TCP
 
 ### HTTP
