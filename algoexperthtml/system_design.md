@@ -44,11 +44,21 @@ By way and memory, other ways as bytes and have two main sections. Headers sourc
 
 The header you can know what the total size of the package is. It turns out there are two versions. With the IPV4 and now being used the IPV6 which is now getting started to being used. The rest this part here,
 The data of the machine, and limited in size, 2^16 bytes, which is actually not that much, Sending an image, way more than 2^16 bytes. Likely no fit, the IP packages, when you have multiple IP packages, you dont actually get a way to receive all the data that you were trying to send and neither the 
-order of them
+order of them. Is really ment to solve and serve the IP ways, and the order in which they are readed, they are guaranteed or at least know if some packages are being corrupted, you will know and receive on a incorruptible way. All the applications being used
+Because of this things being solved, that cant be accomplished alone. That really isnt useful. working in the networking field. But is important to know from a high level of understanding. What have the PCP, or something like this. Some information, the rest are here, and erase, here the data having
+the TCP 
 
 
 
 ### TCP
+
+Web servers is first going t create a TCP connection, through an handshake, basically communcaites with another package, we are now connected, and both machines send data to each other, the connection can be ended if unsuccessfully connected. A more powerful wrapper along the internet.
+Can use to really define meaning ful and easy to use. All sending in these underlined packages. HTTP, is a protocol built on top, introduces a higher level abstraction. Is the response request paradome. One
+machine sends one machine request response, to easi9ly build easy to mantian systems. Request that have this defined properties, the power and rigor to visualize hwow this requests look like. Kepepo in mind they are arbitrary just the stuff
+
+The hos and ports, http methods to have here, they basically describe the purpose of the request. retrieving data from the servers, providing data from the server, to delete some data. You asa developer relies int he server logic whatever you like. Really depending on the server.
+The path is where you have logic on the server. A server might have have different logic, payment information, making an actual painting, you had a slash auth paths, the request would likely have to do with authentication.
+
 
 ### HTTP
 
