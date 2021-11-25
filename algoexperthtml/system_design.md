@@ -21,4 +21,7 @@ Next video informative and next ones.
 ## Client Server Model  
 Ip Addressess as IP addressess. The expert when you in the browser find the dns. Http is a way to save and algoexpert servers, pack into packages. into the addreessess gets the request, would use the source address and 
 use it to send in response. Servers are machiens called clients, a server usually listen for response in distinct ports. You have to specify which oport you want to communicate. IP address the appartment, the port as the apartment numbers. Most clients know which port to use
-know what port to use. Mostly speaks to port 80. So here is to open up
+know what port to use. Mostly speaks to port 80. So here is to open up. Eventually receives the request, understands the format, and the server understand you want to look an HTML of the Algoexpert. 
+
+All computers talk around the world, client server concepts, type in the browser communicating throught the browser.
+
