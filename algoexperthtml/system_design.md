@@ -62,6 +62,9 @@ The path is where you have logic on the server. A server might have have differe
 
 ### HTTP
 
-
 Just the data, piece of data in JSON format, int h similar format, one improtant field being the status codes, specific inks by normal API standards are error codes, that they might not had been found.
+Accepts JSON, defines endpoints, get and post endpoints, console logging stuff, headers and methods of the requests, the body of the rquests. Hey I receive the POST requests. in the top terminal listingin to the curl localhost3000/hello.
 
+A bunch of different protocols since we haven't specified anything else we ge the GET requests witht he response of the servers. Headers with the metadata, post requests, headers where we issue. Applications / Json.
+
+As specification of Data. Food point bar. 
