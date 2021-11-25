@@ -57,8 +57,11 @@ Can use to really define meaning ful and easy to use. All sending in these under
 machine sends one machine request response, to easi9ly build easy to mantian systems. Request that have this defined properties, the power and rigor to visualize hwow this requests look like. Kepepo in mind they are arbitrary just the stuff
 
 The hos and ports, http methods to have here, they basically describe the purpose of the request. retrieving data from the servers, providing data from the server, to delete some data. You asa developer relies int he server logic whatever you like. Really depending on the server.
-The path is where you have logic on the server. A server might have have different logic, payment information, making an actual painting, you had a slash auth paths, the request would likely have to do with authentication.
+The path is where you have logic on the server. A server might have have different logic, payment information, making an actual painting, you had a slash auth paths, the request would likely have to do with authentication.00
 
 
 ### HTTP
+
+
+Just the data, piece of data in JSON format, int h similar format, one improtant field being the status codes, specific inks by normal API standards are error codes, that they might not had been found.
 
