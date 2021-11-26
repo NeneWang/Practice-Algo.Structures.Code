@@ -9,9 +9,8 @@
     - [HTTP](#http)
   - [Storage](#storage)
     - [Databases](#databases)
-    - [Disk](#disk)
-    - [Memory](#memory)
-    - [Persistent Storage](#persistent-storage)
+  - [Latency and Throughput](#latency-and-throughput)
+  - [Systems Availability](#systems-availability)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -83,10 +82,36 @@ A key take waways is that these three are very important protocols. Http is more
 
 Databases, in lore, lives somewhere in the memory. Is the memories, always. Save files, 
 Your computer and machines, very the server, Is persistance, database thats on the database, if it is stored, it is percepted, and stored onn the database, scrashes, once is boot up. A lot of database, is stored
+Database and server goes down, server thats down, see as how it goes, the first two endpoints that write data from memory 
+
+Gonna restore the body, in the hash table. Saving after the key value score, the get request is going to brab the memories, 
+returning and having null, having null. Storing the data, in the destination file. database data. SUse the actual key
+
+Write data to the destination file, when we get data we try reading that file, and otherwise will return the data, and allow us to store this data.
+
+By launching our server, you have a curl command. Endpoints that grab data, nd is going to store the response body.
+Stores the request body.
+
+The key the key bar,.
+
+Acccess ot the database, if we are scalaing that data, and knowing the consistency of these.
+
+## Latency and Throughput
+
+Latency how long itetakes for client to server and server to client. On a machine reading a piece of data, 
+refered to latency, Is the fact that there are different things that have different latencies
+
+Reading microbyte by hdd and 20 000 ms. And somethimes sending something from a network takes 10 000
+
+A packet to californiand round trip to nether lands that will take aproximatelly 150 ms. if that takes 150 ms, around the world taes a lot world.
+Or reading stuff for them. Is really as how electricity takes to travel, which is considerably slower than some types. 
+A network,  or a billion a second. A clients and one clients, How many bits can the server handle? How many bits can be handled? How do I incraease?
+
+The naive answer is o pay the Throughput. In theory we can pay our Thrughput, algthought that might not solve 
+It might go to diffeernt servers, related as measures. Not necesssarilly correlated. 
 
 
-### Disk
+## Systems Availability
 
-### Memory
-
-### Persistent Storage
+Most systems have an implied availability to wathc them. There is an implied guaranteed of availability. You expect the website to be up. And wont be happy for not being able to access it.
+As an designer availability matters a lot. It wouldn't been a really end of the world. But for an airplane while the plane is high then there would be unacceptable.
