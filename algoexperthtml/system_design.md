@@ -7,6 +7,11 @@
     - [IP](#ip)
     - [TCP](#tcp)
     - [HTTP](#http)
+  - [Storage](#storage)
+    - [Databases](#databases)
+    - [Disk](#disk)
+    - [Memory](#memory)
+    - [Persistent Storage](#persistent-storage)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -71,3 +76,17 @@ As specification of Data. Food point bar.
 Here we have the body, and being unfamiliar, why http is so rare. Those protocols and transformation of data. Developing a large scale system, simple endpoints, as data wasn't formatted as it should be.
 
 A key take waways is that these three are very important protocols. Http is more relevant, some of the request. methods pathings.
+
+## Storage
+
+### Databases
+
+Databases, in lore, lives somewhere in the memory. Is the memories, always. Save files, 
+Your computer and machines, very the server, Is persistance, database thats on the database, if it is stored, it is percepted, and stored onn the database, scrashes, once is boot up. A lot of database, is stored
+
+
+### Disk
+
+### Memory
+
+### Persistent Storage
