@@ -155,3 +155,18 @@ Not so  ukmuch to increase, but maybe you dont't want to read form the same datb
 
 Cachin on the system by avoiding avoiding to have to do it multiple times. Or maybe you have operations that you want to speed up that many times.
 
+Depending on the database you have the loader, and you cna notice that the loader is no longer there, we know that it is astatic page of context, adds a little complexity.
+list of questions. Having user. When you running code on algoexperts. As you imagine, when you run code.
+
+We don't need to do. Running code with the solution, that is running code that where you run code, and detach from the components,
+in memory of the caching with the client.
+
+
+Hash it down to a single integer, we check if its on the cache. We avoid that one second computation.
+
+Users that can read or write posts. Posts that can be stored in the database. If we want to cache them now you have tow sources of trueth
+Maybe is on certain intervals, maybe in different type of schedules. Cash evictions, with the right back AOnly the cash will be updated. If something happens.
+Before the database is updated, you might lose data. Lets assume we were assigned to design the youtube section.
+
+All the clients read from the caches of the servers. Fetches, and sometime elapses, edits the comment, goe sback to the video already scored in the cache.
+Not the new edited one, As ou can imagine that would be really bad for youtube comments. Any written content. Posts would fall in this category.
