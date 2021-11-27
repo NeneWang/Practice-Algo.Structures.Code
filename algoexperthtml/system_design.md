@@ -11,6 +11,7 @@
     - [Databases](#databases)
   - [Latency and Throughput](#latency-and-throughput)
   - [Systems Availability](#systems-availability)
+  - [](#)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -115,3 +116,14 @@ It might go to diffeernt servers, related as measures. Not necesssarilly correla
 
 Most systems have an implied availability to wathc them. There is an implied guaranteed of availability. You expect the website to be up. And wont be happy for not being able to access it.
 As an designer availability matters a lot. It wouldn't been a really end of the world. But for an airplane while the plane is high then there would be unacceptable.
+
+People on Vimeo, and as you can imagine thats really bad. Availability maters a lot. 
+Availability as the percentage of a system uptime in a given year. Fifth percent availbaility would be really bad.
+Usuallty dealing with high percentages, 90 percent is actually bad,.
+99 availabilities, 3 nines availabiltieis, The standard way to talk abot ab=navailities, You have ax 
+When you see five, siz times is when theree is the gold standard of availabilities.
+Ai to be highly ideal, and maybe even more.Is something that matters a lot. It matters so much, that there is no implied, but guaranteed.
+Service level agreement between a service provider and the endusers of them. Among other things. Have the splicit sever agreements taht guarantee this level 
+Percentage of guarantees is the SLA, and the SLO is the 
+
+## 
