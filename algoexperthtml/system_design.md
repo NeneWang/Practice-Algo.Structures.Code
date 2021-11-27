@@ -183,4 +183,11 @@ What pieces of data least used more recently, or the least frequently used that 
 
 Depending on the product you are designing. Important fundamental concpts. for system design.
 
-A client makes a request to the proxy and it will forward the request to the server. 
+A client makes a request to the proxy and it will forward the request to the server. Server response,
+
+might be able to access to hide otherwise what it is. Using the forward proxy.
+
+Reverse procxies being a little more tricky. The client think s that you are interacting.
+
+The entity is the reverse client server model. Type google.com in your address or google.com Have it configured, is going to have the reverse proxy and not ht eactual server.
+The client and the browser or the destination. Will forward.
