@@ -11,7 +11,8 @@
     - [Databases](#databases)
   - [Latency and Throughput](#latency-and-throughput)
   - [Systems Availability](#systems-availability)
-  - [](#)
+  - [Availability](#availability)
+  - [Caching](#caching)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -124,6 +125,33 @@ Usuallty dealing with high percentages, 90 percent is actually bad,.
 When you see five, siz times is when theree is the gold standard of availabilities.
 Ai to be highly ideal, and maybe even more.Is something that matters a lot. It matters so much, that there is no implied, but guaranteed.
 Service level agreement between a service provider and the endusers of them. Among other things. Have the splicit sever agreements taht guarantee this level 
-Percentage of guarantees is the SLA, and the SLO is the 
+Percentage of guarantees is the SLA, and the SLO. Single server, the part consistent redudant by adding servers 
+Now the load balancer is a single failyure, large part to avoid having a single server overloaded, redudancency
+Have 5 load balancers, introduced in lots of parts just by adding machines to them. Gets fix, is airplaine, twin engine. Both enginers are used. Passive abundance, active redundancy
+Multiple machines only one have handling and doing the work. Doing the work fails, it fials, somehow knows and takes over. 
+Play load balances. Suddenly one that fails, if you have an special service that is handled by machines, imagine if only one were responsible iwth the main duties, the right
 
-## 
+
+## Availability
+
+Imagine they died. Systems availability, single points of failure, making them redundant, in place to handle system failures.
+Servers tat crash, need processess in place to handle the processess. Highly informative. Computational complex
+Lots of time, caching speed up the algorithms, caching is very similar. To reduce the latency of a system.
+
+Operations that took the time, you can imagine a way to design the system. Data trasnfrer, design the system and 
+do different types of 
+
+## Caching
+Stores data, faster to access from this location. In this location, in the client level. Interacts with the server, Someone in the client.
+
+Always need the client from the database, cache in the server level. In between int he server and the database, System design interviews
+In the modern view in the computer, on the CPU level, that makes faster to retrieve memory, something that you take for gtranted, taht coccurs by default in many levels
+Concrete instances that caching is helpful, and you want to avoid doing levels. Might request to the database, to the database on the client
+
+Here you want to speedup, network request and get to the database. Instances are helpful if there are computational nlong operations. First, at the server level you perform.
+You maight want to perform that.
+
+Not so  ukmuch to increase, but maybe you dont't want to read form the same datbase, so you don't need to read from the database, from there, each server to avoid having that many reads
+
+Cachin on the system by avoiding avoiding to have to do it multiple times. Or maybe you have operations that you want to speed up that many times.
+
