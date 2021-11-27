@@ -170,3 +170,17 @@ Before the database is updated, you might lose data. Lets assume we were assigne
 
 All the clients read from the caches of the servers. Fetches, and sometime elapses, edits the comment, goe sback to the video already scored in the cache.
 Not the new edited one, As ou can imagine that would be really bad for youtube comments. Any written content. Posts would fall in this category.
+
+To put hte cache out of her, you would have the single source of truth. We might not care that much as the scarenesss. View count is not hte most important information.
+Thats when you ask yourself what are the requirements, do we actually care? Then we might not be able to use the cache in a more naive way. Caching while it's great have 
+many pitfalls. Caching is beautiful, Then things are going ot be trickier. Depending on your usecase that might not be the best.
+
+A single ting reading or writting the data. If you don't care about caching, and you can propoerly invalid distributed systems. Caching and 
+eviction policies, the infinite amount of data. Getting rid of data in caches. What policies and rules?
+
+
+What pieces of data least used more recently, or the least frequently used that we can get rid of.
+
+Depending on the product you are designing. Important fundamental concpts. for system design.
+
+A client makes a request to the proxy and it will forward the request to the server. 
