@@ -190,4 +190,15 @@ might be able to access to hide otherwise what it is. Using the forward proxy.
 Reverse procxies being a little more tricky. The client think s that you are interacting.
 
 The entity is the reverse client server model. Type google.com in your address or google.com Have it configured, is going to have the reverse proxy and not ht eactual server.
-The client and the browser or the destination. Will forward.
+The client and the browser or the destination. Will forward. The more request are sent the more likely for it to become overwhelmed. 
+
+For instacnce here with the load balancers and the servers, and the server architecture how to dns queries and google, turns out and the round oblin, DNS Round roblin. Where a signle domain name gets multiple IP addressess how they are associated and they are returned in a big balnace way.
+
+Takes in a domain and google.com Is comes and the IP adddressess. How they end up with different addresses. And we curl them we also get google.com where basically the same domain name is having sam from different IP addressess.
+Is new server where to redirect new traffic. To know about each other, load balancer and the load balancer knows about it's existence. The first one is pure random redirection, load balancer following the purely random order, one server could by chance be overbalanced. When we have the DNS robbing
+On one server, we are issuing, and then. haivng first second, third etc.
+
+more traffics and servr loading balance, and selection and performance based on load. OT know how much traiffic is there how many resources are there, this server is not handling as well
+Is going to start redirecting not to the server, whereas ethe other servers are getting a lot of load. Whenyou get from clients and depending on the value of the hashes and this particular clients, to server n1. IP based are really usefull  if you got cashing on them, really useful always be redirected to the server to the ip balanced, be on the cache server, to another server, you wouldn't be able to use the cashe.
+Distributes request to servers srvers based on their path, ruinning code redirected to specific servers and how they are redirected to another servers deploy changs
+Big changes this deployment, a lot of routing to different servers, are unaffected. Server strategies, and pick server usage strategies. according tot heir server.
