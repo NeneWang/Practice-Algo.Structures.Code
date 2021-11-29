@@ -13,6 +13,8 @@
   - [Systems Availability](#systems-availability)
   - [Availability](#availability)
   - [Caching](#caching)
+  - [Proxies](#proxies)
+  - [Hashing](#hashing)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -202,3 +204,22 @@ more traffics and servr loading balance, and selection and performance based on 
 Is going to start redirecting not to the server, whereas ethe other servers are getting a lot of load. Whenyou get from clients and depending on the value of the hashes and this particular clients, to server n1. IP based are really usefull  if you got cashing on them, really useful always be redirected to the server to the ip balanced, be on the cache server, to another server, you wouldn't be able to use the cashe.
 Distributes request to servers srvers based on their path, ruinning code redirected to specific servers and how they are redirected to another servers deploy changs
 Big changes this deployment, a lot of routing to different servers, are unaffected. Server strategies, and pick server usage strategies. according tot heir server.
+
+
+## Proxies
+
+A lot of server strategies, can serve as a solution and how they end up in the servers. They can perform very long time operations, deal with the requests as cashing, cashing here having every server store each and the respnse that hasn't been cash
+Skips and immediatelly have the cashing. Load balancer has servers for random strategies. Requests happen to be redirected to server A. 
+
+
+## Hashing
+
+Servers and load balancers that follow a server selection strategy, will server rerouting, merely as useful that would be otherwise. 
+As part of the hashing. and items. We can look at this case 4 clients. A B C and D. These request have the load balancers
+The load balancers has to redirect the client to the server pick what server shave selection guarantees. load gand goes to the orders from the top. 
+
+A lot of server strategies can introduce some problems. Request that are computentially complex. They are just expensive. Implement in cash and have every request first
+request have tasks and gets the response, skips the operation.  pretty reasonable computational expensive, following a random strategy.
+
+The request happens to be redirected, server A checks the chsh, and the client. Issues once again, round robin approach, Server D doesn't have the response reuqest. If you design in memory hashes, but the load balancer is following a server strategy, the same memory its going to fall out.
+Server and cashed. This is where hashing takes in place.
