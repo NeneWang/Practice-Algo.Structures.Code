@@ -223,3 +223,20 @@ request have tasks and gets the response, skips the operation.  pretty reasonabl
 
 The request happens to be redirected, server A checks the chsh, and the client. Issues once again, round robin approach, Server D doesn't have the response reuqest. If you design in memory hashes, but the load balancer is following a server strategy, the same memory its going to fall out.
 Server and cashed. This is where hashing takes in place.
+
+Every client rerouted to the server, hashing each and the example, given to us, through that hashing, 11, 12, 
+
+With thesismplest is to mod by the number of servers we have, if we say 11, by the number of servers (4) the remainder of the division 11 by four.
+
+By the number of servers and that would return the servers. Have that uniformity and the serverr D has thecash hits. When have the server miss the cache hits. over the requests.
+
+Of course, you see there is a large distributed systems. Have server A failing to us, and ton oof traffic and we might need to add multiple servers to our system. If we dealing with server E, we no longer have 4 serversn but 5. And never go to E, we wouldn't be able to keep giving until the D. There is some servers we need to balance.
+
+IP Addresses by modding the server that dies everything beomes a mess are not nearly as useful. These two strategic hashes solves the problem, and we gonna look at the code snipping. Instead having servers as ABCD< on the circle, as the concept consistent hashing.
+As you place the servers four initial servers, A, B, C, D. All the way at the pont degree angles this circles can be represented as back to back numbers.
+Four clients as the IP Addressess, the susernames, but through thtehashing on the circle, C 1, C2, and here you would have the servers on the circle, you determine, and each client you move clock wise, What if the server C dies.
+
+Now we have the moving o clock wise, Sift incredible Redirected to server D. Bring back C and E. We go throught hte clients and from the clock wise direction, no longer using it. With this system of putting servers on a circle, if we ever add or rmove, we still mantain most of the mappings, only one of them changed, It mantains some good level of consistency in their mapping inot.
+In the even more redistribute, a lot of clients, where one of the servers are not present, server D, you can pass all the servers throguh multiple hashing functions. Each having multiple server positions, here and there. Up there.
+
+Having some sort of squeue. 
