@@ -15,6 +15,7 @@
   - [Caching](#caching)
   - [Proxies](#proxies)
   - [Hashing](#hashing)
+  - [Relational Databases](#relational-databases)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -239,4 +240,24 @@ Four clients as the IP Addressess, the susernames, but through thtehashing on th
 Now we have the moving o clock wise, Sift incredible Redirected to server D. Bring back C and E. We go throught hte clients and from the clock wise direction, no longer using it. With this system of putting servers on a circle, if we ever add or rmove, we still mantain most of the mappings, only one of them changed, It mantains some good level of consistency in their mapping inot.
 In the even more redistribute, a lot of clients, where one of the servers are not present, server D, you can pass all the servers throguh multiple hashing functions. Each having multiple server positions, here and there. Up there.
 
-Having some sort of squeue. 
+Having some sort of squeue. Useful for having less hash server latency because of servers diying.
+
+
+## Relational Databases
+
+In some cases such as non reqlational databases and the user login, the quering language and a lot of that comes with non support of that type of queries, thats why we moved to postgress.
+Very powerful querying capabilities.
+
+In python and javascript you could implement this stuff, but if you have therabytes of data, you would have lot of non trillion, thats why sql is powerful. 
+ACID Trnasactions.
+Atomiciy,  and the consistency, isolation and durability. Database and causes one or more suboperations to work on fail.
+Any transactions confrers by rules of the databases. We gonna look one by one, 
+
+A single operation. Updating a database, tahts permament. ACID being the naive database. Relational databases. Databases Indexes. Databases much faster and database indexes.
+Ways to be deployed under the good. Take thte apyments withy the auxiliary databases. They would be in sorted order. Table of contents, that make them easier to search. You could break the linear to logarithmic time thats going to be lengendary, Good tool to keep in mind.
+You might want some other dtatabase timelines, whatever you write and Write operations read and write operations. Having sql in operation.
+
+Having zero dollars having table and large databases with 50 000 000 rows showing how gigantus databases can be. Ment to demostrate the kid of power copy the query, haivng the query thats useful for the
+
+
+
