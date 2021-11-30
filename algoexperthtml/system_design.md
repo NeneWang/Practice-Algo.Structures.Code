@@ -16,6 +16,7 @@
   - [Proxies](#proxies)
   - [Hashing](#hashing)
   - [Relational Databases](#relational-databases)
+  - [Key Value Stores](#key-value-stores)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -258,6 +259,21 @@ Ways to be deployed under the good. Take thte apyments withy the auxiliary datab
 You might want some other dtatabase timelines, whatever you write and Write operations read and write operations. Having sql in operation.
 
 Having zero dollars having table and large databases with 50 000 000 rows showing how gigantus databases can be. Ment to demostrate the kid of power copy the query, haivng the query thats useful for the
+
+**Every month **
+Reselection of balances, asset properties. No longer needed. Basically select the 10 largest billion roads. Fact that google only have eventual consistency. The data agains thte transactions.
+Pain and the sq.
+Relatinal databases.
+
+## Key Value Stores
+Mapping from keys with aribitrary numbers. Hash tables incredible flexible and simple because the key values store, and have no use for the imposed structure.
+Cashing and intances somewhere accessing with IP addressess. Key value and stores use case for dynamic configurations. Constants algo experts having system experts is launch may rely in the parameters, is literally how and the true false.
+Previous and few examples, some instance that the database Have data that persisst and the data of them. Totoally acceptable.. 
+
+Pick some key value stores. Taking two files with cashing and replaced with in-memory replaced with in memory key value. 
+Prepare to receive check the reddis library see if you have and the key responses otherwise have. Then have few parameters gonna expire. Something that  always serving same page of clients.
+Loads and have the hello world. 
+
 
 
 
