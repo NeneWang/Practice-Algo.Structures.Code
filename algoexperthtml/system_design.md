@@ -17,6 +17,8 @@
   - [Hashing](#hashing)
   - [Relational Databases](#relational-databases)
   - [Key Value Stores](#key-value-stores)
+  - [Specialized Storage Paradigms](#specialized-storage-paradigms)
+  - [Replication And Sharding](#replication-and-sharding)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -274,6 +276,11 @@ Pick some key value stores. Taking two files with cashing and replaced with in-m
 Prepare to receive check the reddis library see if you have and the key responses otherwise have. Then have few parameters gonna expire. Something that  always serving same page of clients.
 Loads and have the hello world. 
 
+## Specialized Storage Paradigms
+Massive amounts of the blog store products and the most commons using GCS. Microsoft, common and the big tech companies. Blog scores are optimized for massive amount of data.
+Neo 4g. A dataset. How to have the sypher, the interviewers, relationships between these data nodes. Interviewed, interviewed and the relationships.
+ Store nativelly on their own. Run it to connect the data. 
 
+## Replication And Sharding
 
 
