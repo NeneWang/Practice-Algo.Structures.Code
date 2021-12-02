@@ -23,6 +23,7 @@
   - [Peer-To-Peer Network](#peer-to-peer-network)
   - [Polling And Streaming](#polling-and-streaming)
   - [Rate Limiting](#rate-limiting)
+  - [Logging And Monitoring](#logging-and-monitoring)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -366,3 +367,5 @@ Only allow certain changes, deployment services, made configuration. Some sort o
 ## Rate Limiting
 
 Store the users and limit the access every x seconds. Stil vulnerable against DdoS.
+
+## Logging And Monitoring
