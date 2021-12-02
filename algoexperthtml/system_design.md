@@ -21,6 +21,7 @@
   - [Replication And Sharding](#replication-and-sharding)
   - [Leader Election](#leader-election)
   - [Peer-To-Peer Network](#peer-to-peer-network)
+  - [Polling And Streaming](#polling-and-streaming)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -322,6 +323,34 @@ What if instead worked to split up and having into smaller chunks and having the
 
 Divide into thousand five megabytes files. Megabyte files to the machines. Imagine would send out thosuand megafile to each of them.
 
-Network throughput, with thousand machines.
+Network throughput, with thousand machines. For a signle machine now it needs and a signle machine to get 
+all the other machiens, single machine one second to get all the other machines. Whne the top other machines, start talking
+all the other machiens are talking to each other. These can talk here and there. Two machines are talking to each other simulatneously.
+bunch of communication all happening. One happens and having the naive solutions. Here we gonna walk through step to ste. A transfer and the megabytes. 
+
+This is going ot be step to step. We treat them not as a peer. 5 megabytes are receiveing hte pper to peer network solutions.
+
+
+The seocnd in a transfer a chunk and a main machine right under it. This peer here. This peer  connection.
+Two seconds and two megabyte chunks, three megabyte chunks. This machine have three chunks.
+This one right here, might send it here. So as the end of step three, we transfer five megabytes. How this would explode
+
+Four megabytes transfer. Now able to two to three take any two here, At this point you have where you can only transfer we trransfer all this megabyte chunks.
+So many peers we cna communicate Centralized is only hierachy to one. While the other they can both talkt o each of them. 
+
+
+Transfer of five gigabytes. Vs using the naive solution First chunk and the left, receiveing five megabytes. Second step, the second transfer the red
+transfer is going to be two. Peer to peer transfer. One chunk and have 1-3. Having to built up. Hopefully appreciate how faster. Twenty megabytes.
+Fourteen megabytes chunk. THis is the beauty. You might not want to do this randomnly, What peers to get data from next. 
+
+Coursery overview. Yellow circle. Knows that any time, who know who talk with next. You should talk with this one. This central machine is thre tracker. 
+A central, they just talk between themselves. You dont have and this peer, exchange of information in school and office.
+Peers have mappings to certain peers and mappings. When it ocmmunicates, how about your information. 
+By having which as which. Numbered and piece the density. Really better, peer to peer network, 
+how do we appear data when we nee. Why is better is beacuse this connections between peers instead communicating with single machines.
+
+Torrenting involves one data and peers all over the world to obtain and to get the end product, doesn't need. Send the chunks fo the files.
+
+## Polling And Streaming
 
 
