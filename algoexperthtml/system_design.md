@@ -300,4 +300,14 @@ This request is the kind of request that we dont want to duplicate. How do we en
 That are in charge of doing the same only one thing, leader have the servers elect themselves as the leaders. and doing the actions of all the servers to be.
 
 Elect a leader among themselves. Only server for doign the logic. In case something happens to the leader.
+This seemengly trivial task, any point in time difficulty broadly speaking. Sharing state, ahving difficult and network failures.
+This concept is non-trivial, is more the act of having multiple machiens on having concensus together. Who the leader is. Paxos and Raft.
+Never expected to implement them yourself. Not necessarily, and having zookeper using Etcd. Think of hashtable highly available and consistent.
+Multiple machines reading and writting. databases that are highly consistent. y implementing an consistent consensus argument.
+Having read and write always having a single source of truth. 
+
+The nodes need to have one leader to take care and use the consuensus algorithm. General gist of leader election with multiple servers given point int he store who the leader is
+and other special key. with the name of the leader. You know that the value in any given point in time you got leader election.
+
+
 
