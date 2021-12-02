@@ -20,6 +20,7 @@
   - [Specialized Storage Paradigms](#specialized-storage-paradigms)
   - [Replication And Sharding](#replication-and-sharding)
   - [Leader Election](#leader-election)
+  - [Peer-To-Peer Network](#peer-to-peer-network)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -309,5 +310,18 @@ Having read and write always having a single source of truth.
 The nodes need to have one leader to take care and use the consuensus algorithm. General gist of leader election with multiple servers given point int he store who the leader is
 and other special key. with the name of the leader. You know that the value in any given point in time you got leader election.
 
+
+## Peer-To-Peer Network
+Thousand seconds. A thousand times, thousand seconds. We might do this. Remove an dhte machnine, ten machiens serving
+Requesting the five distributed files. This would spped up the system.
+
+Five and some of the files. 20 files, each machine that dont need to replicate transfer 1 to the same and bottleneck. All the approaches are problematic.
+Peer to Peer Network. How would that function on the system.
+
+What if instead worked to split up and having into smaller chunks and having the peers to communicate with each other.
+
+Divide into thousand five megabytes files. Megabyte files to the machines. Imagine would send out thosuand megafile to each of them.
+
+Network throughput, with thousand machines.
 
 
