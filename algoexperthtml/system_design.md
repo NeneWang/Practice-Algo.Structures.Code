@@ -352,5 +352,10 @@ how do we appear data when we nee. Why is better is beacuse this connections bet
 Torrenting involves one data and peers all over the world to obtain and to get the end product, doesn't need. Send the chunks fo the files.
 
 ## Polling And Streaming
+A system that are ment to communicate with each other. Gets updated regularly to reflect these updates?
+Allow to do that. Great techniques. Here having a client and a server. Issue this request having every x seconds.
 
+Having and every interval. Want to have outside temperature. But as many can tell they have connotations. You want to receive message instantaneous
+You want to see this barrage. Polling every seconds, instantaneous, see nothing and new updates. Send a message, see them after 10 seconds.
+Between requests. Every 0.5 seconds. More instantaenosu. You do have a lot of load. 
 
