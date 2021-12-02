@@ -19,6 +19,7 @@
   - [Key Value Stores](#key-value-stores)
   - [Specialized Storage Paradigms](#specialized-storage-paradigms)
   - [Replication And Sharding](#replication-and-sharding)
+  - [Leader Election](#leader-election)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -287,4 +288,16 @@ Table of payments, maybe charting with the customer names. Any payments between 
 
 Sharding and system design interview. How dictated and enduser and have the if else statements. You would rather not have the reverse proxy and the clients
 would make a request for the reverse proxy doing that.
+
+## Leader Election
+For such system you might have a database to store the database, the date and the price in the database, and then have a third-party service 
+needs to communicate, you might not want to have this third-party service to interact directly with the database.
+
+Connect directly insert in the middle. Service on the middle. When the user subscription is going to be communicating with the database, and knowing.
+This could pose a problem, in one machine. What would happen if it fails?
+This request is the kind of request that we dont want to duplicate. How do we ensure that this operation is only performed once?
+
+That are in charge of doing the same only one thing, leader have the servers elect themselves as the leaders. and doing the actions of all the servers to be.
+
+Elect a leader among themselves. Only server for doign the logic. In case something happens to the leader.
 
