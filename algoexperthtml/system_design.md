@@ -22,6 +22,7 @@
   - [Leader Election](#leader-election)
   - [Peer-To-Peer Network](#peer-to-peer-network)
   - [Polling And Streaming](#polling-and-streaming)
+  - [Rate Limiting](#rate-limiting)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -359,3 +360,9 @@ Having and every interval. Want to have outside temperature. But as many can tel
 You want to see this barrage. Polling every seconds, instantaneous, see nothing and new updates. Send a message, see them after 10 seconds.
 Between requests. Every 0.5 seconds. More instantaenosu. You do have a lot of load. 
 
+You wouldn't have the changes configurations, deploy very fast. A throught review, when a configuration changes, big companies, so many benefits, to still mkaing it safe.
+Only allow certain changes, deployment services, made configuration. Some sort of access control.
+
+## Rate Limiting
+
+Store the users and limit the access every x seconds. Stil vulnerable against DdoS.
