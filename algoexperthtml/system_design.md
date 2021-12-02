@@ -282,5 +282,9 @@ Neo 4g. A dataset. How to have the sypher, the interviewers, relationships betwe
  Store nativelly on their own. Run it to connect the data. 
 
 ## Replication And Sharding
+Often shortened as Pub/Sub pattern is a model that that publishers publish to channels and listeners. At least once delivery, persistent storage, ordering of messages and replayability of messages.
+Table of payments, maybe charting with the customer names. Any payments between F and G. According tot he region of the customer. 
 
+Sharding and system design interview. How dictated and enduser and have the if else statements. You would rather not have the reverse proxy and the clients
+would make a request for the reverse proxy doing that.
 
