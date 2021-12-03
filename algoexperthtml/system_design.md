@@ -369,3 +369,9 @@ Only allow certain changes, deployment services, made configuration. Some sort o
 Store the users and limit the access every x seconds. Stil vulnerable against DdoS.
 
 ## Logging And Monitoring
+ Measure the latency, gathering changing the logs, whi is not ideal. Especially gathered for data over time.
+ Algo experts. Servers serve metrics and querying the language, here you have the graphs,
+ Using graphana. And hten you can monitor a system with it. A nice server for the system. 
+
+ Alerting, imagine that the useful, imagine pass the treshhold into monitoring into slack. When there is something and gotten into the purchase errors exceeded the 2 seconds.
+ Can go hand in hand, very important when bulding a big system. Or also extremely important.
