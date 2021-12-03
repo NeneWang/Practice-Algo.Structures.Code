@@ -24,6 +24,8 @@
   - [Polling And Streaming](#polling-and-streaming)
   - [Rate Limiting](#rate-limiting)
   - [Logging And Monitoring](#logging-and-monitoring)
+  - [Pub Sub Pattern](#pub-sub-pattern)
+  - [MapReduce](#mapreduce)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -375,3 +377,15 @@ Store the users and limit the access every x seconds. Stil vulnerable against Dd
 
  Alerting, imagine that the useful, imagine pass the treshhold into monitoring into slack. When there is something and gotten into the purchase errors exceeded the 2 seconds.
  Can go hand in hand, very important when bulding a big system. Or also extremely important.
+
+ ## Pub Sub Pattern
+ As seeen have multiple subscribbers. covering the underlying and to achieve the pub sub. Those tools are non-trivial, we want to know that the later characteristics are specialized tools.
+
+  Re run it. Subscribe to the property. Didn't subscribe. Popular and ability
+
+ ## MapReduce
+ Processing at dataases, network and machine failures to process efficiently in full tolerant manner.
+Just not easy, tough read, that being said, Spread upon tousand of machines. The premise of the data processing tasks.
+Is that it could be reduced and mapped. With the conecept .
+
+
