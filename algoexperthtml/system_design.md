@@ -26,6 +26,8 @@
   - [Logging And Monitoring](#logging-and-monitoring)
   - [Pub Sub Pattern](#pub-sub-pattern)
   - [MapReduce](#mapreduce)
+  - [Security And HTTPS](#security-and-https)
+  - [API Design](#api-design)
 
 ## Design Fundamentals
 System designinterviews leads with systems and how to design the items. Once you consume all the content you will be able to tackle all the contents, and see in the next video.
@@ -390,6 +392,17 @@ Is that it could be reduced and mapped. With the conecept.
 
 Moveing and operating the data. Is that the key value learn structurely, reduces data- values, are cunks to the saqme datasets. 
 
+
+## Security And HTTPS
+
+Security unlickely to knwo about security. System design interviews can go in many directions, and might get into security. Is objectively better to know.
+Communications to the underlying and not telling anybody. Assumption that the communication should be private.
+Rely them to the server in a fashion. Some third party int he communication. This is known as the man in the middle attack.
+
+
+
+
+## API Design
 
 
 
