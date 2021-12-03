@@ -386,6 +386,11 @@ Store the users and limit the access every x seconds. Stil vulnerable against Dd
  ## MapReduce
  Processing at dataases, network and machine failures to process efficiently in full tolerant manner.
 Just not easy, tough read, that being said, Spread upon tousand of machines. The premise of the data processing tasks.
-Is that it could be reduced and mapped. With the conecept .
+Is that it could be reduced and mapped. With the conecept.
+
+Moveing and operating the data. Is that the key value learn structurely, reduces data- values, are cunks to the saqme datasets. 
+
+
+
 
 
