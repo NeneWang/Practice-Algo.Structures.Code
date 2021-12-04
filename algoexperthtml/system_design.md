@@ -404,6 +404,12 @@ Rely them to the server in a fashion. Some third party int he communication. Thi
 
 ## API Design
 
+Api desing, the sts that given an itnerview, You have a subsets of desings. System designs. As part of the design.
+There is a convenience, there is no much to cover. Bundled up inside. Those shares a lot of similarities with sytem desing.
+
+Design and the payment, the core products. Is effectivelly an PAI> Their product being the AI. Some literrally are about the product. A sense to it. 
+
+Challange in a very long process. The API Design. and the actual design interview. What part of them are we desinging?
 
 
 
