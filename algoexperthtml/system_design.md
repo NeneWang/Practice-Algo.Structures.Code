@@ -411,5 +411,26 @@ Design and the payment, the core products. Is effectivelly an PAI> Their product
 
 Challange in a very long process. The API Design. and the actual design interview. What part of them are we desinging?
 
+A charge and a charge entity. Write  out the various API endpoints. You wouldn write any logic. 
+As said, the genres there isn't really a right answer. Thats probably the system design solutions. Otherwise if you can't defend your decisions. For design
+might be sound. There is a record answers. You sowuld have a google api. 
+
+How the end of the design interview might look like. But keep in mind. Some design of the stripe API. for payments and charages per customer. 
+
+In the middle with how tit might look like. For the card, just in the interview with the subfield. Tells you how it might look like. Endpoints five endpoints for customers
+Create and having the delete endpoints.
+
+This is what you are expected to deliver. Interview questions and the best ideas and how the idea design questions. 
+
+[] Pick few examples in how useful they are. Piublically available apis.
+This is how they desing their API, and how similar to mine could be. Json representation for the cahrges, and how far in the interview you cna get. 
+
+The list endpoitns and the paths. The page tockens. Reponse bodies. As non endpoints.
+
+A good way to be inspired. A little more different, and eitehr way a great exercise. The two excercises, and just try to design the interview and look for the actual api.
+
+Youtube API's. Whats supposed to go on them. 
+
+
 
 
