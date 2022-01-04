@@ -32,3 +32,9 @@ function isValidSubsequence(array, sequence) {
         return false;
     }
 }
+
+function sortedSquaredArray(array) {
+    // Write your code here.
+    return array.map(n => n*n).sort((a,b)=> a-b);
+  }
+  
