@@ -57,3 +57,15 @@ function sortedSquaredArray(array) {
       }
     return currentLargest;
   }
+
+  function nonConstructibleChange(coins) {
+	coins.sort((a,b)=>a-b);
+	let maxChange = 0;
+	for(const coin of coins){
+		if(coin>maxChange+1){
+			return maxChange+1;
+		}
+		maxChange += coin;
+	}
+	return maxChange+1;
+}
