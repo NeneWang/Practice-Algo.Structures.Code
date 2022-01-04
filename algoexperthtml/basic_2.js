@@ -69,3 +69,34 @@ function sortedSquaredArray(array) {
 	}
 	return maxChange+1;
 }
+
+function findClosestValueInBst(tree, target) {
+    // Write your code here.
+      return findHelper(tree, target, tree.value)
+      
+  }
+  
+  function findHelper(tree, target, closest){
+      while(tree!==null){
+          const nodeDistance = Math.abs(tree.value-target);
+          closest = Math.abs(closest-target) > nodeDistance ? tree.value: closest;	
+          if(tree.value == target){
+              return closest;
+          }
+          if(target > tree.value){
+              tree = tree.right;
+          }else{
+              tree = tree.left;
+          }
+      }
+      return closest;	
+  }
+  
+  // This is the class of the input tree. Do not edit.
+  class BST {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
