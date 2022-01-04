@@ -38,3 +38,22 @@ function sortedSquaredArray(array) {
     return array.map(n => n*n).sort((a,b)=> a-b);
   }
   
+
+  function tournamentWinner(competitions, results) {
+    // Write your code here.
+  // 	Create a hashmap with the winners and return the best
+      const winningHash = {};
+      let currentLargest = "";
+      winningHash[currentLargest] = 0;
+      
+      for(const result of results){
+          
+          const [homeTeam, awayTeam]  = competitions.shift();
+          const winningTeam = result ==1?homeTeam:awayTeam;
+          
+          winningHash[winningTeam] = winningHash[winningTeam] == null? 3: winningHash[winningTeam]+3;
+          currentLargest = winningHash[currentLargest]>winningHash[winningTeam]?currentLargest:winningTeam;
+          
+      }
+    return currentLargest;
+  }
