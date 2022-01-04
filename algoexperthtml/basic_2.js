@@ -187,4 +187,15 @@ class Node {
   
   // Do not edit the line below.
   exports.Node = Node;
-  
+  function minimumWaitingTime(queries) {
+	let countingTime = 0;
+	queries.sort((a,b)=>a-b)
+	const queryLen = queries.length;
+	for(let i=0; i<queryLen-1; i++){
+		countingTime+= (queryLen-1-i)*queries[i];
+	}
+	return countingTime;
+}
+
+// Do not edit the line below.
+exports.minimumWaitingTime = minimumWaitingTime;
