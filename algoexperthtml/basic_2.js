@@ -100,3 +100,40 @@ function findClosestValueInBst(tree, target) {
       this.right = null;
     }
   }
+
+  // This is the class of the input root.
+// Do not edit it.
+class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+  
+  function branchSums(root) {
+    // Write your code here.
+      const sums = []
+      helper(root, 0, sums);
+      return sums;
+  }
+  
+  function helper(root, runningSum, sums){
+  // 	Go to right and left and return the variables
+      if(root == null){
+          return;
+      }
+      
+      runningSum+=root.value;
+      if(!root.right && !root.left){
+          sums.push(runningSum)
+      }
+      
+      let sumLeft = helper(root.left, runningSum, sums);
+      let sumRight = helper(root.right, runningSum, sums);
+  }
+  
+  // Do not edit the lines below.
+  exports.BinaryTree = BinaryTree;
+  exports.branchSums = branchSums;
+  
