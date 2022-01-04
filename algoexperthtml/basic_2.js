@@ -15,7 +15,23 @@ function twoNumberSum(array, targetSum) {
       }
       return [];
   }
+  function isValidSubsequence(array, sequence) {
+    // Write your code here.
+      let countSequence = 0;
+      
+      for(const value of array){
+          if(value == sequence[countSequence]){
+              countSequence++;
+          }
+      }
+      
+      if(countSequence==sequence.length){
+          return true;
+      }else{
+          return false;
+      }
+  }
   
   // Do not edit the line below.
-  exports.twoNumberSum = twoNumberSum;
+  
   
